@@ -18,9 +18,27 @@ class ViewController: UIViewController{
         verifik = Verifik(vc: self, token: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjbGllbnRJZCI6IjYxNTc3MTU2OTBmMDEwOGNmMmRjNjI4MSIsImRvY3VtZW50VHlwZSI6IkNDIiwiZG9jdW1lbnROdW1iZXIiOiIxNjM1MzczMzY3NDY3NDMiLCJ2IjoxLCJyb2xlIjoiY2xpZW50IiwiZXhwaXJlc0F0IjoiMjAyMi0xMi0wNCAxOTozNjo1NSIsImlhdCI6MTY2NzU5MDYxNX0.QvyQyTXoQCzXlGGfBs2brK15_9AvoveFWTAgprHvRDc")
     }
 
-    @IBAction func tapOnVerify(_ sender: Any) {
+    @IBAction func tapOnEnroll(_ sender: Any) {
         if initVerifik{
             verifik?.enroll()
+        }
+    }
+    
+    @IBAction func tapOnAuthenticate(_ sender: Any) {
+        if initVerifik{
+            verifik?.authenticate()
+        }
+    }
+    
+    @IBAction func tapOnVerifyID(_ sender: Any) {
+        if initVerifik{
+            verifik?.matchIDScan()
+        }
+    }
+    
+    @IBAction func tapOnOCR(_ sender: Any) {
+        if initVerifik{
+            verifik?.photoIDScan()
         }
     }
     

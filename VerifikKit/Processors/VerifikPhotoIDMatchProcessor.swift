@@ -103,6 +103,7 @@ class VerifikPhotoIDMatchProcessor: NSObject, Processor, FaceTecFaceScanProcesso
         parameters["auditTrailImage"] = sessionResult.auditTrailCompressedBase64![0]
         parameters["lowQualityAuditTrailImage"] = sessionResult.lowQualityAuditTrailCompressedBase64![0]
         parameters["externalDatabaseRefID"] = self.externalDatabaseRef
+        parameters["sessionId"] = sessionResult.sessionId
         
         //
         // Part 5:  Make the Networking Call to Your Servers.  Below is just example code, you are free to customize based on how your own API works.
@@ -113,7 +114,7 @@ class VerifikPhotoIDMatchProcessor: NSObject, Processor, FaceTecFaceScanProcesso
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.httpBody = try! JSONSerialization.data(withJSONObject: parameters, options: JSONSerialization.WritingOptions(rawValue: 0))
         request.addValue(Config.shared.DeviceKeyIdentifier!, forHTTPHeaderField: "X-Device-Key")
-        request.addValue(FaceTec.sdk.createFaceTecAPIUserAgentString(sessionResult.sessionId), forHTTPHeaderField: "User-Agent")
+        request.addValue(FaceTec.sdk.createFaceTecAPIUserAgentString(sessionResult.sessionId), forHTTPHeaderField: "X-User-Agent")
         
         let session = URLSession(configuration: URLSessionConfiguration.default, delegate: self, delegateQueue: OperationQueue.main)
         latestNetworkRequest = session.dataTask(with: request as URLRequest, completionHandler: { data, response, error in
@@ -136,8 +137,8 @@ class VerifikPhotoIDMatchProcessor: NSObject, Processor, FaceTecFaceScanProcesso
                 return
             }
             
-            guard let scanResultBlob = responseJSON["scanResultBlob"] as? String,
-                  let wasProcessed = responseJSON["wasProcessed"] as? Bool else {
+            guard let scanResultBlob = responseJSON["data"]?["scanResultBlob"] as? String,
+                  let wasProcessed = responseJSON["data"]?["wasProcessed"] as? Bool else {
                 // CASE:  UNEXPECTED response from API.  Our Sample Code keys off a wasProcessed boolean on the root of the JSON object --> You define your own API contracts with yourself and may choose to do something different here based on the error.
                 faceScanResultCallback.onFaceScanResultCancel()
                 return;
@@ -227,6 +228,7 @@ class VerifikPhotoIDMatchProcessor: NSObject, Processor, FaceTecFaceScanProcesso
         }
         parameters["minMatchLevel"] = minMatchLevel
         parameters["externalDatabaseRefID"] = self.externalDatabaseRef
+        parameters["sessionId"] = idScanResult.sessionId
         
         //
         // Part 13:  Make the Networking Call to Your Servers.  Below is just example code, you are free to customize based on how your own API works.
@@ -237,7 +239,7 @@ class VerifikPhotoIDMatchProcessor: NSObject, Processor, FaceTecFaceScanProcesso
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.httpBody = try! JSONSerialization.data(withJSONObject: parameters, options: JSONSerialization.WritingOptions(rawValue: 0))
         request.addValue(Config.shared.DeviceKeyIdentifier!, forHTTPHeaderField: "X-Device-Key")
-        request.addValue(FaceTec.sdk.createFaceTecAPIUserAgentString((idScanResult.sessionId)!), forHTTPHeaderField: "User-Agent")
+        request.addValue(FaceTec.sdk.createFaceTecAPIUserAgentString((idScanResult.sessionId)!), forHTTPHeaderField: "X-User-Agent")
         
         let session = URLSession(configuration: URLSessionConfiguration.default, delegate: self, delegateQueue: OperationQueue.main)
         latestNetworkRequest = session.dataTask(with: request as URLRequest, completionHandler: { data, response, error in
@@ -260,8 +262,8 @@ class VerifikPhotoIDMatchProcessor: NSObject, Processor, FaceTecFaceScanProcesso
                 return
             }
             
-            guard let scanResultBlob = responseJSON["scanResultBlob"] as? String,
-                  let wasProcessed = responseJSON["wasProcessed"] as? Bool else {
+            guard let scanResultBlob = responseJSON["data"]?["scanResultBlob"] as? String,
+                  let wasProcessed = responseJSON["data"]?["wasProcessed"] as? Bool else {
                 // CASE:  UNEXPECTED response from API.  Our Sample Code keys off a wasProcessed boolean on the root of the JSON object --> You define your own API contracts with yourself and may choose to do something different here based on the error.
                 idScanResultCallback.onIDScanResultCancel()
                 return
