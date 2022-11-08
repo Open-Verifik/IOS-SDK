@@ -16,14 +16,22 @@ public protocol VerifikProtocol: UIViewController, URLSessionDelegate{
     func onVerifikComplete()
     
     func onEnrollmentDone()
+    func enrollmentError(error: String)
     func onAuthDone()
+    func authError(error: String)
     func onPhotoIDMatchDone()
+    func photoIDMatchError(error: String)
     func onPhotoIDScan()
+    func photoIDScanError(error: String)
 }
 
 public extension VerifikProtocol{
     func onEnrollmentDone() {}
+    func enrollmentError(error: String) {}
     func onAuthDone() {}
+    func authError(error: String) {}
     func onPhotoIDMatchDone() {}
+    func photoIDMatchError(error: String) {}
     func onPhotoIDScan() {}
+    func photoIDScanError(error: String) {}
 }

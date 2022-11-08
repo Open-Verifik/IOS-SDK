@@ -60,7 +60,7 @@ class VerifikEnrollmentProcessor: NSObject, Processor, FaceTecFaceScanProcessorD
             if latestNetworkRequest != nil {
                 latestNetworkRequest.cancel()
             }
-            
+            self.fromViewController.enrollmentError(error: "User cancel enrollment or there was a connection error")
             faceScanResultCallback.onFaceScanResultCancel()
             return
         }
@@ -98,11 +98,13 @@ class VerifikEnrollmentProcessor: NSObject, Processor, FaceTecFaceScanProcessorD
             guard let data = data else {
                 // CASE:  UNEXPECTED response from API. Our Sample Code keys off a wasProcessed boolean on the root of the JSON object --> You define your own API contracts with yourself and may choose to do something different here based on the error.
                 faceScanResultCallback.onFaceScanResultCancel()
+                self.fromViewController.enrollmentError(error: "There was an error parsing enrollment resulting data")
                 return
             }
             
             guard let responseJSON = try? JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.allowFragments) as! [String: AnyObject] else {
                 // CASE:  UNEXPECTED response from API.  Our Sample Code keys off a wasProcessed boolean on the root of the JSON object --> You define your own API contracts with yourself and may choose to do something different here based on the error.
+                self.fromViewController.enrollmentError(error: "There was an error parsing enrollment resulting data 2")
                 faceScanResultCallback.onFaceScanResultCancel()
                 return
             }
@@ -111,6 +113,7 @@ class VerifikEnrollmentProcessor: NSObject, Processor, FaceTecFaceScanProcessorD
                   let wasProcessed = responseJSON["data"]?["wasProcessed"] as? Bool else {
                 // CASE:  UNEXPECTED response from API.  Our Sample Code keys off a wasProcessed boolean on the root of the JSON object --> You define your own API contracts with yourself and may choose to do something different here based on the error.
                 faceScanResultCallback.onFaceScanResultCancel()
+                self.fromViewController.enrollmentError(error: "There was an error with the enrollment process")
                 return;
             }
             
@@ -127,6 +130,7 @@ class VerifikEnrollmentProcessor: NSObject, Processor, FaceTecFaceScanProcessorD
             }
             else {
                 // CASE:  UNEXPECTED response from API.  Our Sample Code keys off a wasProcessed boolean on the root of the JSON object --> You define your own API contracts with yourself and may choose to do something different here based on the error.
+                self.fromViewController.enrollmentError(error: "No enrollment executed")
                 faceScanResultCallback.onFaceScanResultCancel()
                 return;
             }
