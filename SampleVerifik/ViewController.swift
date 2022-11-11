@@ -11,6 +11,7 @@ import VerifikKit
 class ViewController: UIViewController{
     var verifik: Verifik?
     var initVerifik = false
+    let refId = "verifik_app_" + UUID().uuidString
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,13 +21,13 @@ class ViewController: UIViewController{
 
     @IBAction func tapOnEnroll(_ sender: Any) {
         if initVerifik{
-            verifik?.enroll()
+            verifik?.enroll(externalDataBaseRefID: refId)
         }
     }
     
     @IBAction func tapOnAuthenticate(_ sender: Any) {
         if initVerifik{
-            verifik?.authenticate()
+            verifik?.authenticate(externalDataBaseRefID: refId)
         }
     }
     

@@ -44,24 +44,20 @@ public class Verifik: NSObject, URLSessionDelegate{
     }
     
     // Initiate a 3D Liveness Check, then storing the 3D FaceMap in the Database, also known as "Enrollment".  A random externalDatabaseRefID is generated each time to guarantee uniqueness.
-    public func enroll(){
+    public func enroll(externalDataBaseRefID: String){
+        self.latestExternalDatabaseRefID = externalDataBaseRefID
         // Get a Session Token from the FaceTec SDK, then start the Enrollment.
         let httpService = HttpService()
         httpService.getSessionToken(vc: self.vc, token: token){ sessionToken in
             self.resetLatestResults()
-            self.latestExternalDatabaseRefID = "verifik_app_" + UUID().uuidString
             self.latestProcessor = VerifikEnrollmentProcessor(sessionToken: sessionToken, verifikToken: self.token, fromViewController: self.vc, externalDatabaseRef: self.latestExternalDatabaseRefID)
         }
     }
     
     // Perform 3D to 3D Authentication against the Enrollment previously performed.
-    public func authenticate(){
+    public func authenticate(externalDataBaseRefID: String){
         // For demonstration purposes, verify that we have an externalDatabaseRefID to Authenticate against.
-        if latestExternalDatabaseRefID.count == 0 {
-            //TODO: Display error
-            //utils.displayStatus(statusString: "Please enroll first before trying authentication.")
-            return
-        }
+        self.latestExternalDatabaseRefID = externalDataBaseRefID
         // Get a Session Token from the FaceTec SDK, then start the 3D to 3D Matching.
         let httpService = HttpService()
         httpService.getSessionToken(vc: self.vc, token: token){ sessionToken in
