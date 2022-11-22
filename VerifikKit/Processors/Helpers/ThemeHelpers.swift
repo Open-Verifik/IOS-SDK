@@ -34,7 +34,8 @@ class ThemeHelpers {
         if theme == "FaceTec Theme" {
             // using default customizations -- do nothing
         }
-        else if theme == "Config Wizard Theme" {
+        //Modified
+        else if theme == "Config Wizard Theme old" {
             currentCustomization = Config.retrieveConfigurationWizardCustomization()
         }
         else if theme == "Pseudo-Fullscreen" {
@@ -684,7 +685,8 @@ class ThemeHelpers {
             currentCustomization.cancelButtonCustomization.customImage = UIImage(named: "cancel_box_red")
             currentCustomization.cancelButtonCustomization.location = FaceTecCancelButtonLocation.topRight
         }
-        else if theme == "Sample Bank" {
+        else if theme == "Config Wizard Theme" {
+            let bundle = Bundle(for: ThemeHelpers.self)
             let primaryColor = UIColor.white
             let backgroundColor = UIColor(red: 0.114, green: 0.090, blue: 0.310, alpha: 1) // navy
 
@@ -704,7 +706,7 @@ class ThemeHelpers {
             // Overlay Customization
             currentCustomization.overlayCustomization.backgroundColor = UIColor.clear
             currentCustomization.overlayCustomization.showBrandingImage = true
-            currentCustomization.overlayCustomization.brandingImage = UIImage(named: "sample_bank_logo")
+            currentCustomization.overlayCustomization.brandingImage = UIImage(named: "sample_bank_logo", in: bundle, with: .none)
             // Guidance Customization
             currentCustomization.guidanceCustomization.backgroundColors = [backgroundColor, backgroundColor]
             currentCustomization.guidanceCustomization.foregroundColor = primaryColor
@@ -730,7 +732,7 @@ class ThemeHelpers {
             currentCustomization.guidanceCustomization.retryScreenSlideshowImages = retryScreenSlideshowImages
             currentCustomization.guidanceCustomization.retryScreenSlideshowInterval = 1500
             currentCustomization.guidanceCustomization.enableRetryScreenSlideshowShuffle = false
-            currentCustomization.guidanceCustomization.cameraPermissionsScreenImage = UIImage(named: "camera_white_navy")
+            currentCustomization.guidanceCustomization.cameraPermissionsScreenImage = UIImage(named: "camera_white_navy", in: bundle, with: .none)
             // ID Scan Customization
             currentCustomization.idScanCustomization.showSelectionScreenDocumentImage = false
             currentCustomization.idScanCustomization.selectionScreenDocumentImage = nil
@@ -766,8 +768,8 @@ class ThemeHelpers {
             currentCustomization.idScanCustomization.captureFrameStrokeColor = primaryColor
             currentCustomization.idScanCustomization.captureFrameStrokeWith = 2
             currentCustomization.idScanCustomization.captureFrameCornerRadius = 12
-            currentCustomization.idScanCustomization.activeTorchButtonImage = UIImage(named: "torch_active_white")
-            currentCustomization.idScanCustomization.inactiveTorchButtonImage = UIImage(named: "torch_inactive_white")
+            currentCustomization.idScanCustomization.activeTorchButtonImage = UIImage(named: "torch_active_white", in: bundle, with: .none)
+            currentCustomization.idScanCustomization.inactiveTorchButtonImage = UIImage(named: "torch_inactive_white", in: bundle, with: .none)
             // OCR Confirmation Screen Customization
             currentCustomization.ocrConfirmationCustomization.backgroundColors = [backgroundColor, backgroundColor]
             currentCustomization.ocrConfirmationCustomization.mainHeaderDividerLineColor = primaryColor
@@ -804,7 +806,7 @@ class ThemeHelpers {
             currentCustomization.resultScreenCustomization.foregroundColor = primaryColor
             currentCustomization.resultScreenCustomization.messageFont = headerFont
             currentCustomization.resultScreenCustomization.activityIndicatorColor = primaryColor
-            currentCustomization.resultScreenCustomization.customActivityIndicatorImage = UIImage(named: "activity_indicator_white")
+            currentCustomization.resultScreenCustomization.customActivityIndicatorImage = UIImage(named: "activity_indicator_white", in: bundle, with: .none)
             currentCustomization.resultScreenCustomization.customActivityIndicatorRotationInterval = 1000
             currentCustomization.resultScreenCustomization.resultAnimationBackgroundColor = UIColor.clear
             currentCustomization.resultScreenCustomization.resultAnimationForegroundColor = primaryColor
@@ -831,7 +833,7 @@ class ThemeHelpers {
             currentCustomization.ovalCustomization.progressColor1 = primaryColor.withAlphaComponent(0.5)
             currentCustomization.ovalCustomization.progressColor2 = primaryColor.withAlphaComponent(0.5)
             // Cancel Button Customization
-            currentCustomization.cancelButtonCustomization.customImage = UIImage(named: "cancel_white")
+            currentCustomization.cancelButtonCustomization.customImage = UIImage(named: "cancel_white", in: bundle, with: .none)
             currentCustomization.cancelButtonCustomization.location = FaceTecCancelButtonLocation.topLeft
         }
         
