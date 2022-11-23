@@ -90,7 +90,7 @@ class VerifikPhotoIDMatchProcessor: NSObject, Processor, FaceTecFaceScanProcesso
             if latestNetworkRequest != nil {
                 latestNetworkRequest.cancel()
             }
-            self.fromViewController.enrollmentError(error: "User cancel Photo ID Match or there was a connection error - Face")
+            self.fromViewController.photoIDMatchError(error: "User cancel Photo ID Match or there was a connection error - Face Step")
             faceScanResultCallback.onFaceScanResultCancel()
             return
         }
@@ -128,12 +128,13 @@ class VerifikPhotoIDMatchProcessor: NSObject, Processor, FaceTecFaceScanProcesso
             guard let data = data else {
                 // CASE:  UNEXPECTED response from API. Our Sample Code keys off a wasProcessed boolean on the root of the JSON object --> You define your own API contracts with yourself and may choose to do something different here based on the error.
                 faceScanResultCallback.onFaceScanResultCancel()
+                self.fromViewController.photoIDMatchError(error: "There was an error parsing face scan resulting data -  Face Step, please contact Verifik Support Team")
                 return
             }
             
             guard let responseJSON = try? JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.allowFragments) as! [String: AnyObject] else {
                 // CASE:  UNEXPECTED response from API.  Our Sample Code keys off a wasProcessed boolean on the root of the JSON object --> You define your own API contracts with yourself and may choose to do something different here based on the error.
-                self.fromViewController.enrollmentError(error: "There was an error parsing face scan resulting data - Face")
+                self.fromViewController.photoIDMatchError(error: "There was an error parsing face scan resulting data 2 - Face Step, please contact Verifik Support Team")
                 faceScanResultCallback.onFaceScanResultCancel()
                 return
             }
@@ -141,7 +142,7 @@ class VerifikPhotoIDMatchProcessor: NSObject, Processor, FaceTecFaceScanProcesso
             guard let scanResultBlob = responseJSON["data"]?["scanResultBlob"] as? String,
                   let wasProcessed = responseJSON["data"]?["wasProcessed"] as? Bool else {
                 // CASE:  UNEXPECTED response from API.  Our Sample Code keys off a wasProcessed boolean on the root of the JSON object --> You define your own API contracts with yourself and may choose to do something different here based on the error.
-                self.fromViewController.enrollmentError(error: "There was an error parsing face scan resulting data 2 - Face")
+                self.fromViewController.photoIDMatchError(error: "There was an error with the face scan process")
                 faceScanResultCallback.onFaceScanResultCancel()
                 return;
             }
@@ -159,7 +160,7 @@ class VerifikPhotoIDMatchProcessor: NSObject, Processor, FaceTecFaceScanProcesso
             }
             else {
                 // CASE:  UNEXPECTED response from API.  Our Sample Code keys off a wasProcessed boolean on the root of the JSON object --> You define your own API contracts with yourself and may choose to do something different here based on the error.
-                self.fromViewController.enrollmentError(error: "No enrollment executed")
+                self.fromViewController.photoIDMatchError(error: "No enrollment executed")
                 faceScanResultCallback.onFaceScanResultCancel()
                 return;
             }
@@ -204,7 +205,7 @@ class VerifikPhotoIDMatchProcessor: NSObject, Processor, FaceTecFaceScanProcesso
             if latestNetworkRequest != nil {
                 latestNetworkRequest.cancel()
             }
-            self.fromViewController.enrollmentError(error: "User cancel authentication or there was a connection error - ID")
+            self.fromViewController.photoIDMatchError(error: "User cancel ID Scan or there was a connection error - ID Step")
             idScanResultCallback.onIDScanResultCancel()
             return
         }
@@ -255,13 +256,14 @@ class VerifikPhotoIDMatchProcessor: NSObject, Processor, FaceTecFaceScanProcesso
             
             guard let data = data else {
                 // CASE:  UNEXPECTED response from API. Our Sample Code keys off a wasProcessed boolean on the root of the JSON object --> You define your own API contracts with yourself and may choose to do something different here based on the error.
+                self.fromViewController.photoIDMatchError(error: "There was an error parsing ID scan resulting data - ID Step, please contact Verifik Support Team")
                 idScanResultCallback.onIDScanResultCancel()
                 return
             }
             
             guard let responseJSON = try? JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.allowFragments) as! [String: AnyObject] else {
                 // CASE:  UNEXPECTED response from API.  Our Sample Code keys off a wasProcessed boolean on the root of the JSON object --> You define your own API contracts with yourself and may choose to do something different here based on the error.
-                self.fromViewController.enrollmentError(error: "There was an error parsing face scan resulting data - ID")
+                self.fromViewController.photoIDMatchError(error: "There was an error parsing ID scan resulting data 2 - ID Step, please contact Verifik Support Team")
                 idScanResultCallback.onIDScanResultCancel()
                 return
             }
@@ -269,7 +271,7 @@ class VerifikPhotoIDMatchProcessor: NSObject, Processor, FaceTecFaceScanProcesso
             guard let scanResultBlob = responseJSON["data"]?["scanResultBlob"] as? String,
                   let wasProcessed = responseJSON["data"]?["wasProcessed"] as? Bool else {
                 // CASE:  UNEXPECTED response from API.  Our Sample Code keys off a wasProcessed boolean on the root of the JSON object --> You define your own API contracts with yourself and may choose to do something different here based on the error.
-                self.fromViewController.enrollmentError(error: "There was an error parsing face scan resulting data 2 - Face")
+                self.fromViewController.photoIDMatchError(error: "There was an error with the ID scan process")
                 idScanResultCallback.onIDScanResultCancel()
                 return
             }
@@ -310,7 +312,7 @@ class VerifikPhotoIDMatchProcessor: NSObject, Processor, FaceTecFaceScanProcesso
             }
             else {
                 // CASE:  UNEXPECTED response from API.  Our Sample Code keys off a wasProcessed boolean on the root of the JSON object --> You define your own API contracts with yourself and may choose to do something different here based on the error.
-                self.fromViewController.enrollmentError(error: "Can't scan ID")
+                self.fromViewController.photoIDMatchError(error: "Photo ID Match not executed")
                 idScanResultCallback.onIDScanResultCancel()
             }
         })
@@ -346,7 +348,7 @@ class VerifikPhotoIDMatchProcessor: NSObject, Processor, FaceTecFaceScanProcesso
         // In your code, you will handle what to do after the Photo ID Scan is successful here.
         // In our example code here, to keep the code in this class simple, we will call a static method on another class to update the Sample App UI.
         self.fromViewController.onVerifikComplete()
-        self.fromViewController.onPhotoIDMatchDone()
+        self.fromViewController.onPhotoIDMatchDone(done: success)
     }
     
     func isSuccess() -> Bool {

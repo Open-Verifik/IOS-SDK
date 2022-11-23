@@ -64,26 +64,34 @@ extension ViewController: VerifikProtocol {
         
     }
     
-    func onEnrollmentDone() {
-        print("Se registro el rostro correctamente")
+    func onEnrollmentDone(done: Bool) {
+        if done{
+            print("Se registro el rostro correctamente")
+        }
     }
     func enrollmentError(error: String) {
         print("Hubo un error al registrar el rostro: \(error)")
     }
-    func onAuthDone() {
-        print("Se autenticó el rostro correctamente")
+    func onAuthDone(done: Bool) {
+        if done{
+            print("Se autenticó el rostro correctamente")
+        }
     }
     func authError(error: String) {
         print("Hubo un error al autenticar el rostro: \(error)")
     }
-    func onPhotoIDMatchDone() {
-        print("Se registro correctamente el rostro con la identificación")
+    func onPhotoIDMatchDone(done: Bool) {
+        if done{
+            print("Se registro correctamente el rostro con la identificación")
+        }
     }
     func photoIDMatchError(error: String) {
         print("Hubo un error al registrar el rostro con la identificación: \(error)")
     }
-    func onPhotoIDScan() {
-        print("Se escaneo correctamente la identificación")
+    func onPhotoIDScan(done: Bool) {
+        if done{
+            print("Se escaneo correctamente la identificación")
+        }
     }
     func photoIDScanError(error: String) {
         print("Hubo un error al escanear la identificación")

@@ -98,13 +98,13 @@ class VerifikEnrollmentProcessor: NSObject, Processor, FaceTecFaceScanProcessorD
             guard let data = data else {
                 // CASE:  UNEXPECTED response from API. Our Sample Code keys off a wasProcessed boolean on the root of the JSON object --> You define your own API contracts with yourself and may choose to do something different here based on the error.
                 faceScanResultCallback.onFaceScanResultCancel()
-                self.fromViewController.enrollmentError(error: "There was an error parsing enrollment resulting data")
+                self.fromViewController.enrollmentError(error: "There was an error parsing enrollment resulting data, please contact Verifik Support Team")
                 return
             }
             
             guard let responseJSON = try? JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.allowFragments) as! [String: AnyObject] else {
                 // CASE:  UNEXPECTED response from API.  Our Sample Code keys off a wasProcessed boolean on the root of the JSON object --> You define your own API contracts with yourself and may choose to do something different here based on the error.
-                self.fromViewController.enrollmentError(error: "There was an error parsing enrollment resulting data 2")
+                self.fromViewController.enrollmentError(error: "There was an error parsing enrollment resulting data 2, please contact Verifik Support Team")
                 faceScanResultCallback.onFaceScanResultCancel()
                 return
             }
@@ -172,7 +172,7 @@ class VerifikEnrollmentProcessor: NSObject, Processor, FaceTecFaceScanProcessorD
         // In your code, you will handle what to do after the Enrollment is successful here.
         // In our example code here, to keep the code in this class simple, we will call a static method on another class to update the Sample App UI.
         self.fromViewController.onVerifikComplete()
-        self.fromViewController.onEnrollmentDone()
+        self.fromViewController.onEnrollmentDone(done: success)
     }
     
     func isSuccess() -> Bool {
