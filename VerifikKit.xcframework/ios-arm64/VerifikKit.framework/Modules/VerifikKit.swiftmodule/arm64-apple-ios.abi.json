@@ -99,17 +99,23 @@
           {
             "kind": "Function",
             "name": "enroll",
-            "printedName": "enroll()",
+            "printedName": "enroll(externalDataBaseRefID:)",
             "children": [
               {
                 "kind": "TypeNominal",
                 "name": "Void",
                 "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
               }
             ],
             "declKind": "Func",
-            "usr": "s:10VerifikKit0A0C6enrollyyF",
-            "mangledName": "$s10VerifikKit0A0C6enrollyyF",
+            "usr": "s:10VerifikKit0A0C6enroll21externalDataBaseRefIDySS_tF",
+            "mangledName": "$s10VerifikKit0A0C6enroll21externalDataBaseRefIDySS_tF",
             "moduleName": "VerifikKit",
             "declAttributes": [
               "AccessControl",
@@ -120,17 +126,23 @@
           {
             "kind": "Function",
             "name": "authenticate",
-            "printedName": "authenticate()",
+            "printedName": "authenticate(externalDataBaseRefID:)",
             "children": [
               {
                 "kind": "TypeNominal",
                 "name": "Void",
                 "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
               }
             ],
             "declKind": "Func",
-            "usr": "s:10VerifikKit0A0C12authenticateyyF",
-            "mangledName": "$s10VerifikKit0A0C12authenticateyyF",
+            "usr": "s:10VerifikKit0A0C12authenticate21externalDataBaseRefIDySS_tF",
+            "mangledName": "$s10VerifikKit0A0C12authenticate21externalDataBaseRefIDySS_tF",
             "moduleName": "VerifikKit",
             "declAttributes": [
               "AccessControl",
@@ -462,17 +474,50 @@
           {
             "kind": "Function",
             "name": "onEnrollmentDone",
-            "printedName": "onEnrollmentDone()",
+            "printedName": "onEnrollmentDone(done:)",
             "children": [
               {
                 "kind": "TypeNominal",
                 "name": "Void",
                 "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
               }
             ],
             "declKind": "Func",
-            "usr": "s:10VerifikKit0A8ProtocolP16onEnrollmentDoneyyF",
-            "mangledName": "$s10VerifikKit0A8ProtocolP16onEnrollmentDoneyyF",
+            "usr": "s:10VerifikKit0A8ProtocolP16onEnrollmentDone4doneySb_tF",
+            "mangledName": "$s10VerifikKit0A8ProtocolP16onEnrollmentDone4doneySb_tF",
+            "moduleName": "VerifikKit",
+            "genericSig": "<τ_0_0 where τ_0_0 : VerifikKit.VerifikProtocol>",
+            "sugared_genericSig": "<Self where Self : VerifikKit.VerifikProtocol>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "enrollmentError",
+            "printedName": "enrollmentError(error:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:10VerifikKit0A8ProtocolP15enrollmentError5errorySS_tF",
+            "mangledName": "$s10VerifikKit0A8ProtocolP15enrollmentError5errorySS_tF",
             "moduleName": "VerifikKit",
             "genericSig": "<τ_0_0 where τ_0_0 : VerifikKit.VerifikProtocol>",
             "sugared_genericSig": "<Self where Self : VerifikKit.VerifikProtocol>",
@@ -483,17 +528,50 @@
           {
             "kind": "Function",
             "name": "onAuthDone",
-            "printedName": "onAuthDone()",
+            "printedName": "onAuthDone(done:)",
             "children": [
               {
                 "kind": "TypeNominal",
                 "name": "Void",
                 "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
               }
             ],
             "declKind": "Func",
-            "usr": "s:10VerifikKit0A8ProtocolP10onAuthDoneyyF",
-            "mangledName": "$s10VerifikKit0A8ProtocolP10onAuthDoneyyF",
+            "usr": "s:10VerifikKit0A8ProtocolP10onAuthDone4doneySb_tF",
+            "mangledName": "$s10VerifikKit0A8ProtocolP10onAuthDone4doneySb_tF",
+            "moduleName": "VerifikKit",
+            "genericSig": "<τ_0_0 where τ_0_0 : VerifikKit.VerifikProtocol>",
+            "sugared_genericSig": "<Self where Self : VerifikKit.VerifikProtocol>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "authError",
+            "printedName": "authError(error:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:10VerifikKit0A8ProtocolP9authError5errorySS_tF",
+            "mangledName": "$s10VerifikKit0A8ProtocolP9authError5errorySS_tF",
             "moduleName": "VerifikKit",
             "genericSig": "<τ_0_0 where τ_0_0 : VerifikKit.VerifikProtocol>",
             "sugared_genericSig": "<Self where Self : VerifikKit.VerifikProtocol>",
@@ -504,17 +582,50 @@
           {
             "kind": "Function",
             "name": "onPhotoIDMatchDone",
-            "printedName": "onPhotoIDMatchDone()",
+            "printedName": "onPhotoIDMatchDone(done:)",
             "children": [
               {
                 "kind": "TypeNominal",
                 "name": "Void",
                 "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
               }
             ],
             "declKind": "Func",
-            "usr": "s:10VerifikKit0A8ProtocolP18onPhotoIDMatchDoneyyF",
-            "mangledName": "$s10VerifikKit0A8ProtocolP18onPhotoIDMatchDoneyyF",
+            "usr": "s:10VerifikKit0A8ProtocolP18onPhotoIDMatchDone4doneySb_tF",
+            "mangledName": "$s10VerifikKit0A8ProtocolP18onPhotoIDMatchDone4doneySb_tF",
+            "moduleName": "VerifikKit",
+            "genericSig": "<τ_0_0 where τ_0_0 : VerifikKit.VerifikProtocol>",
+            "sugared_genericSig": "<Self where Self : VerifikKit.VerifikProtocol>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "photoIDMatchError",
+            "printedName": "photoIDMatchError(error:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:10VerifikKit0A8ProtocolP17photoIDMatchError5errorySS_tF",
+            "mangledName": "$s10VerifikKit0A8ProtocolP17photoIDMatchError5errorySS_tF",
             "moduleName": "VerifikKit",
             "genericSig": "<τ_0_0 where τ_0_0 : VerifikKit.VerifikProtocol>",
             "sugared_genericSig": "<Self where Self : VerifikKit.VerifikProtocol>",
@@ -525,17 +636,50 @@
           {
             "kind": "Function",
             "name": "onPhotoIDScan",
-            "printedName": "onPhotoIDScan()",
+            "printedName": "onPhotoIDScan(done:)",
             "children": [
               {
                 "kind": "TypeNominal",
                 "name": "Void",
                 "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
               }
             ],
             "declKind": "Func",
-            "usr": "s:10VerifikKit0A8ProtocolP13onPhotoIDScanyyF",
-            "mangledName": "$s10VerifikKit0A8ProtocolP13onPhotoIDScanyyF",
+            "usr": "s:10VerifikKit0A8ProtocolP13onPhotoIDScan4doneySb_tF",
+            "mangledName": "$s10VerifikKit0A8ProtocolP13onPhotoIDScan4doneySb_tF",
+            "moduleName": "VerifikKit",
+            "genericSig": "<τ_0_0 where τ_0_0 : VerifikKit.VerifikProtocol>",
+            "sugared_genericSig": "<Self where Self : VerifikKit.VerifikProtocol>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "photoIDScanError",
+            "printedName": "photoIDScanError(error:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:10VerifikKit0A8ProtocolP16photoIDScanError5errorySS_tF",
+            "mangledName": "$s10VerifikKit0A8ProtocolP16photoIDScanError5errorySS_tF",
             "moduleName": "VerifikKit",
             "genericSig": "<τ_0_0 where τ_0_0 : VerifikKit.VerifikProtocol>",
             "sugared_genericSig": "<Self where Self : VerifikKit.VerifikProtocol>",
@@ -546,17 +690,49 @@
           {
             "kind": "Function",
             "name": "onEnrollmentDone",
-            "printedName": "onEnrollmentDone()",
+            "printedName": "onEnrollmentDone(done:)",
             "children": [
               {
                 "kind": "TypeNominal",
                 "name": "Void",
                 "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
               }
             ],
             "declKind": "Func",
-            "usr": "s:10VerifikKit0A8ProtocolPAAE16onEnrollmentDoneyyF",
-            "mangledName": "$s10VerifikKit0A8ProtocolPAAE16onEnrollmentDoneyyF",
+            "usr": "s:10VerifikKit0A8ProtocolPAAE16onEnrollmentDone4doneySb_tF",
+            "mangledName": "$s10VerifikKit0A8ProtocolPAAE16onEnrollmentDone4doneySb_tF",
+            "moduleName": "VerifikKit",
+            "genericSig": "<τ_0_0 where τ_0_0 : VerifikKit.VerifikProtocol>",
+            "sugared_genericSig": "<Self where Self : VerifikKit.VerifikProtocol>",
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "enrollmentError",
+            "printedName": "enrollmentError(error:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:10VerifikKit0A8ProtocolPAAE15enrollmentError5errorySS_tF",
+            "mangledName": "$s10VerifikKit0A8ProtocolPAAE15enrollmentError5errorySS_tF",
             "moduleName": "VerifikKit",
             "genericSig": "<τ_0_0 where τ_0_0 : VerifikKit.VerifikProtocol>",
             "sugared_genericSig": "<Self where Self : VerifikKit.VerifikProtocol>",
@@ -566,17 +742,49 @@
           {
             "kind": "Function",
             "name": "onAuthDone",
-            "printedName": "onAuthDone()",
+            "printedName": "onAuthDone(done:)",
             "children": [
               {
                 "kind": "TypeNominal",
                 "name": "Void",
                 "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
               }
             ],
             "declKind": "Func",
-            "usr": "s:10VerifikKit0A8ProtocolPAAE10onAuthDoneyyF",
-            "mangledName": "$s10VerifikKit0A8ProtocolPAAE10onAuthDoneyyF",
+            "usr": "s:10VerifikKit0A8ProtocolPAAE10onAuthDone4doneySb_tF",
+            "mangledName": "$s10VerifikKit0A8ProtocolPAAE10onAuthDone4doneySb_tF",
+            "moduleName": "VerifikKit",
+            "genericSig": "<τ_0_0 where τ_0_0 : VerifikKit.VerifikProtocol>",
+            "sugared_genericSig": "<Self where Self : VerifikKit.VerifikProtocol>",
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "authError",
+            "printedName": "authError(error:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:10VerifikKit0A8ProtocolPAAE9authError5errorySS_tF",
+            "mangledName": "$s10VerifikKit0A8ProtocolPAAE9authError5errorySS_tF",
             "moduleName": "VerifikKit",
             "genericSig": "<τ_0_0 where τ_0_0 : VerifikKit.VerifikProtocol>",
             "sugared_genericSig": "<Self where Self : VerifikKit.VerifikProtocol>",
@@ -586,17 +794,49 @@
           {
             "kind": "Function",
             "name": "onPhotoIDMatchDone",
-            "printedName": "onPhotoIDMatchDone()",
+            "printedName": "onPhotoIDMatchDone(done:)",
             "children": [
               {
                 "kind": "TypeNominal",
                 "name": "Void",
                 "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
               }
             ],
             "declKind": "Func",
-            "usr": "s:10VerifikKit0A8ProtocolPAAE18onPhotoIDMatchDoneyyF",
-            "mangledName": "$s10VerifikKit0A8ProtocolPAAE18onPhotoIDMatchDoneyyF",
+            "usr": "s:10VerifikKit0A8ProtocolPAAE18onPhotoIDMatchDone4doneySb_tF",
+            "mangledName": "$s10VerifikKit0A8ProtocolPAAE18onPhotoIDMatchDone4doneySb_tF",
+            "moduleName": "VerifikKit",
+            "genericSig": "<τ_0_0 where τ_0_0 : VerifikKit.VerifikProtocol>",
+            "sugared_genericSig": "<Self where Self : VerifikKit.VerifikProtocol>",
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "photoIDMatchError",
+            "printedName": "photoIDMatchError(error:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:10VerifikKit0A8ProtocolPAAE17photoIDMatchError5errorySS_tF",
+            "mangledName": "$s10VerifikKit0A8ProtocolPAAE17photoIDMatchError5errorySS_tF",
             "moduleName": "VerifikKit",
             "genericSig": "<τ_0_0 where τ_0_0 : VerifikKit.VerifikProtocol>",
             "sugared_genericSig": "<Self where Self : VerifikKit.VerifikProtocol>",
@@ -606,17 +846,49 @@
           {
             "kind": "Function",
             "name": "onPhotoIDScan",
-            "printedName": "onPhotoIDScan()",
+            "printedName": "onPhotoIDScan(done:)",
             "children": [
               {
                 "kind": "TypeNominal",
                 "name": "Void",
                 "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
               }
             ],
             "declKind": "Func",
-            "usr": "s:10VerifikKit0A8ProtocolPAAE13onPhotoIDScanyyF",
-            "mangledName": "$s10VerifikKit0A8ProtocolPAAE13onPhotoIDScanyyF",
+            "usr": "s:10VerifikKit0A8ProtocolPAAE13onPhotoIDScan4doneySb_tF",
+            "mangledName": "$s10VerifikKit0A8ProtocolPAAE13onPhotoIDScan4doneySb_tF",
+            "moduleName": "VerifikKit",
+            "genericSig": "<τ_0_0 where τ_0_0 : VerifikKit.VerifikProtocol>",
+            "sugared_genericSig": "<Self where Self : VerifikKit.VerifikProtocol>",
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "photoIDScanError",
+            "printedName": "photoIDScanError(error:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:10VerifikKit0A8ProtocolPAAE16photoIDScanError5errorySS_tF",
+            "mangledName": "$s10VerifikKit0A8ProtocolPAAE16photoIDScanError5errorySS_tF",
             "moduleName": "VerifikKit",
             "genericSig": "<τ_0_0 where τ_0_0 : VerifikKit.VerifikProtocol>",
             "sugared_genericSig": "<Self where Self : VerifikKit.VerifikProtocol>",
@@ -777,175 +1049,175 @@
   },
   "ConstValues": [
     {
-      "filePath": "\/Users\/bleck\/Desktop\/VerifikKit\/VerifikKit\/Processors\/VerifikLivenessProcessor.swift",
+      "filePath": "\/Users\/bleck\/Documents\/biometrics-ios-sdk\/VerifikKit\/Processors\/VerifikLivenessProcessor.swift",
       "kind": "BooleanLiteral",
       "offset": 617,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/bleck\/Desktop\/VerifikKit\/VerifikKit\/Processors\/VerifikLivenessProcessor.swift",
+      "filePath": "\/Users\/bleck\/Documents\/biometrics-ios-sdk\/VerifikKit\/Processors\/VerifikLivenessProcessor.swift",
       "kind": "StringLiteral",
       "offset": 382,
       "length": 24,
       "value": "\"VerifikKit.VerifikLivenessProcessor\""
     },
     {
-      "filePath": "\/Users\/bleck\/Desktop\/VerifikKit\/VerifikKit\/Verifik.swift",
+      "filePath": "\/Users\/bleck\/Documents\/biometrics-ios-sdk\/VerifikKit\/Verifik.swift",
       "kind": "StringLiteral",
       "offset": 411,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/bleck\/Desktop\/VerifikKit\/VerifikKit\/Verifik.swift",
+      "filePath": "\/Users\/bleck\/Documents\/biometrics-ios-sdk\/VerifikKit\/Verifik.swift",
       "kind": "StringLiteral",
       "offset": 165,
       "length": 7,
       "value": "\"VerifikKit.Verifik\""
     },
     {
-      "filePath": "\/Users\/bleck\/Desktop\/VerifikKit\/VerifikKit\/Processors\/VerifikPhotoIDScanProcessor.swift",
+      "filePath": "\/Users\/bleck\/Documents\/biometrics-ios-sdk\/VerifikKit\/Processors\/VerifikPhotoIDScanProcessor.swift",
       "kind": "BooleanLiteral",
       "offset": 540,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/bleck\/Desktop\/VerifikKit\/VerifikKit\/Processors\/VerifikPhotoIDScanProcessor.swift",
+      "filePath": "\/Users\/bleck\/Documents\/biometrics-ios-sdk\/VerifikKit\/Processors\/VerifikPhotoIDScanProcessor.swift",
       "kind": "StringLiteral",
       "offset": 718,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/bleck\/Desktop\/VerifikKit\/VerifikKit\/Processors\/VerifikPhotoIDScanProcessor.swift",
+      "filePath": "\/Users\/bleck\/Documents\/biometrics-ios-sdk\/VerifikKit\/Processors\/VerifikPhotoIDScanProcessor.swift",
       "kind": "StringLiteral",
       "offset": 369,
       "length": 27,
       "value": "\"VerifikKit.VerifikPhotoIDScanProcessor\""
     },
     {
-      "filePath": "\/Users\/bleck\/Desktop\/VerifikKit\/VerifikKit\/Services\/VerifikURL.swift",
+      "filePath": "\/Users\/bleck\/Documents\/biometrics-ios-sdk\/VerifikKit\/Services\/VerifikURL.swift",
       "kind": "StringLiteral",
       "offset": 146,
       "length": 46,
       "value": "\"https:\/\/staging-api.verifik.co\/v2\/biometrics\""
     },
     {
-      "filePath": "\/Users\/bleck\/Desktop\/VerifikKit\/VerifikKit\/Services\/VerifikURL.swift",
+      "filePath": "\/Users\/bleck\/Documents\/biometrics-ios-sdk\/VerifikKit\/Services\/VerifikURL.swift",
       "kind": "StringLiteral",
       "offset": 222,
       "length": 9,
       "value": "\"\/config\""
     },
     {
-      "filePath": "\/Users\/bleck\/Desktop\/VerifikKit\/VerifikKit\/Services\/VerifikURL.swift",
+      "filePath": "\/Users\/bleck\/Documents\/biometrics-ios-sdk\/VerifikKit\/Services\/VerifikURL.swift",
       "kind": "StringLiteral",
       "offset": 257,
       "length": 10,
       "value": "\"\/session\""
     },
     {
-      "filePath": "\/Users\/bleck\/Desktop\/VerifikKit\/VerifikKit\/Services\/VerifikURL.swift",
+      "filePath": "\/Users\/bleck\/Documents\/biometrics-ios-sdk\/VerifikKit\/Services\/VerifikURL.swift",
       "kind": "StringLiteral",
       "offset": 292,
       "length": 9,
       "value": "\"\/enroll\""
     },
     {
-      "filePath": "\/Users\/bleck\/Desktop\/VerifikKit\/VerifikKit\/Services\/VerifikURL.swift",
+      "filePath": "\/Users\/bleck\/Documents\/biometrics-ios-sdk\/VerifikKit\/Services\/VerifikURL.swift",
       "kind": "StringLiteral",
       "offset": 332,
       "length": 15,
       "value": "\"\/authenticate\""
     },
     {
-      "filePath": "\/Users\/bleck\/Desktop\/VerifikKit\/VerifikKit\/Services\/VerifikURL.swift",
+      "filePath": "\/Users\/bleck\/Documents\/biometrics-ios-sdk\/VerifikKit\/Services\/VerifikURL.swift",
       "kind": "StringLiteral",
       "offset": 373,
       "length": 15,
       "value": "\"\/match-idscan\""
     },
     {
-      "filePath": "\/Users\/bleck\/Desktop\/VerifikKit\/VerifikKit\/Services\/VerifikURL.swift",
+      "filePath": "\/Users\/bleck\/Documents\/biometrics-ios-sdk\/VerifikKit\/Services\/VerifikURL.swift",
       "kind": "StringLiteral",
       "offset": 413,
       "length": 9,
       "value": "\"\/idscan\""
     },
     {
-      "filePath": "\/Users\/bleck\/Desktop\/VerifikKit\/VerifikKit\/Processors\/VerifikPhotoIDMatchProcessor.swift",
+      "filePath": "\/Users\/bleck\/Documents\/biometrics-ios-sdk\/VerifikKit\/Processors\/VerifikPhotoIDMatchProcessor.swift",
       "kind": "BooleanLiteral",
       "offset": 578,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/bleck\/Desktop\/VerifikKit\/VerifikKit\/Processors\/VerifikPhotoIDMatchProcessor.swift",
+      "filePath": "\/Users\/bleck\/Documents\/biometrics-ios-sdk\/VerifikKit\/Processors\/VerifikPhotoIDMatchProcessor.swift",
       "kind": "BooleanLiteral",
       "offset": 616,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/bleck\/Desktop\/VerifikKit\/VerifikKit\/Processors\/VerifikPhotoIDMatchProcessor.swift",
+      "filePath": "\/Users\/bleck\/Documents\/biometrics-ios-sdk\/VerifikKit\/Processors\/VerifikPhotoIDMatchProcessor.swift",
       "kind": "StringLiteral",
       "offset": 857,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/bleck\/Desktop\/VerifikKit\/VerifikKit\/Processors\/VerifikPhotoIDMatchProcessor.swift",
+      "filePath": "\/Users\/bleck\/Documents\/biometrics-ios-sdk\/VerifikKit\/Processors\/VerifikPhotoIDMatchProcessor.swift",
       "kind": "StringLiteral",
       "offset": 372,
       "length": 28,
       "value": "\"VerifikKit.VerifikPhotoIDMatchProcessor\""
     },
     {
-      "filePath": "\/Users\/bleck\/Desktop\/VerifikKit\/VerifikKit\/Config.swift",
+      "filePath": "\/Users\/bleck\/Documents\/biometrics-ios-sdk\/VerifikKit\/Config.swift",
       "kind": "BooleanLiteral",
       "offset": 9211,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/bleck\/Desktop\/VerifikKit\/VerifikKit\/Processors\/VerifikEnrollmentProcessor.swift",
+      "filePath": "\/Users\/bleck\/Documents\/biometrics-ios-sdk\/VerifikKit\/Processors\/VerifikEnrollmentProcessor.swift",
       "kind": "BooleanLiteral",
       "offset": 339,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/bleck\/Desktop\/VerifikKit\/VerifikKit\/Processors\/VerifikEnrollmentProcessor.swift",
+      "filePath": "\/Users\/bleck\/Documents\/biometrics-ios-sdk\/VerifikKit\/Processors\/VerifikEnrollmentProcessor.swift",
       "kind": "StringLiteral",
       "offset": 521,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/bleck\/Desktop\/VerifikKit\/VerifikKit\/Processors\/VerifikEnrollmentProcessor.swift",
+      "filePath": "\/Users\/bleck\/Documents\/biometrics-ios-sdk\/VerifikKit\/Processors\/VerifikEnrollmentProcessor.swift",
       "kind": "StringLiteral",
       "offset": 167,
       "length": 26,
       "value": "\"VerifikKit.VerifikEnrollmentProcessor\""
     },
     {
-      "filePath": "\/Users\/bleck\/Desktop\/VerifikKit\/VerifikKit\/Processors\/VerifikAuthProcessor.swift",
+      "filePath": "\/Users\/bleck\/Documents\/biometrics-ios-sdk\/VerifikKit\/Processors\/VerifikAuthProcessor.swift",
       "kind": "BooleanLiteral",
       "offset": 559,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/bleck\/Desktop\/VerifikKit\/VerifikKit\/Processors\/VerifikAuthProcessor.swift",
+      "filePath": "\/Users\/bleck\/Documents\/biometrics-ios-sdk\/VerifikKit\/Processors\/VerifikAuthProcessor.swift",
       "kind": "StringLiteral",
       "offset": 741,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/bleck\/Desktop\/VerifikKit\/VerifikKit\/Processors\/VerifikAuthProcessor.swift",
+      "filePath": "\/Users\/bleck\/Documents\/biometrics-ios-sdk\/VerifikKit\/Processors\/VerifikAuthProcessor.swift",
       "kind": "StringLiteral",
       "offset": 393,
       "length": 20,

@@ -39,6 +39,16 @@ class HttpService{
                     let prodKeyText = HttpUtils.parseProdKeyText(responseJSONData[0].description ?? "")
                     let deviceKeyIdentifier = responseJSONData[1] as? String
                     let publicFaceScanEncryptionKey = responseJSONData[2] as? String
+                    
+                    let bundle = Bundle(for: type(of: vc))
+                    let bundleId = bundle.bundleIdentifier ?? "---"
+                    
+                    if !prodKeyText.contains(bundleId){
+                        print("Verifik error: Bundle ID isn't registered, please contact Verifik Support Team")
+                        vc.configError(error: "Bundle ID isn't registered, please contact Verifik Support Team")
+                        return
+                    }
+                    
                     /*
                      let prodKeyText = """
                      # FaceTec Mobile SDK license

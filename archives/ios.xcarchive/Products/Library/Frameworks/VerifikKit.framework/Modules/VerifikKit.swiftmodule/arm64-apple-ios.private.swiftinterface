@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.7 (swiftlang-5.7.0.127.4 clang-1400.0.29.50)
+// swift-compiler-version: Apple Swift version 5.7.1 (swiftlang-5.7.1.135.3 clang-1400.0.29.51)
 // swift-module-flags: -target arm64-apple-ios16.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name VerifikKit
 // swift-module-flags-ignorable: -enable-bare-slash-regex
 import Foundation
@@ -10,8 +10,8 @@ import _Concurrency
 import _StringProcessing
 @objc public class Verifik : ObjectiveC.NSObject, Foundation.URLSessionDelegate {
   public init(vc: VerifikKit.VerifikProtocol, token: Swift.String)
-  public func enroll()
-  public func authenticate()
+  public func enroll(externalDataBaseRefID: Swift.String)
+  public func authenticate(externalDataBaseRefID: Swift.String)
   public func matchIDScan()
   public func photoIDScan()
   @objc deinit
@@ -21,14 +21,22 @@ public protocol VerifikProtocol : UIKit.UIViewController, Foundation.URLSessionD
   func configError(error: Swift.String)
   func sessionError(error: Swift.String)
   func onVerifikComplete()
-  func onEnrollmentDone()
-  func onAuthDone()
-  func onPhotoIDMatchDone()
-  func onPhotoIDScan()
+  func onEnrollmentDone(done: Swift.Bool)
+  func enrollmentError(error: Swift.String)
+  func onAuthDone(done: Swift.Bool)
+  func authError(error: Swift.String)
+  func onPhotoIDMatchDone(done: Swift.Bool)
+  func photoIDMatchError(error: Swift.String)
+  func onPhotoIDScan(done: Swift.Bool)
+  func photoIDScanError(error: Swift.String)
 }
 extension VerifikKit.VerifikProtocol {
-  public func onEnrollmentDone()
-  public func onAuthDone()
-  public func onPhotoIDMatchDone()
-  public func onPhotoIDScan()
+  public func onEnrollmentDone(done: Swift.Bool)
+  public func enrollmentError(error: Swift.String)
+  public func onAuthDone(done: Swift.Bool)
+  public func authError(error: Swift.String)
+  public func onPhotoIDMatchDone(done: Swift.Bool)
+  public func photoIDMatchError(error: Swift.String)
+  public func onPhotoIDScan(done: Swift.Bool)
+  public func photoIDScanError(error: Swift.String)
 }
