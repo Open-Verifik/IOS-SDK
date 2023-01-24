@@ -12,7 +12,8 @@ class ViewController: UIViewController{
     var verifik: Verifik?
     var initVerifik = false
     let refId = "verifik_app_" + UUID().uuidString
-
+    @IBOutlet weak var phoneTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -43,6 +44,11 @@ class ViewController: UIViewController{
         }
     }
     
+    @IBAction func tapOnAppRegistration(_ sender: Any) {
+        if initVerifik{
+            verifik?.appRegistrationKYC(project: "63c5620874ed501af5f983b1", email: nil, phone: phoneTextField.text)
+        }
+    }
 }
 
 extension ViewController: VerifikProtocol {
@@ -95,5 +101,17 @@ extension ViewController: VerifikProtocol {
     }
     func photoIDScanError(error: String) {
         print("Hubo un error al escanear la identificación")
+    }
+    
+    func onAppRegisterDone(done: Bool, resultToken: String?) {
+        if done{
+            let alert = UIAlertController(title: "Login exitoso", message: resultToken, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default))
+            self.show(alert, sender: nil)
+        }
+    }
+    
+    func appRegisterError(error: String) {
+        print("Hubo un error al intentar hacer el registro en la app: \(error)")
     }
 }

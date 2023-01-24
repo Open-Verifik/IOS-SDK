@@ -6,7 +6,7 @@
 	<dict>
 		<key>Assets.car</key>
 		<data>
-		rLTD5TZeZYoCcQiC1Em5QCwqdV4=
+		T2XA9r+VHyU4vHyYgHB5ZdW/CPU=
 		</data>
 		<key>Frameworks/FaceTecSDK.framework/Assets.car</key>
 		<data>
@@ -14,7 +14,7 @@
 		</data>
 		<key>Frameworks/FaceTecSDK.framework/FaceTecSDK</key>
 		<data>
-		HaiHXfWvH/Q37sxfHMcQmTXjcCs=
+		0lk9gHIhbbTP8QzZVoAmScdN+rE=
 		</data>
 		<key>Frameworks/FaceTecSDK.framework/GenericGuidanceContentLayout.nib</key>
 		<data>
@@ -167,7 +167,7 @@
 		</data>
 		<key>Headers/VerifikKit-Swift.h</key>
 		<data>
-		8DK/SQeAWnGbcXUmTw/HPuTr3X0=
+		9Lw01gI9fmW5yu6LJZvneACUFac=
 		</data>
 		<key>Headers/VerifikKit.h</key>
 		<data>
@@ -175,27 +175,27 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		FXfsF6IVaH01D9xa+5fPtI6TgrM=
+		5iYwfF+78v+ytvLY78F74UqKIz4=
 		</data>
 		<key>Modules/VerifikKit.swiftmodule/arm64-apple-ios.abi.json</key>
 		<data>
-		mS/avF5XnxIt/0/Ia8FwdZEAq64=
+		FGwjsjKeES/GdY0a4EmzkuLsr34=
 		</data>
 		<key>Modules/VerifikKit.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<data>
-		V8KYE5rEqIoYfhdwSDdiBnwsroU=
+		U4fWSjDnCFAnIVcoevwipEcpAYI=
 		</data>
 		<key>Modules/VerifikKit.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
-		AwPISOEPqbv1mVHLWet22lNDUsQ=
+		ekit4E6b7LTxUw9W+HMH0fajQ1k=
 		</data>
 		<key>Modules/VerifikKit.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		V8KYE5rEqIoYfhdwSDdiBnwsroU=
+		U4fWSjDnCFAnIVcoevwipEcpAYI=
 		</data>
 		<key>Modules/VerifikKit.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		fdeIGjjwHrTsiQ0u5nNUWRtPDTg=
+		/RWCKjEFOEh9tIVa6QH4/Lq7pd4=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -208,7 +208,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			lNucDHqyXqK2k6F95ynuxn0CaopOH6xl0Z+k5Azf6Fs=
+			Z793QOaEZQVwIfSNlh9/TAi4rXDZiaUPcTs4EpX2rB8=
 			</data>
 		</dict>
 		<key>Frameworks/FaceTecSDK.framework/Assets.car</key>
@@ -222,7 +222,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			pdSMC99MPIFmRXAh1huP0DBpm/hCPxBdNx0N7EJ39ig=
+			SIGh2Fu59jidO5HbAlD8KrdrbgP7cUApslX2IexYDjc=
 			</data>
 		</dict>
 		<key>Frameworks/FaceTecSDK.framework/GenericGuidanceContentLayout.nib</key>
@@ -483,7 +483,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			lIgs5pv4Evij2Fxla/VqWknkLsI8hzufRhVlx5zKz8Y=
+			U31PdsPE3qFHwdi9eOS/kv0HxxSulcSPo6KTK7ufUao=
 			</data>
 		</dict>
 		<key>Headers/VerifikKit.h</key>
@@ -497,35 +497,35 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			MRb2HCoPPPbk+NyjS7Vp3gBVLKsTmKxEZQ44QpWowgc=
+			qWMv02BHA8HuV/EK+fdikwBkTUSXUdgl6pAl76A0HbI=
 			</data>
 		</dict>
 		<key>Modules/VerifikKit.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			OWMk13YuZPEhJIZhOa7W94qdOV2Mn5GFUAgwHDGDwds=
+			kuL4zOzdb+B57RR9iMYjzQCkwTcXry3zB1yPAmCjpmU=
 			</data>
 		</dict>
 		<key>Modules/VerifikKit.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			y0A5ADaGXCYuZ+5U88NjggWchXETonWD+VVHykck0II=
+			IrajPLkT6LLZSa4g9b6S8ZDqyavuTP54DVfBmqud/S8=
 			</data>
 		</dict>
 		<key>Modules/VerifikKit.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			OWMk13YuZPEhJIZhOa7W94qdOV2Mn5GFUAgwHDGDwds=
+			kuL4zOzdb+B57RR9iMYjzQCkwTcXry3zB1yPAmCjpmU=
 			</data>
 		</dict>
 		<key>Modules/VerifikKit.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			l1S4amX8QaOlTWAo6v0CMe7hww21n0PQXJBKn9vu6CU=
+			atmCQ4hFAD1HxOm1/TIlt7rSFuD/i6Iw8SX78L3Q/t4=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

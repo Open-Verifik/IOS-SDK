@@ -23,6 +23,8 @@ public protocol VerifikProtocol: UIViewController, URLSessionDelegate{
     func photoIDMatchError(error: String)
     func onPhotoIDScan(done: Bool)
     func photoIDScanError(error: String)
+    func onAppRegisterDone(done: Bool, resultToken: String?)
+    func appRegisterError(error: String)
 }
 
 public extension VerifikProtocol{
@@ -34,4 +36,6 @@ public extension VerifikProtocol{
     func photoIDMatchError(error: String) {}
     func onPhotoIDScan(done: Bool) {}
     func photoIDScanError(error: String) {}
+    func onAppRegisterDone(done: Bool, resultToken: String?) {}
+    func appRegisterError(error: String) {}
 }

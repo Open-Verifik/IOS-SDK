@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D18A2711293986E4004F2FBB /* VerifikKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = D18A270F293986CC004F2FBB /* VerifikKit.xcframework */; };
-		D18A2712293986E4004F2FBB /* VerifikKit.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D18A270F293986CC004F2FBB /* VerifikKit.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D138F0FF29524C6600CDB786 /* VerifikKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = D138F0FD29524C6300CDB786 /* VerifikKit.xcframework */; };
+		D138F10029524C6600CDB786 /* VerifikKit.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D138F0FD29524C6300CDB786 /* VerifikKit.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D1A98BFA290BB4E5007818D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A98BF9290BB4E5007818D6 /* AppDelegate.swift */; };
 		D1A98BFC290BB4E5007818D6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A98BFB290BB4E5007818D6 /* SceneDelegate.swift */; };
 		D1A98BFE290BB4E5007818D6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A98BFD290BB4E5007818D6 /* ViewController.swift */; };
@@ -18,13 +18,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		D111F243290CC0F000F04815 /* Embed Frameworks */ = {
+		D138F10129524C6600CDB786 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				D18A2712293986E4004F2FBB /* VerifikKit.xcframework in Embed Frameworks */,
+				D138F10029524C6600CDB786 /* VerifikKit.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -32,7 +32,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		D18A270F293986CC004F2FBB /* VerifikKit.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = VerifikKit.xcframework; path = "../../../Documents/biometrics-ios-sdk/VerifikKit.xcframework"; sourceTree = "<group>"; };
+		D138F0FD29524C6300CDB786 /* VerifikKit.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = VerifikKit.xcframework; path = ../../VerifikKit.xcframework; sourceTree = "<group>"; };
 		D1A98BF6290BB4E5007818D6 /* VerifikText.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VerifikText.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1A98BF9290BB4E5007818D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D1A98BFB290BB4E5007818D6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -48,7 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D18A2711293986E4004F2FBB /* VerifikKit.xcframework in Frameworks */,
+				D138F0FF29524C6600CDB786 /* VerifikKit.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,7 +81,7 @@
 				D1A98C02290BB4E7007818D6 /* Assets.xcassets */,
 				D1A98C04290BB4E7007818D6 /* LaunchScreen.storyboard */,
 				D1A98C07290BB4E7007818D6 /* Info.plist */,
-				D18A270F293986CC004F2FBB /* VerifikKit.xcframework */,
+				D138F0FD29524C6300CDB786 /* VerifikKit.xcframework */,
 			);
 			path = VerifikTest;
 			sourceTree = "<group>";
@@ -96,7 +96,7 @@
 				D1A98BF2290BB4E5007818D6 /* Sources */,
 				D1A98BF3290BB4E5007818D6 /* Frameworks */,
 				D1A98BF4290BB4E5007818D6 /* Resources */,
-				D111F243290CC0F000F04815 /* Embed Frameworks */,
+				D138F10129524C6600CDB786 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

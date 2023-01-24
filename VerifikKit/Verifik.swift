@@ -43,6 +43,14 @@ public class Verifik: NSObject, URLSessionDelegate{
         }
     }
     
+    public func liveness(){
+        let httpService = HttpService()
+        httpService.getSessionToken(vc: self.vc, token: token){ sessionToken in
+            self.resetLatestResults()
+            self.latestProcessor = VerifikLivenessProcessor(sessionToken: sessionToken, verifikToken: self.token, fromViewController: self.vc)
+        }
+    }
+    
     // Initiate a 3D Liveness Check, then storing the 3D FaceMap in the Database, also known as "Enrollment".  A random externalDatabaseRefID is generated each time to guarantee uniqueness.
     public func enroll(externalDataBaseRefID: String){
         self.latestExternalDatabaseRefID = externalDataBaseRefID
@@ -84,6 +92,16 @@ public class Verifik: NSObject, URLSessionDelegate{
         httpService.getSessionToken(vc: self.vc, token: token){ sessionToken in
             self.resetLatestResults()
             self.latestProcessor = VerifikPhotoIDScanProcessor(sessionToken: sessionToken, verifikToken: self.token, fromViewController: self.vc, externalDatabaseRef: self.latestExternalDatabaseRefID)
+        }
+    }
+    
+    // Perform an automatic user login with biometric
+    public func appRegistrationKYC(project: String, email: String?, phone: String?){
+        // Get a Session Token from the FaceTec SDK, then start the 3D to 3D Matching.
+        let httpService = HttpService()
+        httpService.getSessionToken(vc: self.vc, token: token){ sessionToken in
+            self.resetLatestResults()
+            self.latestProcessor = VerifikAppRegisterProcessor(sessionToken: sessionToken, verifikToken: self.token, fromViewController: self.vc, project: project, email: email, phone: phone)
         }
     }
     

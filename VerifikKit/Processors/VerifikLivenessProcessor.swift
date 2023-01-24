@@ -13,9 +13,12 @@ class VerifikLivenessProcessor: NSObject, Processor, FaceTecFaceScanProcessorDel
     var latestNetworkRequest: URLSessionTask!
     var success = false
     var fromViewController: VerifikProtocol!
+    var verifikToken: String!
     var faceScanResultCallback: FaceTecFaceScanResultCallback!
     
-    init(sessionToken: String, fromViewController: VerifikProtocol) {
+    init(sessionToken: String, verifikToken: String,
+         fromViewController: VerifikProtocol) {
+        self.verifikToken = verifikToken
         self.fromViewController = fromViewController
         super.init()        
         //
@@ -71,8 +74,9 @@ class VerifikLivenessProcessor: NSObject, Processor, FaceTecFaceScanProcessorDel
         //
         // Part 5:  Make the Networking Call to Your Servers.  Below is just example code, you are free to customize based on how your own API works.
         //
-        var request = URLRequest(url: NSURL(string: Config.shared.BaseURL! + "/liveness-3d")! as URL)
+        var request = URLRequest(url: NSURL(string: Config.shared.BaseURL! + "/liveness")! as URL)
         request.httpMethod = "POST"
+        request.setValue("Bearer \(verifikToken!)", forHTTPHeaderField: "Authorization")
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.httpBody = try! JSONSerialization.data(withJSONObject: parameters, options: JSONSerialization.WritingOptions(rawValue: 0))
         request.addValue(Config.shared.DeviceKeyIdentifier!, forHTTPHeaderField: "X-Device-Key")
