@@ -7,7 +7,7 @@
 
 import Foundation
 import UIKit
-@_implementationOnly import FaceTecSDK
+import FaceTecSDK
 
 public class Verifik: NSObject, URLSessionDelegate{
         

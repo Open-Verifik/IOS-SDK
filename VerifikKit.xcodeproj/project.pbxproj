@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D14C93182915D1FE00AE95CC /* FaceTecSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D14C93162915D1B800AE95CC /* FaceTecSDK.framework */; };
-		D14C93192915D1FE00AE95CC /* FaceTecSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D14C93162915D1B800AE95CC /* FaceTecSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D16617762915E56E007000F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16617752915E56E007000F8 /* AppDelegate.swift */; };
 		D16617782915E56E007000F8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16617772915E56E007000F8 /* SceneDelegate.swift */; };
 		D166177A2915E56E007000F8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16617792915E56E007000F8 /* ViewController.swift */; };
@@ -22,6 +20,9 @@
 		D166912E2914AE5200485AAF /* VerifikPhotoIDScanProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D166912D2914AE5200485AAF /* VerifikPhotoIDScanProcessor.swift */; };
 		D16691302915B07000485AAF /* HttpUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D166912F2915B07000485AAF /* HttpUtils.swift */; };
 		D16AEDEE297F6B4300E859A9 /* VerifikAppRegisterProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16AEDED297F6B4300E859A9 /* VerifikAppRegisterProcessor.swift */; };
+		D19484682984ADF9000BD94E /* FaceTecSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D19484672984ADF9000BD94E /* FaceTecSDK.framework */; };
+		D194846B2984AE09000BD94E /* FaceTecSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D19484672984ADF9000BD94E /* FaceTecSDK.framework */; };
+		D194846C2984AE09000BD94E /* FaceTecSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D19484672984ADF9000BD94E /* FaceTecSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D1A3FA4229105CB600491AEF /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1A3FA4129105CB600491AEF /* Media.xcassets */; };
 		D1A3FA4C2912F2DA00491AEF /* VerifikAuthProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A3FA4B2912F2DA00491AEF /* VerifikAuthProcessor.swift */; };
 		D1A3FA4F2913045700491AEF /* HttpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A3FA4E2913045700491AEF /* HttpService.swift */; };
@@ -63,17 +64,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				D166178B2915E618007000F8 /* VerifikKit.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D16691332915C2AC00485AAF /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				D14C93192915D1FE00AE95CC /* FaceTecSDK.framework in Embed Frameworks */,
+				D194846C2984AE09000BD94E /* FaceTecSDK.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -81,7 +72,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		D14C93162915D1B800AE95CC /* FaceTecSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FaceTecSDK.framework; sourceTree = "<group>"; };
 		D16617732915E56E007000F8 /* SampleVerifik.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleVerifik.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D16617752915E56E007000F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D16617772915E56E007000F8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -95,6 +85,7 @@
 		D166912D2914AE5200485AAF /* VerifikPhotoIDScanProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifikPhotoIDScanProcessor.swift; sourceTree = "<group>"; };
 		D166912F2915B07000485AAF /* HttpUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpUtils.swift; sourceTree = "<group>"; };
 		D16AEDED297F6B4300E859A9 /* VerifikAppRegisterProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifikAppRegisterProcessor.swift; sourceTree = "<group>"; };
+		D19484672984ADF9000BD94E /* FaceTecSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FaceTecSDK.framework; path = frameworks/FaceTecSDK.framework; sourceTree = SOURCE_ROOT; };
 		D1A3FA4129105CB600491AEF /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		D1A3FA4B2912F2DA00491AEF /* VerifikAuthProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifikAuthProcessor.swift; sourceTree = "<group>"; };
 		D1A3FA4E2913045700491AEF /* HttpService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpService.swift; sourceTree = "<group>"; };
@@ -118,6 +109,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D166178A2915E618007000F8 /* VerifikKit.framework in Frameworks */,
+				D194846B2984AE09000BD94E /* FaceTecSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,7 +117,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D14C93182915D1FE00AE95CC /* FaceTecSDK.framework in Frameworks */,
+				D19484682984ADF9000BD94E /* FaceTecSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,7 +135,7 @@
 		D111F212290C7EB500F04815 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D14C93162915D1B800AE95CC /* FaceTecSDK.framework */,
+				D19484672984ADF9000BD94E /* FaceTecSDK.framework */,
 			);
 			path = Frameworks;
 			sourceTree = "<group>";
@@ -261,6 +253,7 @@
 				D16617702915E56E007000F8 /* Frameworks */,
 				D16617712915E56E007000F8 /* Resources */,
 				D166178E2915E618007000F8 /* Embed Frameworks */,
+				D194846D2984B0F2000BD94E /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -280,8 +273,6 @@
 				D1A98BB0290B45C7007818D6 /* Sources */,
 				D1A98BB1290B45C7007818D6 /* Frameworks */,
 				D1A98BB2290B45C7007818D6 /* Resources */,
-				D16691332915C2AC00485AAF /* Embed Frameworks */,
-				D111F217290C7F6500F04815 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -380,9 +371,9 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		D111F217290C7F6500F04815 /* ShellScript */ = {
+		D194846D2984B0F2000BD94E /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 12;
+			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
@@ -395,7 +386,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "################################################################################\n#\n# Copyright 2015 Realm Inc.\n#\n# Licensed under the Apache License, Version 2.0 (the \"License\");\n# you may not use this file except in compliance with the License.\n# You may obtain a copy of the License at\n#\n# http://www.apache.org/licenses/LICENSE-2.0\n#\n# Unless required by applicable law or agreed to in writing, software\n# distributed under the License is distributed on an \"AS IS\" BASIS,\n# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n# See the License for the specific language governing permissions and\n# limitations under the License.\n#\n################################################################################\n\n# This script strips all non-valid architectures from dynamic libraries in\n# the application's `Frameworks` directory.\n#\n# The following environment variables are required:\n#\n# BUILT_PRODUCTS_DIR\n# FRAMEWORKS_FOLDER_PATH\n# VALID_ARCHS\n# EXPANDED_CODE_SIGN_IDENTITY\n\n\n# Signs a framework with the provided identity\ncode_sign() {\n  # Use the current code_sign_identitiy\n  echo \"Code Signing $1 with Identity ${EXPANDED_CODE_SIGN_IDENTITY_NAME}\"\n  echo \"/usr/bin/codesign --force --sign ${EXPANDED_CODE_SIGN_IDENTITY} --preserve-metadata=identifier,entitlements $1\"\n  /usr/bin/codesign --force --sign ${EXPANDED_CODE_SIGN_IDENTITY} --preserve-metadata=identifier,entitlements \"$1\"\n}\n\necho \"Stripping frameworks\"\ncd \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}\"\n\nfor file in $(find . -type f -perm +111); do\n  # Skip non-dynamic libraries\n  if ! [[ \"$(file \"$file\")\" == *\"dynamically linked shared library\"* ]]; then\n    continue\n  fi\n  # Get architectures for current file\n  archs=\"$(lipo -info \"${file}\" | rev | cut -d ':' -f1 | rev)\"\n  stripped=\"\"\n  for arch in $archs; do\n    if ! [[ \"${VALID_ARCHS}\" == *\"$arch\"* ]]; then\n      # Strip non-valid architectures in-place\n      lipo -remove \"$arch\" -output \"$file\" \"$file\" || exit 1\n      stripped=\"$stripped $arch\"\n    fi\n  done\n  if [[ \"$stripped\" != \"\" ]]; then\n    echo \"Stripped $file of architectures:$stripped\"\n    if [ \"${CODE_SIGNING_REQUIRED}\" == \"YES\" ]; then\n      code_sign \"${file}\"\n    fi\n  fi\ndone\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n################################################################################\n#\n# Copyright 2015 Realm Inc.\n#\n# Licensed under the Apache License, Version 2.0 (the \"License\");\n# you may not use this file except in compliance with the License.\n# You may obtain a copy of the License at\n#\n# http://www.apache.org/licenses/LICENSE-2.0\n#\n# Unless required by applicable law or agreed to in writing, software\n# distributed under the License is distributed on an \"AS IS\" BASIS,\n# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n# See the License for the specific language governing permissions and\n# limitations under the License.\n#\n################################################################################\n\n# This script strips all non-valid architectures from dynamic libraries in\n# the application's `Frameworks` directory.\n#\n# The following environment variables are required:\n#\n# BUILT_PRODUCTS_DIR\n# FRAMEWORKS_FOLDER_PATH\n# VALID_ARCHS\n# EXPANDED_CODE_SIGN_IDENTITY\n\n\n# Signs a framework with the provided identity\ncode_sign() {\n  # Use the current code_sign_identitiy\n  echo \"Code Signing $1 with Identity ${EXPANDED_CODE_SIGN_IDENTITY_NAME}\"\n  echo \"/usr/bin/codesign --force --sign ${EXPANDED_CODE_SIGN_IDENTITY} --preserve-metadata=identifier,entitlements $1\"\n  /usr/bin/codesign --force --sign ${EXPANDED_CODE_SIGN_IDENTITY} --preserve-metadata=identifier,entitlements \"$1\"\n}\n\necho \"Stripping frameworks\"\ncd \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}\"\n\nfor file in $(find . -type f -perm +111); do\n  # Skip non-dynamic libraries\n  if ! [[ \"$(file \"$file\")\" == *\"dynamically linked shared library\"* ]]; then\n    continue\n  fi\n  # Get architectures for current file\n  archs=\"$(lipo -info \"${file}\" | rev | cut -d ':' -f1 | rev)\"\n  stripped=\"\"\n  for arch in $archs; do\n    if ! [[ \"${VALID_ARCHS}\" == *\"$arch\"* ]]; then\n      # Strip non-valid architectures in-place\n      lipo -remove \"$arch\" -output \"$file\" \"$file\" || exit 1\n      stripped=\"$stripped $arch\"\n    fi\n  done\n  if [[ \"$stripped\" != \"\" ]]; then\n    echo \"Stripped $file of architectures:$stripped\"\n    if [ \"${CODE_SIGNING_REQUIRED}\" == \"YES\" ]; then\n      code_sign \"${file}\"\n    fi\n  fi\ndone\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -483,9 +474,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9LSP2W34DN;
+				EXCLUDED_ARCHS = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Frameworks",
+					"$(PROJECT_DIR)/frameworks",
 				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SampleVerifik/Info.plist;
@@ -515,9 +508,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9LSP2W34DN;
+				EXCLUDED_ARCHS = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Frameworks",
+					"$(PROJECT_DIR)/frameworks",
 				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SampleVerifik/Info.plist;
@@ -678,6 +673,7 @@
 					"$(PROJECT_DIR)/VerifikKitTests",
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/Frameworks",
+					"$(PROJECT_DIR)/frameworks",
 				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
@@ -714,6 +710,7 @@
 					"$(PROJECT_DIR)/VerifikKitTests",
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/Frameworks",
+					"$(PROJECT_DIR)/frameworks",
 				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";

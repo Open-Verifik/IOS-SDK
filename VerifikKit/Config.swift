@@ -4,7 +4,7 @@
 //
 import UIKit
 import Foundation
-@_implementationOnly import FaceTecSDK
+import FaceTecSDK
 
 class Config {
     static var shared = Config()

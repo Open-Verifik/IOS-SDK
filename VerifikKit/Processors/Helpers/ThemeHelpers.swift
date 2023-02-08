@@ -5,7 +5,7 @@
 
 import Foundation
 import UIKit
-@_implementationOnly import FaceTecSDK
+import FaceTecSDK
 
 class ThemeHelpers {
 
@@ -704,7 +704,7 @@ class ThemeHelpers {
             let frameShadow: FaceTecShadow? = nil
 
             // Overlay Customization
-            currentCustomization.overlayCustomization.backgroundColor = UIColor.clear
+            currentCustomization.overlayCustomization.backgroundColor = UIColor.white
             currentCustomization.overlayCustomization.showBrandingImage = true
             currentCustomization.overlayCustomization.brandingImage = UIImage(named: "sample_bank_logo", in: bundle, with: .none)
             // Guidance Customization

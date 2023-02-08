@@ -6,7 +6,7 @@
 //
 
 import Foundation
-@_implementationOnly import FaceTecSDK
+import FaceTecSDK
 
 // This is an example self-contained class to perform Authentication with the FaceTec SDK.
 // You may choose to further componentize parts of this in your own Apps based on your specific requirements.
@@ -121,10 +121,17 @@ class VerifikAppRegisterProcessor: NSObject, Processor, FaceTecFaceScanProcessor
                 return
             }
             
-            if let code = responseJSON["data"]?["code"] as? String,
+            if let code = responseJSON["code"] as? String,
                 code == "NotFound"{
-                self.fromViewController.appRegisterError(error: "")
+                self.fromViewController.appRegisterError(error: "User not found on Database")
                 faceScanResultCallback.onFaceScanResultCancel()
+                return
+            }
+            if let code = responseJSON["code"] as? String,
+                code == "Conflict"{
+                self.fromViewController.appRegisterError(error: "Biometric validation failed")
+                faceScanResultCallback.onFaceScanResultCancel()
+                return
             }
             
             guard let scanResultBlob = responseJSON["data"]?["scanResultBlob"] as? String,
@@ -133,7 +140,7 @@ class VerifikAppRegisterProcessor: NSObject, Processor, FaceTecFaceScanProcessor
                 // CASE:  UNEXPECTED response from API.  Our Sample Code keys off a wasProcessed boolean on the root of the JSON object --> You define your own API contracts with yourself and may choose to do something different here based on the error.
                 self.fromViewController.appRegisterError(error: "There was an error with the AppRegister process")
                 faceScanResultCallback.onFaceScanResultCancel()
-                return;
+                return
             }
             
             self.resultToken = token

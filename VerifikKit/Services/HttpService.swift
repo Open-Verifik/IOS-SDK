@@ -6,7 +6,7 @@
 //
 
 import Foundation
-@_implementationOnly import FaceTecSDK
+import FaceTecSDK
 
 class HttpService{
     func getCredentials(vc: VerifikProtocol, token: String,

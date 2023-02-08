@@ -6,7 +6,7 @@
 //
 
 import Foundation
-@_implementationOnly import FaceTecSDK
+import FaceTecSDK
 
 class VerifikEnrollmentProcessor: NSObject, Processor, FaceTecFaceScanProcessorDelegate, URLSessionTaskDelegate {
     var latestNetworkRequest: URLSessionTask!

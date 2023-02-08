@@ -4,7 +4,7 @@
 
 import UIKit
 import Foundation
-@_implementationOnly import FaceTecSDK
+import FaceTecSDK
 
 // This is an example self-contained class to perform Liveness Checks with the FaceTec SDK.
 // You may choose to further componentize parts of this in your own Apps based on your specific requirements.

@@ -26,10 +26,7 @@
         "name": "FaceTecSDK",
         "printedName": "FaceTecSDK",
         "declKind": "Import",
-        "moduleName": "VerifikKit",
-        "declAttributes": [
-          "ImplementationOnly"
-        ]
+        "moduleName": "VerifikKit"
       },
       {
         "kind": "Import",
@@ -53,10 +50,7 @@
         "name": "FaceTecSDK",
         "printedName": "FaceTecSDK",
         "declKind": "Import",
-        "moduleName": "VerifikKit",
-        "declAttributes": [
-          "ImplementationOnly"
-        ]
+        "moduleName": "VerifikKit"
       },
       {
         "kind": "TypeDecl",
@@ -360,16 +354,6 @@
       },
       {
         "kind": "Import",
-        "name": "FaceTecSDK",
-        "printedName": "FaceTecSDK",
-        "declKind": "Import",
-        "moduleName": "VerifikKit",
-        "declAttributes": [
-          "ImplementationOnly"
-        ]
-      },
-      {
-        "kind": "Import",
         "name": "Foundation",
         "printedName": "Foundation",
         "declKind": "Import",
@@ -383,10 +367,7 @@
         "name": "FaceTecSDK",
         "printedName": "FaceTecSDK",
         "declKind": "Import",
-        "moduleName": "VerifikKit",
-        "declAttributes": [
-          "ImplementationOnly"
-        ]
+        "moduleName": "VerifikKit"
       },
       {
         "kind": "Import",
@@ -413,10 +394,7 @@
         "name": "FaceTecSDK",
         "printedName": "FaceTecSDK",
         "declKind": "Import",
-        "moduleName": "VerifikKit",
-        "declAttributes": [
-          "ImplementationOnly"
-        ]
+        "moduleName": "VerifikKit"
       },
       {
         "kind": "Import",
@@ -433,10 +411,7 @@
         "name": "FaceTecSDK",
         "printedName": "FaceTecSDK",
         "declKind": "Import",
-        "moduleName": "VerifikKit",
-        "declAttributes": [
-          "ImplementationOnly"
-        ]
+        "moduleName": "VerifikKit"
       },
       {
         "kind": "Import",
@@ -454,16 +429,6 @@
         "printedName": "UIKit",
         "declKind": "Import",
         "moduleName": "VerifikKit"
-      },
-      {
-        "kind": "Import",
-        "name": "FaceTecSDK",
-        "printedName": "FaceTecSDK",
-        "declKind": "Import",
-        "moduleName": "VerifikKit",
-        "declAttributes": [
-          "ImplementationOnly"
-        ]
       },
       {
         "kind": "TypeDecl",
@@ -1150,10 +1115,7 @@
         "name": "FaceTecSDK",
         "printedName": "FaceTecSDK",
         "declKind": "Import",
-        "moduleName": "VerifikKit",
-        "declAttributes": [
-          "ImplementationOnly"
-        ]
+        "moduleName": "VerifikKit"
       },
       {
         "kind": "Import",
@@ -1187,10 +1149,7 @@
         "name": "FaceTecSDK",
         "printedName": "FaceTecSDK",
         "declKind": "Import",
-        "moduleName": "VerifikKit",
-        "declAttributes": [
-          "ImplementationOnly"
-        ]
+        "moduleName": "VerifikKit"
       },
       {
         "kind": "Import",
@@ -1214,10 +1173,7 @@
         "name": "FaceTecSDK",
         "printedName": "FaceTecSDK",
         "declKind": "Import",
-        "moduleName": "VerifikKit",
-        "declAttributes": [
-          "ImplementationOnly"
-        ]
+        "moduleName": "VerifikKit"
       },
       {
         "kind": "Import",
@@ -1234,10 +1190,7 @@
         "name": "FaceTecSDK",
         "printedName": "FaceTecSDK",
         "declKind": "Import",
-        "moduleName": "VerifikKit",
-        "declAttributes": [
-          "ImplementationOnly"
-        ]
+        "moduleName": "VerifikKit"
       },
       {
         "kind": "Import",
@@ -1268,10 +1221,7 @@
         "name": "FaceTecSDK",
         "printedName": "FaceTecSDK",
         "declKind": "Import",
-        "moduleName": "VerifikKit",
-        "declAttributes": [
-          "ImplementationOnly"
-        ]
+        "moduleName": "VerifikKit"
       }
     ],
     "json_format_version": 8
@@ -1280,49 +1230,49 @@
     {
       "filePath": "\/Users\/bleck\/Documents\/biometrics-ios-sdk\/VerifikKit\/Processors\/VerifikLivenessProcessor.swift",
       "kind": "BooleanLiteral",
-      "offset": 617,
+      "offset": 596,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/bleck\/Documents\/biometrics-ios-sdk\/VerifikKit\/Processors\/VerifikLivenessProcessor.swift",
       "kind": "StringLiteral",
-      "offset": 382,
+      "offset": 361,
       "length": 24,
       "value": "\"VerifikKit.VerifikLivenessProcessor\""
     },
     {
       "filePath": "\/Users\/bleck\/Documents\/biometrics-ios-sdk\/VerifikKit\/Verifik.swift",
       "kind": "StringLiteral",
-      "offset": 411,
+      "offset": 390,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/bleck\/Documents\/biometrics-ios-sdk\/VerifikKit\/Verifik.swift",
       "kind": "StringLiteral",
-      "offset": 165,
+      "offset": 144,
       "length": 7,
       "value": "\"VerifikKit.Verifik\""
     },
     {
       "filePath": "\/Users\/bleck\/Documents\/biometrics-ios-sdk\/VerifikKit\/Processors\/VerifikPhotoIDScanProcessor.swift",
       "kind": "BooleanLiteral",
-      "offset": 540,
+      "offset": 519,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/bleck\/Documents\/biometrics-ios-sdk\/VerifikKit\/Processors\/VerifikPhotoIDScanProcessor.swift",
       "kind": "StringLiteral",
-      "offset": 718,
+      "offset": 697,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/bleck\/Documents\/biometrics-ios-sdk\/VerifikKit\/Processors\/VerifikPhotoIDScanProcessor.swift",
       "kind": "StringLiteral",
-      "offset": 369,
+      "offset": 348,
       "length": 27,
       "value": "\"VerifikKit.VerifikPhotoIDScanProcessor\""
     },
@@ -1392,98 +1342,98 @@
     {
       "filePath": "\/Users\/bleck\/Documents\/biometrics-ios-sdk\/VerifikKit\/Processors\/VerifikPhotoIDMatchProcessor.swift",
       "kind": "BooleanLiteral",
-      "offset": 578,
+      "offset": 557,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/bleck\/Documents\/biometrics-ios-sdk\/VerifikKit\/Processors\/VerifikPhotoIDMatchProcessor.swift",
       "kind": "BooleanLiteral",
-      "offset": 616,
+      "offset": 595,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/bleck\/Documents\/biometrics-ios-sdk\/VerifikKit\/Processors\/VerifikPhotoIDMatchProcessor.swift",
       "kind": "StringLiteral",
-      "offset": 857,
+      "offset": 836,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/bleck\/Documents\/biometrics-ios-sdk\/VerifikKit\/Processors\/VerifikPhotoIDMatchProcessor.swift",
       "kind": "StringLiteral",
-      "offset": 372,
+      "offset": 351,
       "length": 28,
       "value": "\"VerifikKit.VerifikPhotoIDMatchProcessor\""
     },
     {
       "filePath": "\/Users\/bleck\/Documents\/biometrics-ios-sdk\/VerifikKit\/Processors\/VerifikAppRegisterProcessor.swift",
       "kind": "BooleanLiteral",
-      "offset": 542,
+      "offset": 521,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/bleck\/Documents\/biometrics-ios-sdk\/VerifikKit\/Processors\/VerifikAppRegisterProcessor.swift",
       "kind": "StringLiteral",
-      "offset": 741,
+      "offset": 720,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/bleck\/Documents\/biometrics-ios-sdk\/VerifikKit\/Processors\/VerifikAppRegisterProcessor.swift",
       "kind": "StringLiteral",
-      "offset": 369,
+      "offset": 348,
       "length": 27,
       "value": "\"VerifikKit.VerifikAppRegisterProcessor\""
     },
     {
       "filePath": "\/Users\/bleck\/Documents\/biometrics-ios-sdk\/VerifikKit\/Config.swift",
       "kind": "BooleanLiteral",
-      "offset": 9211,
+      "offset": 9190,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/bleck\/Documents\/biometrics-ios-sdk\/VerifikKit\/Processors\/VerifikEnrollmentProcessor.swift",
       "kind": "BooleanLiteral",
-      "offset": 339,
+      "offset": 318,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/bleck\/Documents\/biometrics-ios-sdk\/VerifikKit\/Processors\/VerifikEnrollmentProcessor.swift",
       "kind": "StringLiteral",
-      "offset": 521,
+      "offset": 500,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/bleck\/Documents\/biometrics-ios-sdk\/VerifikKit\/Processors\/VerifikEnrollmentProcessor.swift",
       "kind": "StringLiteral",
-      "offset": 167,
+      "offset": 146,
       "length": 26,
       "value": "\"VerifikKit.VerifikEnrollmentProcessor\""
     },
     {
       "filePath": "\/Users\/bleck\/Documents\/biometrics-ios-sdk\/VerifikKit\/Processors\/VerifikAuthProcessor.swift",
       "kind": "BooleanLiteral",
-      "offset": 559,
+      "offset": 538,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/bleck\/Documents\/biometrics-ios-sdk\/VerifikKit\/Processors\/VerifikAuthProcessor.swift",
       "kind": "StringLiteral",
-      "offset": 741,
+      "offset": 720,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/bleck\/Documents\/biometrics-ios-sdk\/VerifikKit\/Processors\/VerifikAuthProcessor.swift",
       "kind": "StringLiteral",
-      "offset": 393,
+      "offset": 372,
       "length": 20,
       "value": "\"VerifikKit.VerifikAuthProcessor\""
     }

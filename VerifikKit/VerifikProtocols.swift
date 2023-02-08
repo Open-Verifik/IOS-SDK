@@ -7,7 +7,6 @@
 
 import Foundation
 import UIKit
-@_implementationOnly import FaceTecSDK
 
 public protocol VerifikProtocol: UIViewController, URLSessionDelegate{
     func initializationSuccesful()
