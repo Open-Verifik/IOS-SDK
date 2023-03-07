@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import FaceTecSDK
+@_implementationOnly import FaceTecSDK
 
 class VerifikEnrollmentProcessor: NSObject, Processor, FaceTecFaceScanProcessorDelegate, URLSessionTaskDelegate {
     var latestNetworkRequest: URLSessionTask!
@@ -109,6 +109,13 @@ class VerifikEnrollmentProcessor: NSObject, Processor, FaceTecFaceScanProcessorD
                 return
             }
             
+            if let code = responseJSON["code"] as? String,
+                code == "Conflict"{
+                self.fromViewController.enrollmentError(error: "User already registered")
+                faceScanResultCallback.onFaceScanResultCancel()
+                return
+            }
+            
             guard let scanResultBlob = responseJSON["data"]?["scanResultBlob"] as? String,
                   let wasProcessed = responseJSON["data"]?["wasProcessed"] as? Bool else {
                 // CASE:  UNEXPECTED response from API.  Our Sample Code keys off a wasProcessed boolean on the root of the JSON object --> You define your own API contracts with yourself and may choose to do something different here based on the error.
@@ -122,7 +129,7 @@ class VerifikEnrollmentProcessor: NSObject, Processor, FaceTecFaceScanProcessorD
             if wasProcessed == true {
                 
                 // Demonstrates dynamically setting the Success Screen Message.
-                FaceTecCustomization.setOverrideResultScreenSuccessMessage("Liveness\nConfirmed")
+                FaceTecCustomization.setOverrideResultScreenSuccessMessage("Enrollment\nConfirmed")
 
                 // In v9.2.0+, simply pass in scanResultBlob to the proceedToNextStep function to advance the User flow.
                 // scanResultBlob is a proprietary, encrypted blob that controls the logic for what happens next for the User.

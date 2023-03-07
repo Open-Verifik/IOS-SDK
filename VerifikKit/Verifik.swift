@@ -7,7 +7,7 @@
 
 import Foundation
 import UIKit
-import FaceTecSDK
+@_implementationOnly import FaceTecSDK
 
 public class Verifik: NSObject, URLSessionDelegate{
         
@@ -30,7 +30,7 @@ public class Verifik: NSObject, URLSessionDelegate{
             // Initialize FaceTec SDK
             Config.initializeFaceTec(completion: { initializationSuccessful in
                 if(initializationSuccessful) {
-                    vc.initializationSuccesful()
+                    vc.initVerifikSuccess()
                 }
                 // Displays the FaceTec SDK Status to text field.
                 // Return facetec check
@@ -95,13 +95,37 @@ public class Verifik: NSObject, URLSessionDelegate{
         }
     }
     
-    // Perform an automatic user login with biometric
-    public func appRegistrationKYC(project: String, email: String?, phone: String?){
+    // Perform an automatic user registration with biometric
+    public func appRegistrationKYC(project: String,
+                                   email: String?,
+                                   phone: String?) {
         // Get a Session Token from the FaceTec SDK, then start the 3D to 3D Matching.
         let httpService = HttpService()
         httpService.getSessionToken(vc: self.vc, token: token){ sessionToken in
             self.resetLatestResults()
             self.latestProcessor = VerifikAppRegisterProcessor(sessionToken: sessionToken, verifikToken: self.token, fromViewController: self.vc, project: project, email: email, phone: phone)
+        }
+    }
+    
+    // Perform an automatic user login with biometric
+    public func appLoginKYC(project: String,
+                            email: String?,
+                            phone: String?) {
+        // Get a Session Token from the FaceTec SDK, then start the 3D to 3D Matching.
+        let httpService = HttpService()
+        httpService.getSessionToken(vc: self.vc, token: token){ sessionToken in
+            self.resetLatestResults()
+            self.latestProcessor = VerifikAppLoginProcessor(sessionToken: sessionToken, verifikToken: self.token, fromViewController: self.vc, project: project, email: email, phone: phone)
+        }
+    }
+    
+    // ID Scan then return ID data.
+    public func appPhotoIDScanKYC(project: String, documentType: VerifikDocumentType) {
+        // Get a Session Token from the FaceTec SDK.  On Success, ID Scanning will start automatically.
+        let httpService = HttpService()
+        httpService.getSessionToken(vc: self.vc, token: token){ sessionToken in
+            self.resetLatestResults()
+            self.latestProcessor = VerifikAppIDScanProcessor(sessionToken: sessionToken, verifikToken: self.token, documentType: documentType, fromViewController: self.vc)
         }
     }
     

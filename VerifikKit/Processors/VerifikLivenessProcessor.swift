@@ -4,7 +4,7 @@
 
 import UIKit
 import Foundation
-import FaceTecSDK
+@_implementationOnly import FaceTecSDK
 
 // This is an example self-contained class to perform Liveness Checks with the FaceTec SDK.
 // You may choose to further componentize parts of this in your own Apps based on your specific requirements.
@@ -74,7 +74,7 @@ class VerifikLivenessProcessor: NSObject, Processor, FaceTecFaceScanProcessorDel
         //
         // Part 5:  Make the Networking Call to Your Servers.  Below is just example code, you are free to customize based on how your own API works.
         //
-        var request = URLRequest(url: NSURL(string: Config.shared.BaseURL! + "/liveness")! as URL)
+        var request = URLRequest(url: NSURL(string: Config.shared.BaseURL! + VerifikURL.Liveness)! as URL)
         request.httpMethod = "POST"
         request.setValue("Bearer \(verifikToken!)", forHTTPHeaderField: "Authorization")
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -103,8 +103,8 @@ class VerifikLivenessProcessor: NSObject, Processor, FaceTecFaceScanProcessorDel
                 return
             }
             
-            guard let scanResultBlob = responseJSON["scanResultBlob"] as? String,
-                  let wasProcessed = responseJSON["wasProcessed"] as? Bool else {
+            guard let scanResultBlob = responseJSON["data"]?["scanResultBlob"] as? String,
+                  let wasProcessed = responseJSON["data"]?["wasProcessed"] as? Bool else {
                 // CASE:  UNEXPECTED response from API.  Our Sample Code keys off a wasProcessed boolean on the root of the JSON object --> You define your own API contracts with yourself and may choose to do something different here based on the error.
                 faceScanResultCallback.onFaceScanResultCancel()
                 return;

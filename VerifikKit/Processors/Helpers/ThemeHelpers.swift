@@ -5,7 +5,7 @@
 
 import Foundation
 import UIKit
-import FaceTecSDK
+@_implementationOnly import FaceTecSDK
 
 class ThemeHelpers {
 

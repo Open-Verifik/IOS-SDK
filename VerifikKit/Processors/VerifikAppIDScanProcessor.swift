@@ -1,30 +1,31 @@
 //
-//  VerifikPhotoIdMatchProcessor.swift
+//  VerifikAppIDScanProcessor.swift
 //  VerifikKit
 //
-//  Created by Carlos Bleck on 03/11/22.
+//  Created by Carlos Bleck on 15/02/23.
 //
 
 import Foundation
 @_implementationOnly import FaceTecSDK
 
-// This is an example self-contained class to perform Photo ID Matches with the FaceTec SDK.
+// This is an example self-contained class to perform Photo ID Scans with the FaceTec SDK.
 // You may choose to further componentize parts of this in your own Apps based on your specific requirements.
-class VerifikPhotoIDMatchProcessor: NSObject, Processor, FaceTecFaceScanProcessorDelegate, FaceTecIDScanProcessorDelegate, URLSessionTaskDelegate {
+class VerifikAppIDScanProcessor: NSObject, Processor, FaceTecIDScanProcessorDelegate, URLSessionTaskDelegate {
     var latestNetworkRequest: URLSessionTask!
     var success = false
-    var faceScanWasSuccessful = false
     var fromViewController: VerifikProtocol!
     var verifikToken: String!
-    var faceScanResultCallback: FaceTecFaceScanResultCallback!
+    var documentType: VerifikDocumentType!
     var idScanResultCallback: FaceTecIDScanResultCallback!
-    var externalDatabaseRef: String = ""
+    var resultID: String?
 
-    init(sessionToken: String, verifikToken: String,
-         fromViewController: VerifikProtocol, externalDatabaseRef: String) {
+    init(sessionToken: String,
+         verifikToken: String,
+         documentType: VerifikDocumentType,
+         fromViewController: VerifikProtocol) {
         self.verifikToken = verifikToken
+        self.documentType = documentType
         self.fromViewController = fromViewController
-        self.externalDatabaseRef = externalDatabaseRef
         super.init()
         
         // In v9.2.2+, configure the messages that will be displayed to the User in each of the possible cases.
@@ -53,14 +54,14 @@ class VerifikPhotoIDMatchProcessor: NSObject, Processor, FaceTecFaceScanProcesso
         );
         
         //
-        // Part 1:  Starting the FaceTec Session
+        // Part 1:  Starting the Photo ID Scan Session
         //
         // Required parameters:
         // - delegate:
-        // - faceScanProcessorDelegate: A class that implements FaceTecFaceScanProcessor, which handles the FaceScan when the User completes a Session.  In this example, "self" implements the class.
+        // - idScanProcessorDelegate: A class that implements FaceTecIDScanProcessorDelegate, which handles the ID Scan when the User completes a Session.  In this example, "self" implements the class.
         // - sessionToken:  A valid Session Token you just created by calling your API to get a Session Token from the Server SDK.
         //
-        let idScanViewController = FaceTec.sdk.createSessionVC(faceScanProcessorDelegate: self, idScanProcessorDelegate: self, sessionToken: sessionToken)
+        let idScanViewController = FaceTec.sdk.createSessionVC(idScanProcessorDelegate: self, sessionToken: sessionToken)
         
         // In your code, you will be presenting from a UIViewController elsewhere. You may choose to augment this class to pass that UIViewController in.
         // In our example code here, to keep the code in this class simple, we will just get the Sample App's UIViewController statically.
@@ -68,53 +69,59 @@ class VerifikPhotoIDMatchProcessor: NSObject, Processor, FaceTecFaceScanProcesso
     }
     
     //
-    // Part 2: Handling the Result of a FaceScan
+    // Part 2: Handling the ID Scan
     //
-    func processSessionWhileFaceTecSDKWaits(sessionResult: FaceTecSessionResult, faceScanResultCallback: FaceTecFaceScanResultCallback) {
+    func processIDScanWhileFaceTecSDKWaits(idScanResult: FaceTecIDScanResult, idScanResultCallback: FaceTecIDScanResultCallback) {
         //
         // DEVELOPER NOTE:  These properties are for demonstration purposes only so the Sample App can get information about what is happening in the processor.
         // In the code in your own App, you can pass around signals, flags, intermediates, and results however you would like.
         //
         //TODO: Send session messages
-        //fromViewController.setLatestSessionResult(sessionResult: sessionResult)
+        //fromViewController.setLatestIDScanResult(idScanResult: idScanResult)
         
         //
         // DEVELOPER NOTE:  A reference to the callback is stored as a class variable so that we can have access to it while performing the Upload and updating progress.
         //
-        self.faceScanResultCallback = faceScanResultCallback
+        self.idScanResultCallback = idScanResultCallback
         
         //
-        // Part 3: Handles early exit scenarios where there is no FaceScan to handle -- i.e. User Cancellation, Timeouts, etc.
+        // Part 3: Handles early exit scenarios where there is no IDScan to handle -- i.e. User Cancellation, Timeouts, etc.
         //
-        if sessionResult.status != FaceTecSessionStatus.sessionCompletedSuccessfully {
+        if idScanResult.status != FaceTecIDScanStatus.success {
             if latestNetworkRequest != nil {
                 latestNetworkRequest.cancel()
             }
-            self.fromViewController.photoIDMatchError(error: "User cancel Photo ID Match or there was a connection error - Face Step")
-            faceScanResultCallback.onFaceScanResultCancel()
+            self.fromViewController.appPhotoIDScanError(error: "User cancel App Photo ID Scan or there was a connection error")
+            idScanResultCallback.onIDScanResultCancel()
             return
         }
         
+        // IMPORTANT:  FaceTecSDK.FaceTecIDScanStatus.Success DOES NOT mean the Photo ID Scan was Successful.
+        // It simply means the User completed the Session. You still need to perform the Photo ID Scan on your Servers.
+        
         //
-        // Part 4:  Get essential data off the FaceTecSessionResult
+        // Part 4:  Get essential data off the FaceTecIDScanResult
         //
         var parameters: [String : Any] = [:]
-        parameters["faceScan"] = sessionResult.faceScanBase64
-        parameters["auditTrailImage"] = sessionResult.auditTrailCompressedBase64![0]
-        parameters["lowQualityAuditTrailImage"] = sessionResult.lowQualityAuditTrailCompressedBase64![0]
-        parameters["externalDatabaseRefID"] = self.externalDatabaseRef
-        parameters["sessionId"] = sessionResult.sessionId
+        parameters["selectedDocument"] = documentType.rawValue
+        parameters["idScan"] = idScanResult.idScanBase64
+        if idScanResult.frontImagesCompressedBase64?.isEmpty == false {
+            parameters["idScanFrontImage"] = idScanResult.frontImagesCompressedBase64![0]
+        }
+        if idScanResult.backImagesCompressedBase64?.isEmpty == false {
+            parameters["idScanBackImage"] = idScanResult.backImagesCompressedBase64![0]
+        }
         
         //
         // Part 5:  Make the Networking Call to Your Servers.  Below is just example code, you are free to customize based on how your own API works.
         //
-        let request = NSMutableURLRequest(url: NSURL(string: VerifikURL.Base + VerifikURL.Enroll)! as URL)
+        let request = NSMutableURLRequest(url: NSURL(string: VerifikURL.Base + VerifikURL.AppPhotoIDKYC)! as URL)
         request.httpMethod = "POST"
         request.setValue("Bearer \(verifikToken!)", forHTTPHeaderField: "Authorization")
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.httpBody = try! JSONSerialization.data(withJSONObject: parameters, options: JSONSerialization.WritingOptions(rawValue: 0))
         request.addValue(Config.shared.DeviceKeyIdentifier!, forHTTPHeaderField: "X-Device-Key")
-        request.addValue(FaceTec.sdk.createFaceTecAPIUserAgentString(sessionResult.sessionId), forHTTPHeaderField: "X-User-Agent")
+        request.addValue(FaceTec.sdk.createFaceTecAPIUserAgentString((idScanResult.sessionId)!), forHTTPHeaderField: "X-User-Agent")
         
         let session = URLSession(configuration: URLSessionConfiguration.default, delegate: self, delegateQueue: OperationQueue.main)
         latestNetworkRequest = session.dataTask(with: request as URLRequest, completionHandler: { data, response, error in
@@ -127,164 +134,35 @@ class VerifikPhotoIDMatchProcessor: NSObject, Processor, FaceTecFaceScanProcesso
             
             guard let data = data else {
                 // CASE:  UNEXPECTED response from API. Our Sample Code keys off a wasProcessed boolean on the root of the JSON object --> You define your own API contracts with yourself and may choose to do something different here based on the error.
-                faceScanResultCallback.onFaceScanResultCancel()
-                self.fromViewController.photoIDMatchError(error: "There was an error parsing face scan resulting data -  Face Step, please contact Verifik Support Team")
-                return
-            }
-            
-            guard let responseJSON = try? JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.allowFragments) as! [String: AnyObject] else {
-                // CASE:  UNEXPECTED response from API.  Our Sample Code keys off a wasProcessed boolean on the root of the JSON object --> You define your own API contracts with yourself and may choose to do something different here based on the error.
-                self.fromViewController.photoIDMatchError(error: "There was an error parsing face scan resulting data 2 - Face Step, please contact Verifik Support Team")
-                faceScanResultCallback.onFaceScanResultCancel()
-                return
-            }
-            
-            guard let scanResultBlob = responseJSON["data"]?["scanResultBlob"] as? String,
-                  let wasProcessed = responseJSON["data"]?["wasProcessed"] as? Bool else {
-                // CASE:  UNEXPECTED response from API.  Our Sample Code keys off a wasProcessed boolean on the root of the JSON object --> You define your own API contracts with yourself and may choose to do something different here based on the error.
-                self.fromViewController.photoIDMatchError(error: "There was an error with the face scan process")
-                faceScanResultCallback.onFaceScanResultCancel()
-                return;
-            }
-            
-            // In v9.2.0+, we key off a new property called wasProcessed to determine if we successfully processed the Session result on the Server.
-            // Device SDK UI flow is now driven by the proceedToNextStep function, which should receive the scanResultBlob from the Server SDK response.
-            if wasProcessed == true {
-
-                // Demonstrates dynamically setting the Success Screen Message.
-                FaceTecCustomization.setOverrideResultScreenSuccessMessage("Liveness\nConfirmed")
-                
-                // In v9.2.0+, simply pass in scanResultBlob to the proceedToNextStep function to advance the User flow.
-                // scanResultBlob is a proprietary, encrypted blob that controls the logic for what happens next for the User.
-                self.faceScanWasSuccessful = faceScanResultCallback.onFaceScanGoToNextStep(scanResultBlob: scanResultBlob)
-            }
-            else {
-                // CASE:  UNEXPECTED response from API.  Our Sample Code keys off a wasProcessed boolean on the root of the JSON object --> You define your own API contracts with yourself and may choose to do something different here based on the error.
-                self.fromViewController.photoIDMatchError(error: "No enrollment executed")
-                faceScanResultCallback.onFaceScanResultCancel()
-                return;
-            }
-        })
-        
-        //
-        // Part 8:  Actually send the request.
-        //
-        latestNetworkRequest.resume()
-        
-        //
-        // Part 9:  For better UX, update the User if the upload is taking a while.  You are free to customize and enhance this behavior to your liking.
-        //
-        DispatchQueue.main.asyncAfter(deadline: .now() + 6) {
-            if self.latestNetworkRequest.state == .completed { return }
-            
-            let uploadMessage:NSMutableAttributedString = NSMutableAttributedString.init(string: "Still Uploading...")
-            faceScanResultCallback.onFaceScanUploadMessageOverride(uploadMessageOverride: uploadMessage)
-        }
-    }
-    
-    //
-    // Part 10: Handling the Result of a FaceScan
-    //
-    func processIDScanWhileFaceTecSDKWaits(idScanResult: FaceTecIDScanResult, idScanResultCallback: FaceTecIDScanResultCallback) {
-        //
-        // DEVELOPER NOTE:  These properties are for demonstration purposes only so the Sample App can get information about what is happening in the processor.
-        // In the code in your own App, you can pass around signals, flags, intermediates, and results however you would like.
-        //
-        //TODO: Send session info to client
-        //fromViewController.setLatestIDScanResult(idScanResult: idScanResult)
-        
-        //
-        // DEVELOPER NOTE:  A reference to the callback is stored as a class variable so that we can have access to it while performing the Upload and updating progress.
-        //
-        self.idScanResultCallback = idScanResultCallback
-        
-        //
-        // Part 11: Handles early exit scenarios where there is no IDScan to handle -- i.e. User Cancellation, Timeouts, etc.
-        //
-        if idScanResult.status != FaceTecIDScanStatus.success {
-            if latestNetworkRequest != nil {
-                latestNetworkRequest.cancel()
-            }
-            self.fromViewController.photoIDMatchError(error: "User cancel ID Scan or there was a connection error - ID Step")
-            idScanResultCallback.onIDScanResultCancel()
-            return
-        }
-        
-        // IMPORTANT:  FaceTecSDK.FaceTecIDScanStatus.Success DOES NOT mean the IDScan 3d-2d Matching was Successful.
-        // It simply means the User completed the Session and a 3D FaceScan was created. You still need to perform the IDScan 3d-2d Matching on your Servers.
-
-        //
-        // minMatchLevel allows Developers to specify a Match Level that they would like to target in order for success to be true in the response.
-        // minMatchLevel cannot be set to 0.
-        // minMatchLevel setting does not affect underlying Algorithm behavior.
-        let minMatchLevel = 3
-        
-        //
-        // Part 12:  Get essential data off the FaceTecSessionResult
-        //
-        var parameters: [String : Any] = [:]
-        parameters["idScan"] = idScanResult.idScanBase64
-        if idScanResult.frontImagesCompressedBase64?.isEmpty == false {
-            parameters["idScanFrontImage"] = idScanResult.frontImagesCompressedBase64![0]
-        }
-        if idScanResult.backImagesCompressedBase64?.isEmpty == false {
-            parameters["idScanBackImage"] = idScanResult.backImagesCompressedBase64![0]
-        }
-        parameters["minMatchLevel"] = minMatchLevel
-        parameters["externalDatabaseRefID"] = self.externalDatabaseRef
-        parameters["sessionId"] = idScanResult.sessionId
-        
-        //
-        // Part 13:  Make the Networking Call to Your Servers.  Below is just example code, you are free to customize based on how your own API works.
-        //
-        let request = NSMutableURLRequest(url: NSURL(string: VerifikURL.Base + VerifikURL.MatchID)! as URL)
-        request.httpMethod = "POST"
-        request.setValue("Bearer \(verifikToken!)", forHTTPHeaderField: "Authorization")
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.httpBody = try! JSONSerialization.data(withJSONObject: parameters, options: JSONSerialization.WritingOptions(rawValue: 0))
-        request.addValue(Config.shared.DeviceKeyIdentifier!, forHTTPHeaderField: "X-Device-Key")
-        request.addValue(FaceTec.sdk.createFaceTecAPIUserAgentString((idScanResult.sessionId)!), forHTTPHeaderField: "X-User-Agent")
-        
-        let session = URLSession(configuration: URLSessionConfiguration.default, delegate: self, delegateQueue: OperationQueue.main)
-        latestNetworkRequest = session.dataTask(with: request as URLRequest, completionHandler: { data, response, error in
-            
-            //
-            // Part 14:  In our Sample, we evaluate a boolean response and treat true as was successfully processed and should proceed to next step,
-            // and handle all other responses by cancelling out.
-            // You may have different paradigms in your own API and are free to customize based on these.
-            //
-            
-            guard let data = data else {
-                // CASE:  UNEXPECTED response from API. Our Sample Code keys off a wasProcessed boolean on the root of the JSON object --> You define your own API contracts with yourself and may choose to do something different here based on the error.
-                self.fromViewController.photoIDMatchError(error: "There was an error parsing ID scan resulting data - ID Step, please contact Verifik Support Team")
+                self.fromViewController.appPhotoIDScanError(error: "There was an error parsing App ID scan resulting data, please contact Verifik Support Team")
                 idScanResultCallback.onIDScanResultCancel()
                 return
             }
             
             guard let responseJSON = try? JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.allowFragments) as! [String: AnyObject] else {
                 // CASE:  UNEXPECTED response from API.  Our Sample Code keys off a wasProcessed boolean on the root of the JSON object --> You define your own API contracts with yourself and may choose to do something different here based on the error.
-                self.fromViewController.photoIDMatchError(error: "There was an error parsing ID scan resulting data 2 - ID Step, please contact Verifik Support Team")
+                self.fromViewController.appPhotoIDScanError(error: "There was an error parsing App ID scan resulting data 2, please contact Verifik Support Team")
                 idScanResultCallback.onIDScanResultCancel()
                 return
             }
             
             if let code = responseJSON["code"] as? String,
                 code == "NotFound"{
-                self.fromViewController.photoIDMatchError(error: "User not found on database")
+                self.fromViewController.appPhotoIDScanError(error: "User not found on Database")
                 idScanResultCallback.onIDScanResultCancel()
                 return
             }
-            if let code = responseJSON["code"] as? String,
-                code == "Conflict"{
-                self.fromViewController.photoIDMatchError(error: "Biometric is disabled")
+            if let code = responseJSON["code"] as? String, code == "Conflict",
+               let message = responseJSON["message"] as? String {
+                self.fromViewController.appPhotoIDScanError(error: message)
                 idScanResultCallback.onIDScanResultCancel()
                 return
             }
             
             guard let scanResultBlob = responseJSON["data"]?["scanResultBlob"] as? String,
-                  let wasProcessed = responseJSON["data"]?["wasProcessed"] as? Bool else {
+                  let wasProcessed = responseJSON["data"]?["success"] as? Bool else {
                 // CASE:  UNEXPECTED response from API.  Our Sample Code keys off a wasProcessed boolean on the root of the JSON object --> You define your own API contracts with yourself and may choose to do something different here based on the error.
-                self.fromViewController.photoIDMatchError(error: "There was an error with the ID scan process")
+                self.fromViewController.appPhotoIDScanError(error: "There was an error with the App ID scan process")
                 idScanResultCallback.onIDScanResultCancel()
                 return
             }
@@ -312,6 +190,9 @@ class VerifikPhotoIDMatchProcessor: NSObject, Processor, FaceTecFaceScanProcesso
                     retryIDTypeNotSupported: "ID Type Mismatch\nPlease Try Again", // Case where there is likely no OCR Template installed for the document the User is attempting to scan.
                     skipOrErrorNFC: "ID Details\nUploaded" // Case where NFC Scan was skipped due to the user's interaction or an unexpected error.
                 )
+                if let resultID = responseJSON["data"]?["_id"] as? String {
+                    self.resultID = resultID
+                }
 
                 // In v9.2.0+, simply pass in scanResultBlob to the proceedToNextStep function to advance the User flow.
                 // scanResultBlob is a proprietary, encrypted blob that controls the logic for what happens next for the User.
@@ -325,13 +206,13 @@ class VerifikPhotoIDMatchProcessor: NSObject, Processor, FaceTecFaceScanProcesso
             }
             else {
                 // CASE:  UNEXPECTED response from API.  Our Sample Code keys off a wasProcessed boolean on the root of the JSON object --> You define your own API contracts with yourself and may choose to do something different here based on the error.
-                self.fromViewController.photoIDMatchError(error: "Photo ID Match not executed")
+                self.fromViewController.appPhotoIDScanError(error: "Can't scan App ID")
                 idScanResultCallback.onIDScanResultCancel()
             }
         })
         
         //
-        // Part 15:  Actually send the request.
+        // Part 7:  Actually send the request.
         //
         latestNetworkRequest.resume()
     }
@@ -344,13 +225,10 @@ class VerifikPhotoIDMatchProcessor: NSObject, Processor, FaceTecFaceScanProcesso
         if idScanResultCallback != nil {
             idScanResultCallback.onIDScanUploadProgress(uploadedPercent: uploadProgress)
         }
-        else {
-            faceScanResultCallback.onFaceScanUploadProgress(uploadedPercent: uploadProgress)
-        }
     }
     
     //
-    //  This function gets called after the FaceTec SDK is completely done.  There are no parameters because you have already been passed all data in the processSessionWhileFaceTecSDKWaits function and have already handled all of your own results.
+    //  Part 8: This function gets called after the FaceTec SDK is completely done.  There are no parameters because you have already been passed all data in the processSessionWhileFaceTecSDKWaits function and have already handled all of your own results.
     //
     func onFaceTecSDKCompletelyDone() {
         //
@@ -361,7 +239,7 @@ class VerifikPhotoIDMatchProcessor: NSObject, Processor, FaceTecFaceScanProcesso
         // In your code, you will handle what to do after the Photo ID Scan is successful here.
         // In our example code here, to keep the code in this class simple, we will call a static method on another class to update the Sample App UI.
         self.fromViewController.onVerifikComplete()
-        self.fromViewController.onPhotoIDMatchDone(done: success)
+        self.fromViewController.onAppPhotoIDScanDone(done: success, resultID: resultID)
     }
     
     func isSuccess() -> Bool {

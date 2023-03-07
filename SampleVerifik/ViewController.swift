@@ -10,18 +10,26 @@ import VerifikKit
 
 class ViewController: UIViewController{
     var verifik: Verifik?
+    var verifikKYC: Verifik?
     var initVerifik = false
     let refId = "verifik_app_" + UUID().uuidString
-    @IBOutlet weak var phoneTextField: UITextField!
+    let projectID = "63c5620874ed501af5f983b1"
+    let phone = "5514968760"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         verifik = Verifik(vc: self, token: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjbGllbnRJZCI6IjYxNTc3MTU2OTBmMDEwOGNmMmRjNjI4MSIsImRvY3VtZW50VHlwZSI6IkNDIiwiZG9jdW1lbnROdW1iZXIiOiIxNjM1MzczMzY3NDY3NDMiLCJ2IjoxLCJyb2xlIjoiY2xpZW50IiwiZXhwaXJlc0F0IjoiMjAyMi0xMi0wNCAxOTozNjo1NSIsImlhdCI6MTY2NzU5MDYxNX0.QvyQyTXoQCzXlGGfBs2brK15_9AvoveFWTAgprHvRDc")
+        verifikKYC = Verifik(vc: self, token: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhcHBSZWdpc3RyYXRpb25JZCI6IjYzZjUxZWRlNDcyM2U2MDU3MTg5NzRiMiIsImV4cGlyZXNBdCI6IjIwMjMtMDItMjEgMjA6MTM6MjYiLCJhY2Nlc3NUeXBlIjoiYXBwX3JlZ2lzdHJhdGlvbl9jcmVhdGVkIiwiZW1haWwiOiJjaGFybGllc2JsZWNrQGdtYWlsLmNvbSIsInBob25lIjoiNTUxNDk2ODc2MCIsImlhdCI6MTY3NzAwODYwNn0.w9u6Vh389qKVQHOKjZ5PNYfPr0VdYNcM7dbRGmXAF28")
     }
 
+    @IBAction func tapOnLiveness(_ sender: Any) {
+        if initVerifik {
+            verifik?.liveness()
+        }
+    }
     @IBAction func tapOnEnroll(_ sender: Any) {
-        if initVerifik{
+        if initVerifik {
             verifik?.enroll(externalDataBaseRefID: refId)
         }
     }
@@ -46,14 +54,29 @@ class ViewController: UIViewController{
     
     @IBAction func tapOnAppRegistration(_ sender: Any) {
         if initVerifik{
-            verifik?.appRegistrationKYC(project: "63c5620874ed501af5f983b1", email: nil, phone: phoneTextField.text)
+            verifikKYC?.appRegistrationKYC(project: projectID,
+                                        email: nil,
+                                        phone: phone)
+        }
+    }
+    @IBAction func tapOnAppLogin(_ sender: Any) {
+        if initVerifik{
+            verifikKYC?.appLoginKYC(project: projectID,
+                                        email: nil,
+                                        phone: phone)
+        }
+    }
+    
+    @IBAction func tapOnAppPhotoIdScan(_ sender: Any) {
+        if initVerifik{
+            verifikKYC?.appPhotoIDScanKYC(project: projectID, documentType: .passport)
         }
     }
 }
 
 extension ViewController: VerifikProtocol {
     
-    func initializationSuccesful() {
+    func initVerifikSuccess() {
         initVerifik = true
         print("Se inició correctamente el sdk de Verifik")
     }
@@ -68,6 +91,16 @@ extension ViewController: VerifikProtocol {
     
     func onVerifikComplete(){
         
+    }
+    
+    func onLivenessDone(done: Bool) {
+        if done {
+            print("Se verifico que es un ser vivo")
+        }
+    }
+    
+    func livenessError(error: String) {
+        print("Hubo un error al detectar vida: \(error)")
     }
     
     func onEnrollmentDone(done: Bool) {
@@ -105,7 +138,7 @@ extension ViewController: VerifikProtocol {
     
     func onAppRegisterDone(done: Bool, resultToken: String?) {
         if done{
-            let alert = UIAlertController(title: "Login exitoso", message: resultToken, preferredStyle: .alert)
+            let alert = UIAlertController(title: "Registro exitoso", message: resultToken, preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default))
             self.show(alert, sender: nil)
         }
@@ -113,5 +146,17 @@ extension ViewController: VerifikProtocol {
     
     func appRegisterError(error: String) {
         print("Hubo un error al intentar hacer el registro en la app: \(error)")
+    }
+    
+    func onAppLoginDone(done: Bool, resultToken: String?) {
+        if done{
+            let alert = UIAlertController(title: "Login exitoso", message: resultToken, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default))
+            self.show(alert, sender: nil)
+        }
+    }
+    
+    func appLoginError(error: String) {
+        print("Hubo un error al intentar hacer login a la app: \(error)")
     }
 }

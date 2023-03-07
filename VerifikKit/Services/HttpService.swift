@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import FaceTecSDK
+@_implementationOnly import FaceTecSDK
 
 class HttpService{
     func getCredentials(vc: VerifikProtocol, token: String,
@@ -40,7 +40,7 @@ class HttpService{
                     let deviceKeyIdentifier = responseJSONData[1] as? String
                     let publicFaceScanEncryptionKey = responseJSONData[2] as? String
                     
-                    let bundle = Bundle(for: type(of: vc))
+                    let bundle = Bundle.main
                     let bundleId = bundle.bundleIdentifier ?? "---"
                     
                     if !prodKeyText.contains(bundleId){

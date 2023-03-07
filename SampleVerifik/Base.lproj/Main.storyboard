@@ -17,18 +17,26 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="geV-AQ-hDQ">
-                                <rect key="frame" x="122.00000000000001" y="319.33333333333331" width="146.33333333333337" height="205.66666666666669"/>
+                                <rect key="frame" x="114.66666666666667" y="302" width="160.66666666666663" height="240.33333333333337"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Dp-eI-Izm">
-                                        <rect key="frame" x="0.0" y="0.0" width="146.33333333333334" height="34.333333333333336"/>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Dp-eI-Izm">
+                                        <rect key="frame" x="0.0" y="0.0" width="160.66666666666666" height="0.0"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Detección de vida"/>
+                                        <connections>
+                                            <action selector="tapOnLiveness:" destination="BYZ-38-t0r" eventType="touchUpInside" id="N3j-uN-4fo"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BV6-ol-JF3">
+                                        <rect key="frame" x="0.0" y="0.0" width="160.66666666666666" height="34.333333333333336"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Registrar"/>
                                         <connections>
-                                            <action selector="tapOnEnroll:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IF1-xd-inM"/>
+                                            <action selector="tapOnEnroll:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ezk-rQ-5JV"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZJ8-08-KPU">
-                                        <rect key="frame" x="0.0" y="34.333333333333371" width="146.33333333333334" height="34.333333333333343"/>
+                                        <rect key="frame" x="0.0" y="34.333333333333314" width="160.66666666666666" height="34.333333333333343"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Autenticar"/>
                                         <connections>
@@ -36,7 +44,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HVn-zr-zaO">
-                                        <rect key="frame" x="0.0" y="68.666666666666686" width="146.33333333333334" height="34.333333333333343"/>
+                                        <rect key="frame" x="0.0" y="68.666666666666686" width="160.66666666666666" height="34.333333333333343"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Verificar con ID"/>
                                         <connections>
@@ -44,7 +52,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ZA-Vk-X8R">
-                                        <rect key="frame" x="0.0" y="103" width="146.33333333333334" height="34.333333333333343"/>
+                                        <rect key="frame" x="0.0" y="103" width="160.66666666666666" height="34.333333333333343"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="OCR"/>
                                         <connections>
@@ -52,19 +60,29 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kXg-VY-v4y">
-                                        <rect key="frame" x="0.0" y="137.33333333333337" width="146.33333333333334" height="34.333333333333343"/>
+                                        <rect key="frame" x="0.0" y="137.33333333333331" width="160.66666666666666" height="34.333333333333343"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="AppRegistration"/>
                                         <connections>
                                             <action selector="tapOnAppRegistration:" destination="BYZ-38-t0r" eventType="touchUpInside" id="b0b-lB-tLP"/>
-                                            <action selector="tapOnOCR:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VoK-LG-6tJ"/>
                                         </connections>
                                     </button>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Y5c-9P-tCZ">
-                                        <rect key="frame" x="0.0" y="171.66666666666669" width="146.33333333333334" height="34"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="phonePad" textContentType="tel"/>
-                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ttd-zu-kzk">
+                                        <rect key="frame" x="0.0" y="171.66666666666669" width="160.66666666666666" height="34.333333333333343"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="AppLogin"/>
+                                        <connections>
+                                            <action selector="tapOnAppLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DES-hp-93G"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Ja-8P-jXV">
+                                        <rect key="frame" x="0.0" y="206" width="160.66666666666666" height="34.333333333333343"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="AppPhotoIDScan"/>
+                                        <connections>
+                                            <action selector="tapOnAppPhotoIdScan:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AwZ-4N-Ave"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -75,9 +93,6 @@
                             <constraint firstItem="geV-AQ-hDQ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="vK6-3o-Uge"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="phoneTextField" destination="Y5c-9P-tCZ" id="YOR-ut-Red"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
