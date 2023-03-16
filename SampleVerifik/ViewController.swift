@@ -30,7 +30,7 @@ class ViewController: UIViewController{
     }
     @IBAction func tapOnEnroll(_ sender: Any) {
         if initVerifik {
-            verifik?.enroll(externalDataBaseRefID: refId)
+            verifik?.enroll(externalDataBaseRefID: "0001")
         }
     }
     
