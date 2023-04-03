@@ -1693,8 +1693,8 @@
           },
           {
             "kind": "Var",
-            "name": "colombian_goverment",
-            "printedName": "colombian_goverment",
+            "name": "government",
+            "printedName": "government",
             "children": [
               {
                 "kind": "TypeFunc",
@@ -1724,8 +1724,8 @@
               }
             ],
             "declKind": "EnumElement",
-            "usr": "s:10VerifikKit0A12DocumentTypeO19colombian_govermentyA2CmF",
-            "mangledName": "$s10VerifikKit0A12DocumentTypeO19colombian_govermentyA2CmF",
+            "usr": "s:10VerifikKit0A12DocumentTypeO10governmentyA2CmF",
+            "mangledName": "$s10VerifikKit0A12DocumentTypeO10governmentyA2CmF",
             "moduleName": "VerifikKit"
           },
           {
@@ -2230,7 +2230,7 @@
     {
       "filePath": "\/Users\/bleck\/Documents\/biometrics-ios-sdk\/VerifikKit\/VerifikProtocols.swift",
       "kind": "StringLiteral",
-      "offset": 2015,
+      "offset": 2006,
       "length": 17,
       "value": "\"useGovernmentID\""
     },
@@ -2251,7 +2251,7 @@
     {
       "filePath": "\/Users\/bleck\/Documents\/biometrics-ios-sdk\/VerifikKit\/VerifikProtocols.swift",
       "kind": "StringLiteral",
-      "offset": 2015,
+      "offset": 2006,
       "length": 17,
       "value": "\"useGovernmentID\""
     },

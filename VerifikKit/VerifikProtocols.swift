@@ -58,7 +58,7 @@ public extension VerifikProtocol{
 public enum VerifikDocumentType: String {
     case license = "useLicense"
     case passport = "usePassport"
-    case colombian_goverment = "useGovernmentID"
+    case government = "useGovernmentID"
     
     func shortName() -> String {
         var shortName = ""
@@ -67,7 +67,7 @@ public enum VerifikDocumentType: String {
             shortName = "DL"
         case .passport:
             shortName = "PA"
-        case .colombian_goverment:
+        case .government:
             shortName = "CC"
         }
         return shortName

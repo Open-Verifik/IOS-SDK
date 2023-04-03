@@ -63,7 +63,7 @@ extension VerifikKit.VerifikProtocol {
 public enum VerifikDocumentType : Swift.String {
   case license
   case passport
-  case colombian_goverment
+  case government
   public init?(rawValue: Swift.String)
   public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
