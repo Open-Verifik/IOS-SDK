@@ -59,6 +59,7 @@ public enum VerifikDocumentType: String {
     case license = "useLicense"
     case passport = "usePassport"
     case government = "useGovernmentID"
+    case automatic_detection = "automatic"
     
     func shortName() -> String {
         var shortName = ""
@@ -69,6 +70,8 @@ public enum VerifikDocumentType: String {
             shortName = "PA"
         case .government:
             shortName = "CC"
+        case .automatic_detection:
+            shortName = "-"
         }
         return shortName
     }

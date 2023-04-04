@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.7.2 (swiftlang-5.7.2.135.5 clang-1400.0.29.51)
+// swift-compiler-version: Apple Swift version 5.8 (swiftlang-5.8.0.124.2 clang-1403.0.22.11.100)
 // swift-module-flags: -target x86_64-apple-ios16.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name VerifikKit
 // swift-module-flags-ignorable: -enable-bare-slash-regex
 import Foundation
@@ -9,7 +9,7 @@ import UIKit
 import _Concurrency
 import _StringProcessing
 @objc public class Verifik : ObjectiveC.NSObject, Foundation.URLSessionDelegate {
-  public init(vc: VerifikKit.VerifikProtocol, token: Swift.String)
+  public init(vc: any VerifikKit.VerifikProtocol, token: Swift.String)
   public func liveness()
   public func enroll(externalDataBaseRefID: Swift.String)
   public func authenticate(externalDataBaseRefID: Swift.String)
@@ -64,6 +64,7 @@ public enum VerifikDocumentType : Swift.String {
   case license
   case passport
   case government
+  case automatic_detection
   public init?(rawValue: Swift.String)
   public typealias RawValue = Swift.String
   public var rawValue: Swift.String {

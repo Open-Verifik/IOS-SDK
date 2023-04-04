@@ -103,7 +103,9 @@ class VerifikAppIDScanProcessor: NSObject, Processor, FaceTecIDScanProcessorDele
         // Part 4:  Get essential data off the FaceTecIDScanResult
         //
         var parameters: [String : Any] = [:]
-        parameters["selectedDocument"] = documentType.rawValue
+        if documentType != .automatic_detection {
+            parameters["selectedDocument"] = documentType.rawValue
+        }
         parameters["idScan"] = idScanResult.idScanBase64
         if idScanResult.frontImagesCompressedBase64?.isEmpty == false {
             parameters["idScanFrontImage"] = idScanResult.frontImagesCompressedBase64![0]

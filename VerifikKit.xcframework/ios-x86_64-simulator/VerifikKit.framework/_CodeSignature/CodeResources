@@ -6,11 +6,11 @@
 	<dict>
 		<key>Assets.car</key>
 		<data>
-		T2XA9r+VHyU4vHyYgHB5ZdW/CPU=
+		2iSUcrX2rDkIqV7YkMzrFORn9RA=
 		</data>
 		<key>Headers/VerifikKit-Swift.h</key>
 		<data>
-		McGEEQ583cJmF2zgNndq/h8vfaQ=
+		HdkXfiQOYqucHdYwIX3DyQ4nSo0=
 		</data>
 		<key>Headers/VerifikKit.h</key>
 		<data>
@@ -18,27 +18,27 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		MxyFjZL0mxjt8UE651o+weVp2lw=
+		Feoef/9igPPAsZspsEYZg4NpPDE=
 		</data>
 		<key>Modules/VerifikKit.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		fLttpG/zG/z/mhTZACkWZngXXoQ=
+		tB1gsgMZZqGbiY8th5Zk8hKbB2A=
 		</data>
 		<key>Modules/VerifikKit.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		kkOATM3xNjaLabKvx5uKAXFRftc=
+		mMvhMAa0RmjF/nB51augxaMCKvU=
 		</data>
 		<key>Modules/VerifikKit.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		XCWf/9k++fKfrzdJkK9kOBj9WeU=
+		Obb17xtQx6uQXVHicrPJJIg44ZA=
 		</data>
 		<key>Modules/VerifikKit.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		kkOATM3xNjaLabKvx5uKAXFRftc=
+		mMvhMAa0RmjF/nB51augxaMCKvU=
 		</data>
 		<key>Modules/VerifikKit.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		v8TXS4VcjR7LXgDG1LGag3171kY=
+		plTPcLQulfH9mibfnGaX6OjAtW8=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -51,14 +51,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Z793QOaEZQVwIfSNlh9/TAi4rXDZiaUPcTs4EpX2rB8=
+			PrMAwyrXC9U7VcaEJ7a13jNGzrwf3SWZCeJm2Lvzv0w=
 			</data>
 		</dict>
 		<key>Headers/VerifikKit-Swift.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Pf+uGN2hBI5sJP3krOnzt/j0ha38AjeHZZderoZkRWU=
+			3S372xNVJrnD3s1JuLIFQkQ+glt1LvFEHlBY/P5wofw=
 			</data>
 		</dict>
 		<key>Headers/VerifikKit.h</key>
@@ -72,35 +72,35 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			3/FyXHJ6wNIlx1qmkLnxgvNsO/muiKVkqLGRLrFOMhc=
+			TcvzlMQb049Wr9G3jHBIBPu+hAe9bv2g0wnkkqtiBs4=
 			</data>
 		</dict>
 		<key>Modules/VerifikKit.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			+VKxOWl34WXqElChsYeWGH7PyFsU13ZZ3IIOP3z1Vgw=
+			DRtzWGjCplBFbhlG0cdVU/LtERR3nSDhfnC9zvo6buo=
 			</data>
 		</dict>
 		<key>Modules/VerifikKit.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			DiEQJTdTPwVlEbYzELuFKeSWXrmhjrRZ4fBABiMLMTQ=
+			VII7ZvTNCHghEAF3UN5Z+r8Pch/Yc9EL0ivrhJYasDY=
 			</data>
 		</dict>
 		<key>Modules/VerifikKit.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			+VKxOWl34WXqElChsYeWGH7PyFsU13ZZ3IIOP3z1Vgw=
+			DRtzWGjCplBFbhlG0cdVU/LtERR3nSDhfnC9zvo6buo=
 			</data>
 		</dict>
 		<key>Modules/VerifikKit.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			+Iy1/eb3RegZI9tyMlJzRcgRMiyL+O4iGZN32lHcF4s=
+			FXe1GyRdBMmMSLNH8NSFGap0XrfhySzTFGas3Eqdw7E=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
