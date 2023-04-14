@@ -95,6 +95,15 @@ typedef NS_ENUM(NSInteger, FaceTecCameraPermissionStatus) {
  */
 @protocol FaceTecCustomAnimationDelegate <NSObject>
 /**
+ Configure a custom UIView to display on the OCR Confirmation Screen's scroll indicator.
+ This method will be called every time that the OCR Confirmation Screen is displayed.
+ Sizing of the UIView's contents should be calculated relative to the UIView's bounds. Animations should be setup to start in the UIView's didMoveToSuperview method.
+ Note: The scroll indicator animation is displayed indefinitely until user action, so the custom animation should be set to loop/repeat infinitely.
+ If this returns nil, the default animation will be used.
+ */
+@optional
+- (UIView * _Nullable)onCreateOCRConfirmationScrollIndicatorAnimationView NS_SWIFT_NAME(onCreateOCRConfirmationScrollIndicatorAnimationView());
+/**
  Configure a custom UIView to display on the Securing Camera Screen for the animation during camera loading.
  This method will be called every time that the Securing Camera Screen is displayed.
  Sizing of the UIView's contents should be calculated relative to the UIView's bounds. Animations should be setup to start in the UIView's didMoveToSuperview method.
@@ -516,6 +525,75 @@ __attribute__((visibility("default")))
  * Default is dynamically configured per device at runtime.
  */
 @property (nonatomic) int buttonCornerRadius;
+/**
+ * Color of the scroll indicator's background during the User OCR Confirmation Screen.
+ * Default is custom color.
+ */
+@property (nonatomic, strong) UIColor * _Nonnull scrollIndicatorBackgroundNormalColor;
+/**
+ * Color of the scroll indicator's background when the button is pressed during the User OCR Confirmation Screen.
+ * Default is custom color.
+ */
+@property (nonatomic, strong) UIColor * _Nonnull scrollIndicatorBackgroundHighlightColor;
+/**
+ * Color of the scroll indicator's text and default image tint during the User OCR Confirmation Screen.
+ * Default is white.
+ */
+@property (nonatomic, strong) UIColor * _Nonnull scrollIndicatorForegroundNormalColor;
+/**
+ * Color of the scroll indicator's text and default image tint when the button is pressed during the User OCR Confirmation Screen.
+ * Default is white.
+ */
+@property (nonatomic, strong) UIColor * _Nonnull scrollIndicatorForegroundHighlightColor;
+/**
+ * Color of the scroll indicator's border during the User OCR Confirmation Screen.
+ * Default is transparent.
+ */
+@property (nonatomic, strong) UIColor * _Nonnull scrollIndicatorBorderColor;
+/**
+ * Thickness of the scroll indicator's border during theUser OCR Confirmation Screen.
+ * Default is dynamically configured per device at runtime.
+ */
+@property (nonatomic) int scrollIndicatorBorderWidth;
+/**
+ * Corner radius of the scroll indicator's border on the User OCR Confirmation Screen.
+ * If this value is set to -1, the corner radius will be set to half the height of the scroll indicator.
+ * Default is -1.
+ */
+@property (nonatomic) int scrollIndicatorCornerRadius;
+/**
+ * Font of the scroll indicator's text on the User OCR Confirmation Screen.
+ * If this value is null, FaceTec's default Typeface will be used.
+ * Default is null.
+ */
+@property (nonatomic, strong) UIFont * _Nullable scrollIndicatorFont;
+/**
+ * Shadow displayed behind the scroll indicator on the User OCR Confirmation Screen.
+ * This customization can be set to nil for no shadow, or it can be set to an instance of FaceTecShadow.
+ * Note: FaceTecShadow's configurable properties correlate to the shadow-related attributes available for CALayer objects.
+ * Default is a custom shadow.
+ */
+@property (nonatomic) FaceTecShadow * _Nullable scrollIndicatorShadow;
+/**
+ * Control whether to show the scroll indicator on the User OCR Confirmation Screen when there is scrollable content.
+ * Default is true (enabled).
+ */
+@property (nonatomic) BOOL enableScrollIndicator;
+/**
+ * Control whether to animate the text of the scroll indicator on the User OCR Confirmation Screen.
+ * Default is true (enabled).
+ */
+@property (nonatomic) BOOL enableScrollIndicatorTextAnimation;
+/**
+ * Control whether to place the User OCR Confirmation Screen action button at the bottom of the scrollable content, or fixed to the bottom of the screen (always visible).
+ * Default is false (button is below the scrollable content).
+ */
+@property (nonatomic) BOOL enableFixedConfirmButton;
+/**
+ * Control whether to show the animate-able image on the scroll indicator on the User OCR Confirmation Screen.
+ * Default is true (shown).
+ */
+@property (nonatomic) BOOL showScrollIndicatorImage;
 
 @end
 

@@ -1,6 +1,19 @@
 
 extern NSString *const FaceTecStringKeyAccessibilityCancelButton;
 extern NSString *const FaceTecStringKeyAccessibilityTorchButton;
+extern NSString *const FaceTecStringKeyAccessibilityTapGuidance;
+extern NSString *const FaceTecStringKeyAccessibilityFeedbackMovePhoneAway;
+extern NSString *const FaceTecStringKeyAccessibilityFeedbackMovePhoneCloser;
+extern NSString *const FaceTecStringKeyAccessibilityFeedbackFaceTooFarLeft;
+extern NSString *const FaceTecStringKeyAccessibilityFeedbackFaceTooFarRight;
+extern NSString *const FaceTecStringKeyAccessibilityFeedbackFaceTooLow;
+extern NSString *const FaceTecStringKeyAccessibilityFeedbackFaceTooHigh;
+extern NSString *const FaceTecStringKeyAccessibilityFeedbackFaceRotatedTooFarLeft;
+extern NSString *const FaceTecStringKeyAccessibilityFeedbackFaceRotatedTooFarRight;
+extern NSString *const FaceTecStringKeyAccessibilityFeedbackFacePointingTooFarLeft;
+extern NSString *const FaceTecStringKeyAccessibilityFeedbackFacePointingTooFarRight;
+extern NSString *const FaceTecStringKeyAccessibilityFeedbackFaceNotOnCamera;
+extern NSString *const FaceTecStringKeyAccessibilityFeedbackHoldDeviceToEyeLevel;
 extern NSString *const FaceTecStringKeyActionOk;
 extern NSString *const FaceTecStringKeyActionImReady;
 extern NSString *const FaceTecStringKeyActionTryAgain;
@@ -34,6 +47,7 @@ extern NSString *const FaceTecStringKeyIdscanCaptureIdBackInstructionMessage;
 extern NSString *const FaceTecStringKeyIdscanReviewIdFrontInstructionMessage;
 extern NSString *const FaceTecStringKeyIdscanReviewIdBackInstructionMessage;
 extern NSString *const FaceTecStringKeyIdscanOcrConfirmationMainHeader;
+extern NSString *const FaceTecStringKeyIdscanOcrConfirmationScrollMessage;
 extern NSString *const FaceTecStringKeyIdscanNfcStatusDisabledMessage;
 extern NSString *const FaceTecStringKeyIdscanNfcStatusReadyMessage;
 extern NSString *const FaceTecStringKeyIdscanNfcCardStatusReadyMessage;
