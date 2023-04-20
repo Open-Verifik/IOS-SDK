@@ -160,6 +160,12 @@ class VerifikAppIDScanProcessor: NSObject, Processor, FaceTecIDScanProcessorDele
                 idScanResultCallback.onIDScanResultCancel()
                 return
             }
+            if let code = responseJSON["code"] as? String,
+                let message = responseJSON["message"] as? String{
+                self.fromViewController.appPhotoIDScanError(error: "\(code) \(message)")
+                idScanResultCallback.onIDScanResultCancel()
+                return
+            }
             
             guard let scanResultBlob = responseJSON["data"]?["scanResultBlob"] as? String,
                   let wasProcessed = responseJSON["data"]?["success"] as? Bool else {

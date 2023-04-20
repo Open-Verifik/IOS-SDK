@@ -280,6 +280,12 @@ class VerifikPhotoIDMatchProcessor: NSObject, Processor, FaceTecFaceScanProcesso
                 idScanResultCallback.onIDScanResultCancel()
                 return
             }
+            if let code = responseJSON["code"] as? String,
+                let message = responseJSON["message"] as? String{
+                self.fromViewController.photoIDMatchError(error: "\(code) \(message)")
+                idScanResultCallback.onIDScanResultCancel()
+                return
+            }
             
             guard let scanResultBlob = responseJSON["data"]?["scanResultBlob"] as? String,
                   let wasProcessed = responseJSON["data"]?["wasProcessed"] as? Bool else {

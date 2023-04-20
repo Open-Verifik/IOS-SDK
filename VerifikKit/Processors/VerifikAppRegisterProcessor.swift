@@ -133,6 +133,12 @@ class VerifikAppRegisterProcessor: NSObject, Processor, FaceTecFaceScanProcessor
                 faceScanResultCallback.onFaceScanResultCancel()
                 return
             }
+            if let code = responseJSON["code"] as? String,
+                let message = responseJSON["message"] as? String{
+                self.fromViewController.appRegisterError(error: "\(code) \(message)")
+                faceScanResultCallback.onFaceScanResultCancel()
+                return
+            }
             
             guard let scanResultBlob = responseJSON["data"]?["scanResultBlob"] as? String,
                   let token = responseJSON["data"]?["_id"] as? String,

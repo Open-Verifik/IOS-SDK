@@ -115,6 +115,12 @@ class VerifikEnrollmentProcessor: NSObject, Processor, FaceTecFaceScanProcessorD
                 faceScanResultCallback.onFaceScanResultCancel()
                 return
             }
+            if let code = responseJSON["code"] as? String,
+                let message = responseJSON["message"] as? String{
+                self.fromViewController.enrollmentError(error: "\(code) \(message)")
+                faceScanResultCallback.onFaceScanResultCancel()
+                return
+            }
             
             guard let scanResultBlob = responseJSON["data"]?["scanResultBlob"] as? String,
                   let wasProcessed = responseJSON["data"]?["wasProcessed"] as? Bool else {

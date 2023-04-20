@@ -142,6 +142,13 @@ class VerifikPhotoIDScanProcessor: NSObject, Processor, FaceTecIDScanProcessorDe
                 return
             }
             
+            if let code = responseJSON["code"] as? String,
+                let message = responseJSON["message"] as? String{
+                self.fromViewController.photoIDScanError(error: "\(code) \(message)")
+                idScanResultCallback.onIDScanResultCancel()
+                return
+            }
+            
             guard let scanResultBlob = responseJSON["data"]?["scanResultBlob"] as? String,
                   let wasProcessed = responseJSON["data"]?["wasProcessed"] as? Bool else {
                 // CASE:  UNEXPECTED response from API.  Our Sample Code keys off a wasProcessed boolean on the root of the JSON object --> You define your own API contracts with yourself and may choose to do something different here based on the error.

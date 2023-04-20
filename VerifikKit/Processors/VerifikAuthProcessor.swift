@@ -125,6 +125,12 @@ class VerifikAuthProcessor: NSObject, Processor, FaceTecFaceScanProcessorDelegat
                 faceScanResultCallback.onFaceScanResultCancel()
                 return
             }
+            if let code = responseJSON["code"] as? String,
+                let message = responseJSON["message"] as? String{
+                self.fromViewController.authError(error: "\(code) \(message)")
+                faceScanResultCallback.onFaceScanResultCancel()
+                return
+            }
             
             guard let scanResultBlob = responseJSON["data"]?["scanResultBlob"] as? String,
                   let wasProcessed = responseJSON["data"]?["wasProcessed"] as? Bool else {
