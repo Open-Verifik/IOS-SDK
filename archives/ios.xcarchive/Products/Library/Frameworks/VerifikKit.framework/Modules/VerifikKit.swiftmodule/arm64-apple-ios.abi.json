@@ -4673,6 +4673,20 @@
       "value": "\"=\""
     },
     {
+      "filePath": "\/Users\/bleck\/Documents\/biometrics-ios-sdk\/VerifikKit\/Services\/HttpUtils.swift",
+      "kind": "StringLiteral",
+      "offset": 1356,
+      "length": 3,
+      "value": "\"_\""
+    },
+    {
+      "filePath": "\/Users\/bleck\/Documents\/biometrics-ios-sdk\/VerifikKit\/Services\/HttpUtils.swift",
+      "kind": "StringLiteral",
+      "offset": 1367,
+      "length": 3,
+      "value": "\",\""
+    },
+    {
       "filePath": "\/Users\/bleck\/Documents\/biometrics-ios-sdk\/VerifikKit\/Processors\/Helpers\/ThemeHelpers.swift",
       "kind": "StringLiteral",
       "offset": 970,
