@@ -29,6 +29,7 @@ class HttpUtils{
         newProdKeyText = newProdKeyText.replacingOccurrences(of: ";", with: "", options: .literal, range: nil)
         newProdKeyText = newProdKeyText.replacingOccurrences(of: "\"", with: "", options: .literal, range: nil)
         newProdKeyText = newProdKeyText.replacingOccurrences(of: ":", with: "=", options: .literal, range: nil)
+        newProdKeyText = newProdKeyText.replacingOccurrences(of: "_", with: ",", options: .literal, range: nil)
         return newProdKeyText
     }
 }
