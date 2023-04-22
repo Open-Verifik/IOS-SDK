@@ -92,7 +92,8 @@ class VerifikViewController: UIViewController {
 }
 
 extension VerifikViewController: VerifikProtocol{
-    func initializationSuccesful() {
+    
+    func initVerifikSuccess() {
         let alertC = UIAlertController(title: "Verifik SDK init successfully", message: "Everything is ok", preferredStyle: .alert)
         let ok = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
         })
