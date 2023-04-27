@@ -93,7 +93,7 @@ Los parámetros enviados en el Body coinciden con los que genera el SDK del Proy
 "Image Age" = "Estimar edad de una imagen";
 "Image Age Desc" = "Obtiene la edad de una imagen";
 "Image Age Parameters" = "image: Este parámetro es una imagen del rostro en base64.";
-"Image Age Criteria" = "1. 1. El escaneo facial provino de un ser humano vivo y se comprobó la vitalidad.
+"Image Age Criteria" = "1. El escaneo facial provino de un ser humano vivo y se comprobó la vitalidad.
 
 2. Fueron enviados todo los parámetros requeridos por el Body";
 "Image Age Step 1" = "Verifik es una plataforma que vende servicios de Verificación , autenticación y comprobación de datos. Al combinar todos los los servicios de Verifik puedes tener una solución completa. Crea una cuenta dentro de https://verifik.co para empezar a disfrutar de nuestros servicios de una manera fácil y sencilla de integrar.";
@@ -108,16 +108,16 @@ Los parámetros enviados en el Body coinciden con los que genera el SDK del Proy
 "Liveness Step 1" = "Verifik es una plataforma que vende servicios de Verificación , autenticación y comprobación de datos. Al combinar todos los los servicios de Verifik puedes tener una solución completa. Crea una cuenta dentro de https://verifik.co para empezar a disfrutar de nuestros servicios de una manera fácil y sencilla de integrar.";
 "Liveness Step 2" = "Ve a tu dashboard en https://app.verifik.co y encontrarás en la parte final de la página tu llave a copiar, en ella tenemos tu información necesaria para validar tus permisos y créditos disponibles para utilizar la lógica en este tutorial.";
 //Match2D
-"2D Image Matching" = "Compara 2 imagenes";
-"2D Image Matching Desc" = "Compara los biometricos de 2 imagenes";
+"2D Image Matching" = "Compara 2 imágenes";
+"2D Image Matching Desc" = "Compara los biometricos de 2 imágenes";
 "2D Image Parameters" = "minMatchLevel: Este parámetro es un numero del 1 al 6, este numero indica el minimo de coincidencia entre las imagenes, siendo 6 el mas alto.
 
 image0: Este parámetro es una imagen del rostro en base64.
 
 image1: Este parámetro es una imagen del rostro en base64.";
-"2D Image Criteria" = "1. The FaceScan came from a live human and was checked for vitality.
+"2D Image Criteria" = "1. El escaneo facial provino de un ser humano vivo y se comprobó la vitalidad.
 
-2. The parameters sent in the Body are as required";
+2. Los parámetros enviados en el Body son los requeridos.";
 "2D Image Step 1" = "Verifik es una plataforma que vende servicios de Verificación , autenticación y comprobación de datos. Al combinar todos los los servicios de Verifik puedes tener una solución completa. Crea una cuenta dentro de https://verifik.co para empezar a disfrutar de nuestros servicios de una manera fácil y sencilla de integrar.";
 "2D Image Step 2" = "Ve a tu dashboard en https://app.verifik.co y encontrarás en la parte final de la página tu llave a copiar, en ella tenemos tu información necesaria para validar tus permisos y créditos disponibles para utilizar la lógica en este tutorial.";
 //Age
@@ -134,9 +134,9 @@ image1: Este parámetro es una imagen del rostro en base64.";
 "Facescan Image Desc" = "Compara tu biometría con una imagen.";
 "Facescan Image Parameters" = "externalDatabaseRefID: Este parámetro es un Identificador único al cual se va a asociar el escaneo biométrico que se realizo, Se cuenta con la opción de correo o de número telefónico.
 
-minMatchLevel: Este parámetro es un numero del 1 al 6, este numero indica el minimo de coincidencia entre las imagenes, siendo 6 el mas alto.
+minMatchLevel: Este parámetro es un numero del 1 al 6, este número indica el minimo de coincidencia entre las imágenes, siendo 6 el mas alto.
 
-image: Este parámetro es una imagen del rostro en base64.";
+image: Este parámetro es una imágen del rostro en base64.";
 "Facescan Image Criteria" = "1. El escaneo facial provino de un ser humano vivo y se comprobó la vitalidad.
 
 2. Los parámetros enviados en el Body son los requeridos";
