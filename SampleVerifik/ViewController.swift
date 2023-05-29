@@ -20,7 +20,7 @@ class ViewController: UIViewController{
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         verifik = Verifik(vc: self, token: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjbGllbnRJZCI6IjYxNTc3MTU2OTBmMDEwOGNmMmRjNjI4MSIsImRvY3VtZW50VHlwZSI6IkNDIiwiZG9jdW1lbnROdW1iZXIiOiIxNjM1MzczMzY3NDY3NDMiLCJ2IjoxLCJyb2xlIjoiY2xpZW50IiwiZXhwaXJlc0F0IjoiMjAyMi0xMi0wNCAxOTozNjo1NSIsImlhdCI6MTY2NzU5MDYxNX0.QvyQyTXoQCzXlGGfBs2brK15_9AvoveFWTAgprHvRDc")
-        verifikKYC = Verifik(vc: self, token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBSZWdpc3RyYXRpb25JZCI6IjY0M2VmOGRjNjFmNTg4YWNjZmMzNTQ1NCIsImV4cGlyZXNBdCI6IjIwMjMtMDQtMTggMjA6Mzk6MDEiLCJhY2Nlc3NUeXBlIjoiYXBwX3JlZ2lzdHJhdGlvbl9jcmVhdGVkIiwiZW1haWwiOiJjaGFybGllc2JsZWNrQGhvdG1haWwuY29tIiwicGhvbmUiOiI1NTE0OTY4NzYwIiwiaWF0IjoxNjgxODQ4NTQxfQ.vu2bH3v_Ptlbs2chpd-_cFGaJdu7PIFPRSaCRDQCZTo")
+        verifikKYC = Verifik(vc: self, token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBSZWdpc3RyYXRpb25JZCI6IjY0NTE0MmM4NDQ5MmMyYzRkNDMxMWYwMSIsImV4cGlyZXNBdCI6IjIwMjMtMDUtMDIgMTg6NDU6NTYiLCJhY2Nlc3NUeXBlIjoiYXBwX3JlZ2lzdHJhdGlvbl9jcmVhdGVkIiwiZW1haWwiOiJpYW1mZWxpcGVvQGdtYWlsLmNvbSIsInBob25lIjoiMzEwMjY5MjEzOCIsInByb2plY3QiOiI2M2M2Y2IyYWU3YzkyZGFkNTBiNjI4ODIiLCJpYXQiOjE2ODMwNTEzNTZ9.M4Sf2b7io_hZTzYUa-qLt7I0Zx5r9u79jJlUsQePI7E")
     }
 
     @IBAction func tapOnLiveness(_ sender: Any) {
