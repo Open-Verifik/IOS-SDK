@@ -13,7 +13,8 @@ import Foundation
 class VerifikAppIDScanProcessor: NSObject, Processor, FaceTecIDScanProcessorDelegate, URLSessionTaskDelegate {
     var latestNetworkRequest: URLSessionTask!
     var success = false
-    var fromViewController: VerifikProtocol!
+    var fromViewController: UIViewController!
+    var vp: VerifikProtocol!
     var verifikToken: String!
     var documentType: VerifikDocumentType!
     var idScanResultCallback: FaceTecIDScanResultCallback!
@@ -22,10 +23,12 @@ class VerifikAppIDScanProcessor: NSObject, Processor, FaceTecIDScanProcessorDele
     init(sessionToken: String,
          verifikToken: String,
          documentType: VerifikDocumentType,
-         fromViewController: VerifikProtocol) {
+         fromViewController: UIViewController,
+         vp: VerifikProtocol) {
         self.verifikToken = verifikToken
         self.documentType = documentType
         self.fromViewController = fromViewController
+        self.vp = vp
         super.init()
         
         // In v9.2.2+, configure the messages that will be displayed to the User in each of the possible cases.
@@ -91,7 +94,7 @@ class VerifikAppIDScanProcessor: NSObject, Processor, FaceTecIDScanProcessorDele
             if latestNetworkRequest != nil {
                 latestNetworkRequest.cancel()
             }
-            self.fromViewController.appPhotoIDScanError(error: "User cancel App Photo ID Scan or there was a connection error")
+            self.vp.appPhotoIDScanError(error: "User cancel App Photo ID Scan or there was a connection error")
             idScanResultCallback.onIDScanResultCancel()
             return
         }
@@ -136,33 +139,33 @@ class VerifikAppIDScanProcessor: NSObject, Processor, FaceTecIDScanProcessorDele
             
             guard let data = data else {
                 // CASE:  UNEXPECTED response from API. Our Sample Code keys off a wasProcessed boolean on the root of the JSON object --> You define your own API contracts with yourself and may choose to do something different here based on the error.
-                self.fromViewController.appPhotoIDScanError(error: "There was an error parsing App ID scan resulting data, please contact Verifik Support Team")
+                self.vp.appPhotoIDScanError(error: "There was an error parsing App ID scan resulting data, please contact Verifik Support Team")
                 idScanResultCallback.onIDScanResultCancel()
                 return
             }
             
             guard let responseJSON = try? JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.allowFragments) as! [String: AnyObject] else {
                 // CASE:  UNEXPECTED response from API.  Our Sample Code keys off a wasProcessed boolean on the root of the JSON object --> You define your own API contracts with yourself and may choose to do something different here based on the error.
-                self.fromViewController.appPhotoIDScanError(error: "There was an error parsing App ID scan resulting data 2, please contact Verifik Support Team")
+                self.vp.appPhotoIDScanError(error: "There was an error parsing App ID scan resulting data 2, please contact Verifik Support Team")
                 idScanResultCallback.onIDScanResultCancel()
                 return
             }
             
             if let code = responseJSON["code"] as? String,
                 code == "NotFound"{
-                self.fromViewController.appPhotoIDScanError(error: "User not found on Database")
+                self.vp.appPhotoIDScanError(error: "User not found on Database")
                 idScanResultCallback.onIDScanResultCancel()
                 return
             }
             if let code = responseJSON["code"] as? String, code == "Conflict",
                let message = responseJSON["message"] as? String {
-                self.fromViewController.appPhotoIDScanError(error: message)
+                self.vp.appPhotoIDScanError(error: message)
                 idScanResultCallback.onIDScanResultCancel()
                 return
             }
             if let code = responseJSON["code"] as? String,
                 let message = responseJSON["message"] as? String{
-                self.fromViewController.appPhotoIDScanError(error: "\(code) \(message)")
+                self.vp.appPhotoIDScanError(error: "\(code) \(message)")
                 idScanResultCallback.onIDScanResultCancel()
                 return
             }
@@ -170,7 +173,7 @@ class VerifikAppIDScanProcessor: NSObject, Processor, FaceTecIDScanProcessorDele
             guard let scanResultBlob = responseJSON["data"]?["scanResultBlob"] as? String,
                   let wasProcessed = responseJSON["data"]?["success"] as? Bool else {
                 // CASE:  UNEXPECTED response from API.  Our Sample Code keys off a wasProcessed boolean on the root of the JSON object --> You define your own API contracts with yourself and may choose to do something different here based on the error.
-                self.fromViewController.appPhotoIDScanError(error: "There was an error with the App ID scan process")
+                self.vp.appPhotoIDScanError(error: "There was an error with the App ID scan process")
                 idScanResultCallback.onIDScanResultCancel()
                 return
             }
@@ -214,7 +217,7 @@ class VerifikAppIDScanProcessor: NSObject, Processor, FaceTecIDScanProcessorDele
             }
             else {
                 // CASE:  UNEXPECTED response from API.  Our Sample Code keys off a wasProcessed boolean on the root of the JSON object --> You define your own API contracts with yourself and may choose to do something different here based on the error.
-                self.fromViewController.appPhotoIDScanError(error: "Can't scan App ID")
+                self.vp.appPhotoIDScanError(error: "Can't scan App ID")
                 idScanResultCallback.onIDScanResultCancel()
             }
         })
@@ -246,8 +249,8 @@ class VerifikAppIDScanProcessor: NSObject, Processor, FaceTecIDScanProcessorDele
         
         // In your code, you will handle what to do after the Photo ID Scan is successful here.
         // In our example code here, to keep the code in this class simple, we will call a static method on another class to update the Sample App UI.
-        self.fromViewController.onVerifikComplete()
-        self.fromViewController.onAppPhotoIDScanDone(done: success, resultID: resultID)
+        self.vp.onVerifikComplete()
+        self.vp.onAppPhotoIDScanDone(done: success, resultID: resultID)
     }
     
     func isSuccess() -> Bool {

@@ -9,7 +9,7 @@ import Foundation
 @_implementationOnly import FaceTecSDK
 
 class HttpService{
-    func getCredentials(vc: VerifikProtocol, token: String,
+    func getCredentials(vp: VerifikProtocol, token: String,
                         credentialsCallback: @escaping (String, String, String) -> ()) {
         
         var parameters: [String : String] = [:]
@@ -19,16 +19,16 @@ class HttpService{
         request.httpMethod = "GET"
         request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
         
-        let session = URLSession(configuration: URLSessionConfiguration.default, delegate: vc, delegateQueue: OperationQueue.main)
+        let session = URLSession(configuration: URLSessionConfiguration.default, delegate: vp, delegateQueue: OperationQueue.main)
         let task = session.dataTask(with: request as URLRequest, completionHandler: { data, response, error in
             // Ensure the data object is not nil otherwise callback with empty dictionary.
             guard error == nil else {
-                vc.configError(error: "There was an error configuring Verifik SDK")
+                vp.configError(error: "There was an error configuring Verifik SDK")
                 return
             }
             guard let data = data else {
                 print("Verifik error: Couldn't get Verifik credentials")
-                vc.configError(error: "Couldn't get Verifik credentials, contact Verifik support team")
+                vp.configError(error: "Couldn't get Verifik credentials, contact Verifik support team")
                 return
             }
             if let responseJSONObj = try? JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.allowFragments) as? [String: AnyObject]{
@@ -45,7 +45,7 @@ class HttpService{
                     
                     if !prodKeyText.contains(bundleId){
                         print("Verifik error: Bundle ID isn't registered, please contact Verifik Support Team")
-                        vc.configError(error: "Bundle ID isn't registered, please contact Verifik Support Team")
+                        vp.configError(error: "Bundle ID isn't registered, please contact Verifik Support Team")
                         return
                     }
                     
@@ -74,12 +74,12 @@ class HttpService{
                     }
                     else {
                         print("Verifik error: Credentials with wrong format, please contact Verifik Support Team")
-                        vc.configError(error: "Credentials with wrong format, please contact Verifik Support Team")
+                        vp.configError(error: "Credentials with wrong format, please contact Verifik Support Team")
                     }
                 }
                 if let responseJSONCode = responseJSONObj["code"] as? String,
                     responseJSONCode == "InvalidCredentials"{
-                    vc.configError(error: "There was an error configuring Verifik SDK, please check your keys")
+                    vp.configError(error: "There was an error configuring Verifik SDK, please check your keys")
                 }
             }
             
@@ -87,7 +87,7 @@ class HttpService{
         task.resume()
     }
     
-    func getSessionToken(vc: VerifikProtocol, token: String,
+    func getSessionToken(vp: VerifikProtocol, token: String,
                          sessionTokenCallback: @escaping (String) -> ()) {
         
         let endpoint = VerifikURL.Base + VerifikURL.Session
@@ -97,12 +97,12 @@ class HttpService{
         request.addValue(FaceTec.sdk.createFaceTecAPIUserAgentString(""), forHTTPHeaderField: "X-User-Agent")
         request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
         
-        let session = URLSession(configuration: URLSessionConfiguration.default, delegate: vc, delegateQueue: OperationQueue.main)
+        let session = URLSession(configuration: URLSessionConfiguration.default, delegate: vp, delegateQueue: OperationQueue.main)
         let task = session.dataTask(with: request as URLRequest, completionHandler: { data, response, error in
             // Ensure the data object is not nil otherwise callback with empty dictionary.
             guard let data = data else {
                 print("Verifik Error: Exception raised while getting session data.")
-                vc.sessionError(error: "Exception raised while getting session data, please contact Verifik Support Team")
+                vp.sessionError(error: "Exception raised while getting session data, please contact Verifik Support Team")
                 return
             }
             if let responseJSONObj = try? JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.allowFragments) as? [String: AnyObject] {
@@ -112,7 +112,7 @@ class HttpService{
                 }
                 else {
                     print("Verifik Error: Exception raised while setting session data.")
-                    vc.sessionError(error: "Exception raised while setting session data, please contact Verifik Support Team")
+                    vp.sessionError(error: "Exception raised while setting session data, please contact Verifik Support Team")
                 }
             }
         })

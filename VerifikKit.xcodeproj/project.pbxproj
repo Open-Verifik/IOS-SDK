@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		D12642BB2996CA8600FA0F00 /* VerifikAppLoginProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12642BA2996CA8600FA0F00 /* VerifikAppLoginProcessor.swift */; };
+		D127AF602A2A8DF9009F8014 /* VerifikWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = D127AF5E2A2A8DF9009F8014 /* VerifikWrapper.h */; };
+		D127AF612A2A8DF9009F8014 /* VerifikWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = D127AF5F2A2A8DF9009F8014 /* VerifikWrapper.m */; };
 		D16617762915E56E007000F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16617752915E56E007000F8 /* AppDelegate.swift */; };
 		D16617782915E56E007000F8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16617772915E56E007000F8 /* SceneDelegate.swift */; };
 		D166177A2915E56E007000F8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16617792915E56E007000F8 /* ViewController.swift */; };
@@ -75,6 +77,8 @@
 
 /* Begin PBXFileReference section */
 		D12642BA2996CA8600FA0F00 /* VerifikAppLoginProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifikAppLoginProcessor.swift; sourceTree = "<group>"; };
+		D127AF5E2A2A8DF9009F8014 /* VerifikWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VerifikWrapper.h; sourceTree = "<group>"; };
+		D127AF5F2A2A8DF9009F8014 /* VerifikWrapper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VerifikWrapper.m; sourceTree = "<group>"; };
 		D16617732915E56E007000F8 /* SampleVerifik.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleVerifik.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D16617752915E56E007000F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D16617772915E56E007000F8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -193,6 +197,8 @@
 			isa = PBXGroup;
 			children = (
 				D1A98BB7290B45C7007818D6 /* VerifikKit.h */,
+				D127AF5E2A2A8DF9009F8014 /* VerifikWrapper.h */,
+				D127AF5F2A2A8DF9009F8014 /* VerifikWrapper.m */,
 				D1A98BE7290B545F007818D6 /* Config.swift */,
 				D1A98BEB290BA710007818D6 /* Verifik.swift */,
 				D1A98BE5290B5300007818D6 /* VerifikProtocols.swift */,
@@ -245,6 +251,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D1A98BC5290B45C7007818D6 /* VerifikKit.h in Headers */,
+				D127AF602A2A8DF9009F8014 /* VerifikWrapper.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,6 +329,7 @@
 					};
 					D1A98BB3290B45C7007818D6 = {
 						CreatedOnToolsVersion = 14.0.1;
+						LastSwiftMigration = 1430;
 					};
 					D1A98BBD290B45C7007818D6 = {
 						CreatedOnToolsVersion = 14.0.1;
@@ -425,6 +433,7 @@
 				D16691302915B07000485AAF /* HttpUtils.swift in Sources */,
 				D1A98BDF290B512F007818D6 /* ThemeHelpers.swift in Sources */,
 				D1A98BE8290B545F007818D6 /* Config.swift in Sources */,
+				D127AF612A2A8DF9009F8014 /* VerifikWrapper.m in Sources */,
 				D1E998CD299D77870007E7AA /* VerifikAppIDScanProcessor.swift in Sources */,
 				D166912629149FC600485AAF /* VerifikEnrollmentProcessor.swift in Sources */,
 				D1A3FA4C2912F2DA00491AEF /* VerifikAuthProcessor.swift in Sources */,
@@ -673,6 +682,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -702,6 +712,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -711,6 +723,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -740,6 +753,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

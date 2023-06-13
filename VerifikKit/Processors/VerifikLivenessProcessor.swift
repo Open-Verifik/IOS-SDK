@@ -12,14 +12,17 @@ class VerifikLivenessProcessor: NSObject, Processor, FaceTecFaceScanProcessorDel
     public typealias VerifikSessionResult = FaceTecSessionResult
     var latestNetworkRequest: URLSessionTask!
     var success = false
-    var fromViewController: VerifikProtocol!
+    var fromViewController: UIViewController!
+    var vp: VerifikProtocol!
     var verifikToken: String!
     var faceScanResultCallback: FaceTecFaceScanResultCallback!
     
     init(sessionToken: String, verifikToken: String,
-         fromViewController: VerifikProtocol) {
+         fromViewController: UIViewController,
+         vp: VerifikProtocol) {
         self.verifikToken = verifikToken
         self.fromViewController = fromViewController
+        self.vp = vp
         super.init()        
         //
         // Part 1:  Starting the FaceTec Session
@@ -104,7 +107,7 @@ class VerifikLivenessProcessor: NSObject, Processor, FaceTecFaceScanProcessorDel
             }
             if let code = responseJSON["code"] as? String,
                 let message = responseJSON["message"] as? String{
-                self.fromViewController.livenessError(error: "\(code) \(message)")
+                self.vp.livenessError(error: "\(code) \(message)")
                 faceScanResultCallback.onFaceScanResultCancel()
                 return
             }
@@ -168,7 +171,7 @@ class VerifikLivenessProcessor: NSObject, Processor, FaceTecFaceScanProcessorDel
         
         // In your code, you will handle what to do after the Liveness Check is successful here.
         // In our example code here, to keep the code in this class simple, we will call a static method on another class to update the Sample App UI.
-        self.fromViewController.onVerifikComplete();
+        self.vp.onVerifikComplete();
     }
     
     func isSuccess() -> Bool {

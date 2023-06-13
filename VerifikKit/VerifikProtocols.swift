@@ -8,7 +8,8 @@
 import Foundation
 import UIKit
 
-public protocol VerifikProtocol: UIViewController, URLSessionDelegate{
+@objc
+public protocol VerifikProtocol: URLSessionDelegate {
     // MARK: General Config
     func initVerifikSuccess()
     func configError(error: String)
@@ -55,11 +56,42 @@ public extension VerifikProtocol{
     func appPhotoIDScanError(error: String) {}
 }
 
-public enum VerifikDocumentType: String {
-    case license = "useLicense"
-    case passport = "usePassport"
-    case government = "useGovernmentID"
-    case automatic_detection = "automatic"
+@objc
+public enum VerifikDocumentType: Int, RawRepresentable {
+    case license
+    case passport
+    case government
+    case automatic_detection
+    
+    public typealias RawValue = String
+    
+    public var rawValue: RawValue {
+        switch self {
+            case .license:
+                return "useLicense"
+            case .passport:
+                return "usePassport"
+            case .government:
+                return "useGovernmentID"
+            case .automatic_detection:
+                return "automatic"
+        }
+    }
+    
+    public init?(rawValue: RawValue) {
+        switch rawValue {
+            case "useLicense":
+                self = .license
+            case "usePassport":
+                self = .passport
+            case "useGovernmentID":
+                self = .government
+            case "automatic":
+                self = .automatic_detection
+            default:
+                return nil
+        }
+    }
     
     func shortName() -> String {
         var shortName = ""

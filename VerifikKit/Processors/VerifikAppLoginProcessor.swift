@@ -14,7 +14,8 @@ class VerifikAppLoginProcessor: NSObject, Processor, FaceTecFaceScanProcessorDel
     var latestNetworkRequest: URLSessionTask!
     var success = false
     var resultToken: String?
-    var fromViewController: VerifikProtocol!
+    var fromViewController: UIViewController!
+    var vp: VerifikProtocol!
     var verifikToken: String!
     var faceScanResultCallback: FaceTecFaceScanResultCallback!
     var project: String = ""
@@ -22,14 +23,16 @@ class VerifikAppLoginProcessor: NSObject, Processor, FaceTecFaceScanProcessorDel
     var phone: String?
 
     init(sessionToken: String, verifikToken: String,
-         fromViewController: VerifikProtocol,
+         fromViewController: UIViewController,
          project: String, email: String?,
-         phone: String?) {
+         phone: String?,
+         vp: VerifikProtocol) {
         self.verifikToken = verifikToken
         self.fromViewController = fromViewController
         self.project = project
         self.email = email
         self.phone = phone
+        self.vp = vp
         super.init()
         //
         // Part 1:  Starting the FaceTec Session
@@ -69,7 +72,7 @@ class VerifikAppLoginProcessor: NSObject, Processor, FaceTecFaceScanProcessorDel
             if latestNetworkRequest != nil {
                 latestNetworkRequest.cancel()
             }
-            self.fromViewController.appLoginError(error: "User cancel App Login or there was a connection error")
+            self.vp.appLoginError(error: "User cancel App Login or there was a connection error")
             faceScanResultCallback.onFaceScanResultCancel()
             return
         }
@@ -109,33 +112,33 @@ class VerifikAppLoginProcessor: NSObject, Processor, FaceTecFaceScanProcessorDel
             
             guard let data = data else {
                 // CASE:  UNEXPECTED response from API. Our Sample Code keys off a wasProcessed boolean on the root of the JSON object --> You define your own API contracts with yourself and may choose to do something different here based on the error.
-                self.fromViewController.appLoginError(error: "There was an error parsing AppLogin resulting data, please contact Verifik Support Team")
+                self.vp.appLoginError(error: "There was an error parsing AppLogin resulting data, please contact Verifik Support Team")
                 faceScanResultCallback.onFaceScanResultCancel()
                 return
             }
             
             guard let responseJSON = try? JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.allowFragments) as! [String: AnyObject] else {
                 // CASE:  UNEXPECTED response from API.  Our Sample Code keys off a wasProcessed boolean on the root of the JSON object --> You define your own API contracts with yourself and may choose to do something different here based on the error.
-                self.fromViewController.appLoginError(error: "There was an error parsing AppLogin resulting data 2, please contact Verifik Support Team")
+                self.vp.appLoginError(error: "There was an error parsing AppLogin resulting data 2, please contact Verifik Support Team")
                 faceScanResultCallback.onFaceScanResultCancel()
                 return
             }
             
             if let code = responseJSON["code"] as? String,
                 code == "NotFound"{
-                self.fromViewController.appLoginError(error: "User not found on Database")
+                self.vp.appLoginError(error: "User not found on Database")
                 faceScanResultCallback.onFaceScanResultCancel()
                 return
             }
             if let code = responseJSON["code"] as? String,
                 code == "Conflict"{
-                self.fromViewController.appLoginError(error: "Biometric validation failed")
+                self.vp.appLoginError(error: "Biometric validation failed")
                 faceScanResultCallback.onFaceScanResultCancel()
                 return
             }
             if let code = responseJSON["code"] as? String,
                 let message = responseJSON["message"] as? String{
-                self.fromViewController.appLoginError(error: "\(code) \(message)")
+                self.vp.appLoginError(error: "\(code) \(message)")
                 faceScanResultCallback.onFaceScanResultCancel()
                 return
             }
@@ -144,7 +147,7 @@ class VerifikAppLoginProcessor: NSObject, Processor, FaceTecFaceScanProcessorDel
                   let token = responseJSON["data"]?["token"] as? String,
                   let wasProcessed = responseJSON["data"]?["success"] as? Bool else {
                 // CASE:  UNEXPECTED response from API.  Our Sample Code keys off a wasProcessed boolean on the root of the JSON object --> You define your own API contracts with yourself and may choose to do something different here based on the error.
-                self.fromViewController.appLoginError(error: "There was an error with the AppLogin process")
+                self.vp.appLoginError(error: "There was an error with the AppLogin process")
                 faceScanResultCallback.onFaceScanResultCancel()
                 return
             }
@@ -163,7 +166,7 @@ class VerifikAppLoginProcessor: NSObject, Processor, FaceTecFaceScanProcessorDel
             }
             else {
                 // CASE:  UNEXPECTED response from API.  Our Sample Code keys off a wasProcessed boolean on the root of the JSON object --> You define your own API contracts with yourself and may choose to do something different here based on the error.
-                self.fromViewController.appLoginError(error: "No authorization granted")
+                self.vp.appLoginError(error: "No authorization granted")
                 faceScanResultCallback.onFaceScanResultCancel()
                 return;
             }
@@ -204,8 +207,8 @@ class VerifikAppLoginProcessor: NSObject, Processor, FaceTecFaceScanProcessorDel
         
         // In your code, you will handle what to do after Authentication is successful here.
         // In our example code here, to keep the code in this class simple, we will call a static method on another class to update the Sample App UI.
-        self.fromViewController.onVerifikComplete()
-        self.fromViewController.onAppLoginDone(done: success, resultToken: resultToken)
+        self.vp.onVerifikComplete()
+        self.vp.onAppLoginDone(done: success, resultToken: resultToken)
     }
     
     func isSuccess() -> Bool {

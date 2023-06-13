@@ -9,9 +9,11 @@ import Foundation
 import UIKit
 @_implementationOnly import FaceTecSDK
 
+@objcMembers
 public class Verifik: NSObject, URLSessionDelegate{
         
-    var vc: VerifikProtocol!
+    var vc: UIViewController!
+    var vp: VerifikProtocol!
     var token: String!
     var latestSessionResult: FaceTecSessionResult!
     var latestIDScanResult: FaceTecIDScanResult!
@@ -19,18 +21,20 @@ public class Verifik: NSObject, URLSessionDelegate{
     var latestProcessor: Processor!
     var latestServerResult: [String: AnyObject]!
     
-    public init(vc: VerifikProtocol, token: String) {
+    @objc
+    public init(vc: UIViewController, token: String, vp: VerifikProtocol) {
         self.vc = vc
         self.token = token
+        self.vp = vp
         
         let httpService = HttpService()
-        httpService.getCredentials(vc: vc, token: token) {
+        httpService.getCredentials(vp: vp, token: token) {
             arg1, arg2, arg3 in
             Config.shared = Config(baseUrl: VerifikURL.Base, deviceKeyIdentifier: arg1, publicFaceScanEncryptionKey: arg2, prodKeyText: arg3)
             // Initialize FaceTec SDK
             Config.initializeFaceTec(completion: { initializationSuccessful in
                 if(initializationSuccessful) {
-                    vc.initVerifikSuccess()
+                    vp.initVerifikSuccess()
                 }
                 // Displays the FaceTec SDK Status to text field.
                 // Return facetec check
@@ -45,9 +49,9 @@ public class Verifik: NSObject, URLSessionDelegate{
     
     public func liveness(){
         let httpService = HttpService()
-        httpService.getSessionToken(vc: self.vc, token: token){ sessionToken in
+        httpService.getSessionToken(vp: self.vp, token: token){ sessionToken in
             self.resetLatestResults()
-            self.latestProcessor = VerifikLivenessProcessor(sessionToken: sessionToken, verifikToken: self.token, fromViewController: self.vc)
+            self.latestProcessor = VerifikLivenessProcessor(sessionToken: sessionToken, verifikToken: self.token, fromViewController: self.vc, vp: self.vp)
         }
     }
     
@@ -56,9 +60,9 @@ public class Verifik: NSObject, URLSessionDelegate{
         self.latestExternalDatabaseRefID = externalDataBaseRefID
         // Get a Session Token from the FaceTec SDK, then start the Enrollment.
         let httpService = HttpService()
-        httpService.getSessionToken(vc: self.vc, token: token){ sessionToken in
+        httpService.getSessionToken(vp: self.vp, token: token){ sessionToken in
             self.resetLatestResults()
-            self.latestProcessor = VerifikEnrollmentProcessor(sessionToken: sessionToken, verifikToken: self.token, fromViewController: self.vc, externalDatabaseRef: self.latestExternalDatabaseRefID)
+            self.latestProcessor = VerifikEnrollmentProcessor(sessionToken: sessionToken, verifikToken: self.token, fromViewController: self.vc, externalDatabaseRef: self.latestExternalDatabaseRefID, vp: self.vp)
         }
     }
     
@@ -68,20 +72,20 @@ public class Verifik: NSObject, URLSessionDelegate{
         self.latestExternalDatabaseRefID = externalDataBaseRefID
         // Get a Session Token from the FaceTec SDK, then start the 3D to 3D Matching.
         let httpService = HttpService()
-        httpService.getSessionToken(vc: self.vc, token: token){ sessionToken in
+        httpService.getSessionToken(vp: self.vp, token: token){ sessionToken in
             self.resetLatestResults()
-            self.latestProcessor = VerifikAuthProcessor(sessionToken: sessionToken, verifikToken: self.token, fromViewController: self.vc, externalDatabaseRef: self.latestExternalDatabaseRefID)
+            self.latestProcessor = VerifikAuthProcessor(sessionToken: sessionToken, verifikToken: self.token, fromViewController: self.vc, externalDatabaseRef: self.latestExternalDatabaseRefID, vp: self.vp)
         }
     }
     
     // Perform a 3D Liveness Check, then an ID Scan, then Match the 3D FaceMap to the ID Scan.
-    public func matchIDScan(){
+    public func matchIDScan(externalDataBaseRefID: String){
+        self.latestExternalDatabaseRefID = externalDataBaseRefID
         // Get a Session Token from the FaceTec SDK, then start the 3D Liveness Check.  On Success, ID Scanning will start automatically.
         let httpService = HttpService()
-        httpService.getSessionToken(vc: self.vc, token: token){ sessionToken in
+        httpService.getSessionToken(vp: self.vp, token: token){ sessionToken in
             self.resetLatestResults()
-            self.latestExternalDatabaseRefID = "verifik_app_" + UUID().uuidString
-            self.latestProcessor = VerifikPhotoIDMatchProcessor(sessionToken: sessionToken, verifikToken: self.token, fromViewController: self.vc, externalDatabaseRef: self.latestExternalDatabaseRefID)
+            self.latestProcessor = VerifikPhotoIDMatchProcessor(sessionToken: sessionToken, verifikToken: self.token, fromViewController: self.vc, externalDatabaseRef: self.latestExternalDatabaseRefID, vp: self.vp)
         }
     }
     
@@ -89,9 +93,9 @@ public class Verifik: NSObject, URLSessionDelegate{
     public func photoIDScan(){
         // Get a Session Token from the FaceTec SDK.  On Success, ID Scanning will start automatically.
         let httpService = HttpService()
-        httpService.getSessionToken(vc: self.vc, token: token){ sessionToken in
+        httpService.getSessionToken(vp: self.vp, token: token){ sessionToken in
             self.resetLatestResults()
-            self.latestProcessor = VerifikPhotoIDScanProcessor(sessionToken: sessionToken, verifikToken: self.token, fromViewController: self.vc, externalDatabaseRef: self.latestExternalDatabaseRefID)
+            self.latestProcessor = VerifikPhotoIDScanProcessor(sessionToken: sessionToken, verifikToken: self.token, fromViewController: self.vc, externalDatabaseRef: self.latestExternalDatabaseRefID, vp: self.vp)
         }
     }
     
@@ -101,9 +105,9 @@ public class Verifik: NSObject, URLSessionDelegate{
                                    phone: String?) {
         // Get a Session Token from the FaceTec SDK, then start the 3D to 3D Matching.
         let httpService = HttpService()
-        httpService.getSessionToken(vc: self.vc, token: token){ sessionToken in
+        httpService.getSessionToken(vp: self.vp, token: token){ sessionToken in
             self.resetLatestResults()
-            self.latestProcessor = VerifikAppRegisterProcessor(sessionToken: sessionToken, verifikToken: self.token, fromViewController: self.vc, project: project, email: email, phone: phone)
+            self.latestProcessor = VerifikAppRegisterProcessor(sessionToken: sessionToken, verifikToken: self.token, fromViewController: self.vc, project: project, email: email, phone: phone, vp: self.vp)
         }
     }
     
@@ -113,9 +117,9 @@ public class Verifik: NSObject, URLSessionDelegate{
                             phone: String?) {
         // Get a Session Token from the FaceTec SDK, then start the 3D to 3D Matching.
         let httpService = HttpService()
-        httpService.getSessionToken(vc: self.vc, token: token){ sessionToken in
+        httpService.getSessionToken(vp: self.vp, token: token){ sessionToken in
             self.resetLatestResults()
-            self.latestProcessor = VerifikAppLoginProcessor(sessionToken: sessionToken, verifikToken: self.token, fromViewController: self.vc, project: project, email: email, phone: phone)
+            self.latestProcessor = VerifikAppLoginProcessor(sessionToken: sessionToken, verifikToken: self.token, fromViewController: self.vc, project: project, email: email, phone: phone, vp: self.vp)
         }
     }
     
@@ -123,9 +127,9 @@ public class Verifik: NSObject, URLSessionDelegate{
     public func appPhotoIDScanKYC(project: String, documentType: VerifikDocumentType) {
         // Get a Session Token from the FaceTec SDK.  On Success, ID Scanning will start automatically.
         let httpService = HttpService()
-        httpService.getSessionToken(vc: self.vc, token: token){ sessionToken in
+        httpService.getSessionToken(vp: self.vp, token: token){ sessionToken in
             self.resetLatestResults()
-            self.latestProcessor = VerifikAppIDScanProcessor(sessionToken: sessionToken, verifikToken: self.token, documentType: documentType, fromViewController: self.vc)
+            self.latestProcessor = VerifikAppIDScanProcessor(sessionToken: sessionToken, verifikToken: self.token, documentType: documentType, fromViewController: self.vc, vp: self.vp)
         }
     }
     
@@ -133,7 +137,7 @@ public class Verifik: NSObject, URLSessionDelegate{
     // Since you have already handled all results in your Processor code, how you proceed here is up to you and how your App works.
     // In general, there was either a Success, or there was some other case where you cancelled out.
     func onComplete() {
-        vc.onVerifikComplete()
+        vp.onVerifikComplete()
         //vc.updateStatus(status: "See logs for more details.")
         
         if !self.latestProcessor.isSuccess() {

@@ -14,17 +14,20 @@ class VerifikPhotoIDMatchProcessor: NSObject, Processor, FaceTecFaceScanProcesso
     var latestNetworkRequest: URLSessionTask!
     var success = false
     var faceScanWasSuccessful = false
-    var fromViewController: VerifikProtocol!
+    var fromViewController: UIViewController!
+    var vp: VerifikProtocol!
     var verifikToken: String!
     var faceScanResultCallback: FaceTecFaceScanResultCallback!
     var idScanResultCallback: FaceTecIDScanResultCallback!
     var externalDatabaseRef: String = ""
 
     init(sessionToken: String, verifikToken: String,
-         fromViewController: VerifikProtocol, externalDatabaseRef: String) {
+         fromViewController: UIViewController, externalDatabaseRef: String,
+         vp: VerifikProtocol) {
         self.verifikToken = verifikToken
         self.fromViewController = fromViewController
         self.externalDatabaseRef = externalDatabaseRef
+        self.vp = vp
         super.init()
         
         // In v9.2.2+, configure the messages that will be displayed to the User in each of the possible cases.
@@ -90,7 +93,7 @@ class VerifikPhotoIDMatchProcessor: NSObject, Processor, FaceTecFaceScanProcesso
             if latestNetworkRequest != nil {
                 latestNetworkRequest.cancel()
             }
-            self.fromViewController.photoIDMatchError(error: "User cancel Photo ID Match or there was a connection error - Face Step")
+            self.vp.photoIDMatchError(error: "User cancel Photo ID Match or there was a connection error - Face Step")
             faceScanResultCallback.onFaceScanResultCancel()
             return
         }
@@ -128,13 +131,13 @@ class VerifikPhotoIDMatchProcessor: NSObject, Processor, FaceTecFaceScanProcesso
             guard let data = data else {
                 // CASE:  UNEXPECTED response from API. Our Sample Code keys off a wasProcessed boolean on the root of the JSON object --> You define your own API contracts with yourself and may choose to do something different here based on the error.
                 faceScanResultCallback.onFaceScanResultCancel()
-                self.fromViewController.photoIDMatchError(error: "There was an error parsing face scan resulting data -  Face Step, please contact Verifik Support Team")
+                self.vp.photoIDMatchError(error: "There was an error parsing face scan resulting data -  Face Step, please contact Verifik Support Team")
                 return
             }
             
             guard let responseJSON = try? JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.allowFragments) as! [String: AnyObject] else {
                 // CASE:  UNEXPECTED response from API.  Our Sample Code keys off a wasProcessed boolean on the root of the JSON object --> You define your own API contracts with yourself and may choose to do something different here based on the error.
-                self.fromViewController.photoIDMatchError(error: "There was an error parsing face scan resulting data 2 - Face Step, please contact Verifik Support Team")
+                self.vp.photoIDMatchError(error: "There was an error parsing face scan resulting data 2 - Face Step, please contact Verifik Support Team")
                 faceScanResultCallback.onFaceScanResultCancel()
                 return
             }
@@ -142,7 +145,7 @@ class VerifikPhotoIDMatchProcessor: NSObject, Processor, FaceTecFaceScanProcesso
             guard let scanResultBlob = responseJSON["data"]?["scanResultBlob"] as? String,
                   let wasProcessed = responseJSON["data"]?["wasProcessed"] as? Bool else {
                 // CASE:  UNEXPECTED response from API.  Our Sample Code keys off a wasProcessed boolean on the root of the JSON object --> You define your own API contracts with yourself and may choose to do something different here based on the error.
-                self.fromViewController.photoIDMatchError(error: "There was an error with the face scan process")
+                self.vp.photoIDMatchError(error: "There was an error with the face scan process")
                 faceScanResultCallback.onFaceScanResultCancel()
                 return;
             }
@@ -160,7 +163,7 @@ class VerifikPhotoIDMatchProcessor: NSObject, Processor, FaceTecFaceScanProcesso
             }
             else {
                 // CASE:  UNEXPECTED response from API.  Our Sample Code keys off a wasProcessed boolean on the root of the JSON object --> You define your own API contracts with yourself and may choose to do something different here based on the error.
-                self.fromViewController.photoIDMatchError(error: "No enrollment executed")
+                self.vp.photoIDMatchError(error: "No enrollment executed")
                 faceScanResultCallback.onFaceScanResultCancel()
                 return;
             }
@@ -205,7 +208,7 @@ class VerifikPhotoIDMatchProcessor: NSObject, Processor, FaceTecFaceScanProcesso
             if latestNetworkRequest != nil {
                 latestNetworkRequest.cancel()
             }
-            self.fromViewController.photoIDMatchError(error: "User cancel ID Scan or there was a connection error - ID Step")
+            self.vp.photoIDMatchError(error: "User cancel ID Scan or there was a connection error - ID Step")
             idScanResultCallback.onIDScanResultCancel()
             return
         }
@@ -256,33 +259,33 @@ class VerifikPhotoIDMatchProcessor: NSObject, Processor, FaceTecFaceScanProcesso
             
             guard let data = data else {
                 // CASE:  UNEXPECTED response from API. Our Sample Code keys off a wasProcessed boolean on the root of the JSON object --> You define your own API contracts with yourself and may choose to do something different here based on the error.
-                self.fromViewController.photoIDMatchError(error: "There was an error parsing ID scan resulting data - ID Step, please contact Verifik Support Team")
+                self.vp.photoIDMatchError(error: "There was an error parsing ID scan resulting data - ID Step, please contact Verifik Support Team")
                 idScanResultCallback.onIDScanResultCancel()
                 return
             }
             
             guard let responseJSON = try? JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.allowFragments) as! [String: AnyObject] else {
                 // CASE:  UNEXPECTED response from API.  Our Sample Code keys off a wasProcessed boolean on the root of the JSON object --> You define your own API contracts with yourself and may choose to do something different here based on the error.
-                self.fromViewController.photoIDMatchError(error: "There was an error parsing ID scan resulting data 2 - ID Step, please contact Verifik Support Team")
+                self.vp.photoIDMatchError(error: "There was an error parsing ID scan resulting data 2 - ID Step, please contact Verifik Support Team")
                 idScanResultCallback.onIDScanResultCancel()
                 return
             }
             
             if let code = responseJSON["code"] as? String,
                 code == "NotFound"{
-                self.fromViewController.photoIDMatchError(error: "User not found on database")
+                self.vp.photoIDMatchError(error: "User not found on database")
                 idScanResultCallback.onIDScanResultCancel()
                 return
             }
             if let code = responseJSON["code"] as? String,
                 code == "Conflict"{
-                self.fromViewController.photoIDMatchError(error: "Biometric is disabled")
+                self.vp.photoIDMatchError(error: "Biometric is disabled")
                 idScanResultCallback.onIDScanResultCancel()
                 return
             }
             if let code = responseJSON["code"] as? String,
                 let message = responseJSON["message"] as? String{
-                self.fromViewController.photoIDMatchError(error: "\(code) \(message)")
+                self.vp.photoIDMatchError(error: "\(code) \(message)")
                 idScanResultCallback.onIDScanResultCancel()
                 return
             }
@@ -290,7 +293,7 @@ class VerifikPhotoIDMatchProcessor: NSObject, Processor, FaceTecFaceScanProcesso
             guard let scanResultBlob = responseJSON["data"]?["scanResultBlob"] as? String,
                   let wasProcessed = responseJSON["data"]?["wasProcessed"] as? Bool else {
                 // CASE:  UNEXPECTED response from API.  Our Sample Code keys off a wasProcessed boolean on the root of the JSON object --> You define your own API contracts with yourself and may choose to do something different here based on the error.
-                self.fromViewController.photoIDMatchError(error: "There was an error with the ID scan process")
+                self.vp.photoIDMatchError(error: "There was an error with the ID scan process")
                 idScanResultCallback.onIDScanResultCancel()
                 return
             }
@@ -331,7 +334,7 @@ class VerifikPhotoIDMatchProcessor: NSObject, Processor, FaceTecFaceScanProcesso
             }
             else {
                 // CASE:  UNEXPECTED response from API.  Our Sample Code keys off a wasProcessed boolean on the root of the JSON object --> You define your own API contracts with yourself and may choose to do something different here based on the error.
-                self.fromViewController.photoIDMatchError(error: "Photo ID Match not executed")
+                self.vp.photoIDMatchError(error: "Photo ID Match not executed")
                 idScanResultCallback.onIDScanResultCancel()
             }
         })
@@ -366,8 +369,8 @@ class VerifikPhotoIDMatchProcessor: NSObject, Processor, FaceTecFaceScanProcesso
         
         // In your code, you will handle what to do after the Photo ID Scan is successful here.
         // In our example code here, to keep the code in this class simple, we will call a static method on another class to update the Sample App UI.
-        self.fromViewController.onVerifikComplete()
-        self.fromViewController.onPhotoIDMatchDone(done: success)
+        self.vp.onVerifikComplete()
+        self.vp.onPhotoIDMatchDone(done: success)
     }
     
     func isSuccess() -> Bool {
