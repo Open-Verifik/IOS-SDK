@@ -10,6 +10,8 @@
 		D12642BB2996CA8600FA0F00 /* VerifikAppLoginProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12642BA2996CA8600FA0F00 /* VerifikAppLoginProcessor.swift */; };
 		D127AF602A2A8DF9009F8014 /* VerifikWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = D127AF5E2A2A8DF9009F8014 /* VerifikWrapper.h */; };
 		D127AF612A2A8DF9009F8014 /* VerifikWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = D127AF5F2A2A8DF9009F8014 /* VerifikWrapper.m */; };
+		D155EE052A393AF300A83760 /* FaceTecSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D155EE032A393AD100A83760 /* FaceTecSDK.framework */; };
+		D155EE062A393AF300A83760 /* FaceTecSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D155EE032A393AD100A83760 /* FaceTecSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D16617762915E56E007000F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16617752915E56E007000F8 /* AppDelegate.swift */; };
 		D16617782915E56E007000F8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16617772915E56E007000F8 /* SceneDelegate.swift */; };
 		D166177A2915E56E007000F8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16617792915E56E007000F8 /* ViewController.swift */; };
@@ -23,9 +25,6 @@
 		D166912E2914AE5200485AAF /* VerifikPhotoIDScanProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D166912D2914AE5200485AAF /* VerifikPhotoIDScanProcessor.swift */; };
 		D16691302915B07000485AAF /* HttpUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D166912F2915B07000485AAF /* HttpUtils.swift */; };
 		D16AEDEE297F6B4300E859A9 /* VerifikAppRegisterProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16AEDED297F6B4300E859A9 /* VerifikAppRegisterProcessor.swift */; };
-		D19484682984ADF9000BD94E /* FaceTecSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D19484672984ADF9000BD94E /* FaceTecSDK.framework */; };
-		D194846B2984AE09000BD94E /* FaceTecSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D19484672984ADF9000BD94E /* FaceTecSDK.framework */; };
-		D194846C2984AE09000BD94E /* FaceTecSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D19484672984ADF9000BD94E /* FaceTecSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D1A3FA4229105CB600491AEF /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1A3FA4129105CB600491AEF /* Media.xcassets */; };
 		D1A3FA4C2912F2DA00491AEF /* VerifikAuthProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A3FA4B2912F2DA00491AEF /* VerifikAuthProcessor.swift */; };
 		D1A3FA4F2913045700491AEF /* HttpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A3FA4E2913045700491AEF /* HttpService.swift */; };
@@ -61,6 +60,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		D155EE072A393AF300A83760 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				D155EE062A393AF300A83760 /* FaceTecSDK.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D166178E2915E618007000F8 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -68,7 +78,6 @@
 			dstSubfolderSpec = 10;
 			files = (
 				D166178B2915E618007000F8 /* VerifikKit.framework in Embed Frameworks */,
-				D194846C2984AE09000BD94E /* FaceTecSDK.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -79,6 +88,7 @@
 		D12642BA2996CA8600FA0F00 /* VerifikAppLoginProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifikAppLoginProcessor.swift; sourceTree = "<group>"; };
 		D127AF5E2A2A8DF9009F8014 /* VerifikWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VerifikWrapper.h; sourceTree = "<group>"; };
 		D127AF5F2A2A8DF9009F8014 /* VerifikWrapper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VerifikWrapper.m; sourceTree = "<group>"; };
+		D155EE032A393AD100A83760 /* FaceTecSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FaceTecSDK.framework; path = frameworks/FaceTecSDK.framework; sourceTree = SOURCE_ROOT; };
 		D16617732915E56E007000F8 /* SampleVerifik.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleVerifik.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D16617752915E56E007000F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D16617772915E56E007000F8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -92,7 +102,6 @@
 		D166912D2914AE5200485AAF /* VerifikPhotoIDScanProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifikPhotoIDScanProcessor.swift; sourceTree = "<group>"; };
 		D166912F2915B07000485AAF /* HttpUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpUtils.swift; sourceTree = "<group>"; };
 		D16AEDED297F6B4300E859A9 /* VerifikAppRegisterProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifikAppRegisterProcessor.swift; sourceTree = "<group>"; };
-		D19484672984ADF9000BD94E /* FaceTecSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FaceTecSDK.framework; path = frameworks/FaceTecSDK.framework; sourceTree = SOURCE_ROOT; };
 		D1A3FA4129105CB600491AEF /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		D1A3FA4B2912F2DA00491AEF /* VerifikAuthProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifikAuthProcessor.swift; sourceTree = "<group>"; };
 		D1A3FA4E2913045700491AEF /* HttpService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpService.swift; sourceTree = "<group>"; };
@@ -117,7 +126,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D166178A2915E618007000F8 /* VerifikKit.framework in Frameworks */,
-				D194846B2984AE09000BD94E /* FaceTecSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,7 +133,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D19484682984ADF9000BD94E /* FaceTecSDK.framework in Frameworks */,
+				D155EE052A393AF300A83760 /* FaceTecSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,7 +151,7 @@
 		D111F212290C7EB500F04815 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D19484672984ADF9000BD94E /* FaceTecSDK.framework */,
+				D155EE032A393AD100A83760 /* FaceTecSDK.framework */,
 			);
 			path = Frameworks;
 			sourceTree = "<group>";
@@ -286,6 +294,7 @@
 				D1A98BB0290B45C7007818D6 /* Sources */,
 				D1A98BB1290B45C7007818D6 /* Frameworks */,
 				D1A98BB2290B45C7007818D6 /* Resources */,
+				D155EE072A393AF300A83760 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
