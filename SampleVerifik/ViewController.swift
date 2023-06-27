@@ -19,7 +19,7 @@ class ViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        verifik = Verifik(vc: self, token: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjbGllbnRJZCI6IjYxNTc3MTU2OTBmMDEwOGNmMmRjNjI4MSIsImRvY3VtZW50VHlwZSI6IkNDIiwiZG9jdW1lbnROdW1iZXIiOiIxNjM1MzczMzY3NDY3NDMiLCJ2IjoxLCJyb2xlIjoiY2xpZW50IiwiZXhwaXJlc0F0IjoiMjAyMi0xMi0wNCAxOTozNjo1NSIsImlhdCI6MTY2NzU5MDYxNX0.QvyQyTXoQCzXlGGfBs2brK15_9AvoveFWTAgprHvRDc", vp: self)
+        verifik = Verifik(vc: self, token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjbGllbnRJZCI6IjYxM2E4NWNlODIyY2NhY2E4ZTQwMWFmMCIsImRvY3VtZW50VHlwZSI6IkNDIiwiZG9jdW1lbnROdW1iZXIiOiIxMjM0NTY3ODkiLCJ2IjoxLCJyb2xlIjoiY2xpZW50IiwiSldUUGhyYXNlIjoiTTExMyIsImV4cGlyZXNBdCI6IjIwMjQtMDYtMjQgMjA6NTA6NTkiLCJpYXQiOjE2ODc4MzQyNTl9.KXWmK5zEw3m4ZfbUaxaK9Fl1sftu_Y4JH9okn1S_9PE", vp: self)
         verifikKYC = Verifik(vc: self, token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBSZWdpc3RyYXRpb25JZCI6IjY0NTE0MmM4NDQ5MmMyYzRkNDMxMWYwMSIsImV4cGlyZXNBdCI6IjIwMjMtMDUtMDIgMTg6NDU6NTYiLCJhY2Nlc3NUeXBlIjoiYXBwX3JlZ2lzdHJhdGlvbl9jcmVhdGVkIiwiZW1haWwiOiJpYW1mZWxpcGVvQGdtYWlsLmNvbSIsInBob25lIjoiMzEwMjY5MjEzOCIsInByb2plY3QiOiI2M2M2Y2IyYWU3YzkyZGFkNTBiNjI4ODIiLCJpYXQiOjE2ODMwNTEzNTZ9.M4Sf2b7io_hZTzYUa-qLt7I0Zx5r9u79jJlUsQePI7E", vp: self)
     }
 
@@ -48,7 +48,7 @@ class ViewController: UIViewController{
     
     @IBAction func tapOnOCR(_ sender: Any) {
         if initVerifik{
-            verifik?.photoIDScan()
+            verifik?.photoIDScan(externalDataBaseRefID: refId)
         }
     }
     
@@ -133,7 +133,7 @@ extension ViewController: VerifikProtocol {
         }
     }
     func photoIDScanError(error: String) {
-        print("Hubo un error al escanear la identificación")
+        print("Hubo un error al escanear la identificación: \(error)")
     }
     
     func onAppRegisterDone(done: Bool, resultToken: String?) {

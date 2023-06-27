@@ -295,7 +295,7 @@ SWIFT_CLASS("_TtC10VerifikKit7Verifik")
 - (void)enrollWithExternalDataBaseRefID:(NSString * _Nonnull)externalDataBaseRefID;
 - (void)authenticateWithExternalDataBaseRefID:(NSString * _Nonnull)externalDataBaseRefID;
 - (void)matchIDScanWithExternalDataBaseRefID:(NSString * _Nonnull)externalDataBaseRefID;
-- (void)photoIDScan;
+- (void)photoIDScanWithExternalDataBaseRefID:(NSString * _Nullable)externalDataBaseRefID;
 - (void)appRegistrationKYCWithProject:(NSString * _Nonnull)project email:(NSString * _Nullable)email phone:(NSString * _Nullable)phone;
 - (void)appLoginKYCWithProject:(NSString * _Nonnull)project email:(NSString * _Nullable)email phone:(NSString * _Nullable)phone;
 - (void)appPhotoIDScanKYCWithProject:(NSString * _Nonnull)project documentType:(enum VerifikDocumentType)documentType;

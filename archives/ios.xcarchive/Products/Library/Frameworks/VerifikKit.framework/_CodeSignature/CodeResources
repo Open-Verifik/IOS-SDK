@@ -14,7 +14,7 @@
 		</data>
 		<key>Frameworks/FaceTecSDK.framework/FaceTecSDK</key>
 		<data>
-		qxe9TV+k31kD9fVcCvisGySfOP4=
+		k6eHxMDxNcCkmtRoXGgHFfMgY8k=
 		</data>
 		<key>Frameworks/FaceTecSDK.framework/GenericGuidanceContentLayout.nib</key>
 		<data>
@@ -257,7 +257,7 @@
 		</data>
 		<key>Headers/VerifikKit-Swift.h</key>
 		<data>
-		bSat7Sswrj6KQGxI1nrp3j0GMAs=
+		JHEk+321mTjgFm6m+hRV+kG1U8c=
 		</data>
 		<key>Headers/VerifikKit.h</key>
 		<data>
@@ -265,15 +265,15 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		0vU4G/hE56s0C3jVmz3Djs38Gss=
+		vx05BX+PAe3y22EBdAgjWtkGvFw=
 		</data>
 		<key>Modules/VerifikKit.swiftmodule/arm64-apple-ios.abi.json</key>
 		<data>
-		Ch+JluqLAbgHwUJ9qRouigjC6SM=
+		cup9vO6Zu0WYFZffwJfylZn9e+k=
 		</data>
 		<key>Modules/VerifikKit.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<data>
-		KmwM/laJEzfj+FPss1bjo+Gc92E=
+		5YI+q3HahNav1nZm6oZl16dqcy0=
 		</data>
 		<key>Modules/VerifikKit.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
@@ -281,11 +281,11 @@
 		</data>
 		<key>Modules/VerifikKit.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		KmwM/laJEzfj+FPss1bjo+Gc92E=
+		5YI+q3HahNav1nZm6oZl16dqcy0=
 		</data>
 		<key>Modules/VerifikKit.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		0oqg3RpcF1/a5L2D0lBWzA1xESE=
+		sH/PLfxPqMGZ9Ae0243YoJfDKLk=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -312,7 +312,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			HgI3aEVGWUhmllW+5QQbn3V8OtodVsT/6WU9W0pT8SE=
+			9FUcd/FAAXBlhz2Q4ecAKfXoPrq4YCrIilNIqyMdcO8=
 			</data>
 		</dict>
 		<key>Frameworks/FaceTecSDK.framework/GenericGuidanceContentLayout.nib</key>
@@ -663,7 +663,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			bTSG/bfS/YxLnLGg3EOSNv06M3jATY1DgTNH3E0YAE4=
+			XufRy/N/Eg+PsJS9IA9zAcCSOGiJSBbJzLba90VzL7o=
 			</data>
 		</dict>
 		<key>Headers/VerifikKit.h</key>
@@ -677,14 +677,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			RnZrLC5bpiBw7zs7oVheCvcham8NK8eCRBvo0nKR0wA=
+			j3/z18z89eZ7RwE0sbAUFF8VdSmwMZLwy+hIuQH9TFc=
 			</data>
 		</dict>
 		<key>Modules/VerifikKit.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			0ilondOQektyfyQHRVukwBVz+2K/25y6dAtFBDyDzeU=
+			9vI2FajCL6MyjfX5XLGaQc3T1eRJ886ByylCx++qLP8=
 			</data>
 		</dict>
 		<key>Modules/VerifikKit.swiftmodule/arm64-apple-ios.swiftdoc</key>
@@ -698,14 +698,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			0ilondOQektyfyQHRVukwBVz+2K/25y6dAtFBDyDzeU=
+			9vI2FajCL6MyjfX5XLGaQc3T1eRJ886ByylCx++qLP8=
 			</data>
 		</dict>
 		<key>Modules/VerifikKit.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			3a30krKlLGvfYe6XSzZy8uZXcHN2XhHwcq2js1mW0GY=
+			ZexI8sdMaSian/aFHj9zvq+JHLbj/8GbKHCPNTlVW/c=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

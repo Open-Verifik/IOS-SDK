@@ -90,7 +90,8 @@ public class Verifik: NSObject, URLSessionDelegate{
     }
     
     // ID Scan then return ID data.
-    public func photoIDScan(){
+    public func photoIDScan(externalDataBaseRefID: String?){
+        self.latestExternalDatabaseRefID = externalDataBaseRefID ?? ""
         // Get a Session Token from the FaceTec SDK.  On Success, ID Scanning will start automatically.
         let httpService = HttpService()
         httpService.getSessionToken(vp: self.vp, token: token){ sessionToken in

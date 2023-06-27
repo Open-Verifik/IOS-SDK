@@ -110,6 +110,9 @@ class VerifikPhotoIDScanProcessor: NSObject, Processor, FaceTecIDScanProcessorDe
         if idScanResult.backImagesCompressedBase64?.isEmpty == false {
             parameters["idScanBackImage"] = idScanResult.backImagesCompressedBase64![0]
         }
+        if externalDatabaseRef != "" {
+            parameters["externalDatabaseRef"] = externalDatabaseRef
+        }
         
         //
         // Part 5:  Make the Networking Call to Your Servers.  Below is just example code, you are free to customize based on how your own API works.

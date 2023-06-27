@@ -212,17 +212,31 @@
           {
             "kind": "Function",
             "name": "photoIDScan",
-            "printedName": "photoIDScan()",
+            "printedName": "photoIDScan(externalDataBaseRefID:)",
             "children": [
               {
                 "kind": "TypeNominal",
                 "name": "Void",
                 "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
               }
             ],
             "declKind": "Func",
-            "usr": "c:@M@VerifikKit@objc(cs)Verifik(im)photoIDScan",
-            "mangledName": "$s10VerifikKit0A0C11photoIDScanyyF",
+            "usr": "c:@M@VerifikKit@objc(cs)Verifik(im)photoIDScanWithExternalDataBaseRefID:",
+            "mangledName": "$s10VerifikKit0A0C11photoIDScan21externalDataBaseRefIDySSSg_tF",
             "moduleName": "VerifikKit",
             "declAttributes": [
               "AccessControl",
@@ -2386,7 +2400,14 @@
     {
       "filePath": "\/Users\/bleck\/Documents\/Dev\/Work\/iOS\/biometrics-ios-sdk\/VerifikKit\/Verifik.swift",
       "kind": "StringLiteral",
-      "offset": 7469,
+      "offset": 4551,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/bleck\/Documents\/Dev\/Work\/iOS\/biometrics-ios-sdk\/VerifikKit\/Verifik.swift",
+      "kind": "StringLiteral",
+      "offset": 7570,
       "length": 2,
       "value": "\"\""
     },
@@ -2995,259 +3016,273 @@
     {
       "filePath": "\/Users\/bleck\/Documents\/Dev\/Work\/iOS\/biometrics-ios-sdk\/VerifikKit\/Processors\/VerifikPhotoIDScanProcessor.swift",
       "kind": "StringLiteral",
-      "offset": 7888,
-      "length": 6,
-      "value": "\"POST\""
-    },
-    {
-      "filePath": "\/Users\/bleck\/Documents\/Dev\/Work\/iOS\/biometrics-ios-sdk\/VerifikKit\/Processors\/VerifikPhotoIDScanProcessor.swift",
-      "kind": "StringLiteral",
-      "offset": 7920,
-      "length": 25,
-      "value": "\"Bearer \""
-    },
-    {
-      "filePath": "\/Users\/bleck\/Documents\/Dev\/Work\/iOS\/biometrics-ios-sdk\/VerifikKit\/Processors\/VerifikPhotoIDScanProcessor.swift",
-      "kind": "StringLiteral",
-      "offset": 7944,
-      "length": 24,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/bleck\/Documents\/Dev\/Work\/iOS\/biometrics-ios-sdk\/VerifikKit\/Processors\/VerifikPhotoIDScanProcessor.swift",
-      "kind": "StringLiteral",
-      "offset": 7967,
-      "length": 15,
-      "value": "\"Authorization\""
-    },
-    {
-      "filePath": "\/Users\/bleck\/Documents\/Dev\/Work\/iOS\/biometrics-ios-sdk\/VerifikKit\/Processors\/VerifikPhotoIDScanProcessor.swift",
-      "kind": "StringLiteral",
-      "offset": 8009,
-      "length": 18,
-      "value": "\"application\/json\""
-    },
-    {
-      "filePath": "\/Users\/bleck\/Documents\/Dev\/Work\/iOS\/biometrics-ios-sdk\/VerifikKit\/Processors\/VerifikPhotoIDScanProcessor.swift",
-      "kind": "StringLiteral",
-      "offset": 8049,
-      "length": 14,
-      "value": "\"Content-Type\""
-    },
-    {
-      "filePath": "\/Users\/bleck\/Documents\/Dev\/Work\/iOS\/biometrics-ios-sdk\/VerifikKit\/Processors\/VerifikPhotoIDScanProcessor.swift",
-      "kind": "IntegerLiteral",
-      "offset": 8200,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/bleck\/Documents\/Dev\/Work\/iOS\/biometrics-ios-sdk\/VerifikKit\/Processors\/VerifikPhotoIDScanProcessor.swift",
-      "kind": "StringLiteral",
-      "offset": 8285,
-      "length": 14,
-      "value": "\"X-Device-Key\""
-    },
-    {
-      "filePath": "\/Users\/bleck\/Documents\/Dev\/Work\/iOS\/biometrics-ios-sdk\/VerifikKit\/Processors\/VerifikPhotoIDScanProcessor.swift",
-      "kind": "StringLiteral",
-      "offset": 8418,
-      "length": 14,
-      "value": "\"X-User-Agent\""
-    },
-    {
-      "filePath": "\/Users\/bleck\/Documents\/Dev\/Work\/iOS\/biometrics-ios-sdk\/VerifikKit\/Processors\/VerifikPhotoIDScanProcessor.swift",
-      "kind": "StringLiteral",
-      "offset": 9416,
-      "length": 88,
-      "value": "\"There was an error parsing ID scan resulting data, please contact Verifik Support Team\""
-    },
-    {
-      "filePath": "\/Users\/bleck\/Documents\/Dev\/Work\/iOS\/biometrics-ios-sdk\/VerifikKit\/Processors\/VerifikPhotoIDScanProcessor.swift",
-      "kind": "StringLiteral",
-      "offset": 10090,
-      "length": 90,
-      "value": "\"There was an error parsing ID scan resulting data 2, please contact Verifik Support Team\""
-    },
-    {
-      "filePath": "\/Users\/bleck\/Documents\/Dev\/Work\/iOS\/biometrics-ios-sdk\/VerifikKit\/Processors\/VerifikPhotoIDScanProcessor.swift",
-      "kind": "StringLiteral",
-      "offset": 10331,
-      "length": 6,
-      "value": "\"code\""
-    },
-    {
-      "filePath": "\/Users\/bleck\/Documents\/Dev\/Work\/iOS\/biometrics-ios-sdk\/VerifikKit\/Processors\/VerifikPhotoIDScanProcessor.swift",
-      "kind": "StringLiteral",
-      "offset": 10394,
-      "length": 9,
-      "value": "\"message\""
-    },
-    {
-      "filePath": "\/Users\/bleck\/Documents\/Dev\/Work\/iOS\/biometrics-ios-sdk\/VerifikKit\/Processors\/VerifikPhotoIDScanProcessor.swift",
-      "kind": "StringLiteral",
-      "offset": 10465,
-      "length": 20,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/bleck\/Documents\/Dev\/Work\/iOS\/biometrics-ios-sdk\/VerifikKit\/Processors\/VerifikPhotoIDScanProcessor.swift",
-      "kind": "StringLiteral",
-      "offset": 10473,
-      "length": 1,
-      "value": "\" \""
-    },
-    {
-      "filePath": "\/Users\/bleck\/Documents\/Dev\/Work\/iOS\/biometrics-ios-sdk\/VerifikKit\/Processors\/VerifikPhotoIDScanProcessor.swift",
-      "kind": "StringLiteral",
-      "offset": 10484,
+      "offset": 7605,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/bleck\/Documents\/Dev\/Work\/iOS\/biometrics-ios-sdk\/VerifikKit\/Processors\/VerifikPhotoIDScanProcessor.swift",
       "kind": "StringLiteral",
-      "offset": 10649,
+      "offset": 7633,
+      "length": 21,
+      "value": "\"externalDatabaseRef\""
+    },
+    {
+      "filePath": "\/Users\/bleck\/Documents\/Dev\/Work\/iOS\/biometrics-ios-sdk\/VerifikKit\/Processors\/VerifikPhotoIDScanProcessor.swift",
+      "kind": "StringLiteral",
+      "offset": 8005,
+      "length": 6,
+      "value": "\"POST\""
+    },
+    {
+      "filePath": "\/Users\/bleck\/Documents\/Dev\/Work\/iOS\/biometrics-ios-sdk\/VerifikKit\/Processors\/VerifikPhotoIDScanProcessor.swift",
+      "kind": "StringLiteral",
+      "offset": 8037,
+      "length": 25,
+      "value": "\"Bearer \""
+    },
+    {
+      "filePath": "\/Users\/bleck\/Documents\/Dev\/Work\/iOS\/biometrics-ios-sdk\/VerifikKit\/Processors\/VerifikPhotoIDScanProcessor.swift",
+      "kind": "StringLiteral",
+      "offset": 8061,
+      "length": 24,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/bleck\/Documents\/Dev\/Work\/iOS\/biometrics-ios-sdk\/VerifikKit\/Processors\/VerifikPhotoIDScanProcessor.swift",
+      "kind": "StringLiteral",
+      "offset": 8084,
+      "length": 15,
+      "value": "\"Authorization\""
+    },
+    {
+      "filePath": "\/Users\/bleck\/Documents\/Dev\/Work\/iOS\/biometrics-ios-sdk\/VerifikKit\/Processors\/VerifikPhotoIDScanProcessor.swift",
+      "kind": "StringLiteral",
+      "offset": 8126,
+      "length": 18,
+      "value": "\"application\/json\""
+    },
+    {
+      "filePath": "\/Users\/bleck\/Documents\/Dev\/Work\/iOS\/biometrics-ios-sdk\/VerifikKit\/Processors\/VerifikPhotoIDScanProcessor.swift",
+      "kind": "StringLiteral",
+      "offset": 8166,
+      "length": 14,
+      "value": "\"Content-Type\""
+    },
+    {
+      "filePath": "\/Users\/bleck\/Documents\/Dev\/Work\/iOS\/biometrics-ios-sdk\/VerifikKit\/Processors\/VerifikPhotoIDScanProcessor.swift",
+      "kind": "IntegerLiteral",
+      "offset": 8317,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/bleck\/Documents\/Dev\/Work\/iOS\/biometrics-ios-sdk\/VerifikKit\/Processors\/VerifikPhotoIDScanProcessor.swift",
+      "kind": "StringLiteral",
+      "offset": 8402,
+      "length": 14,
+      "value": "\"X-Device-Key\""
+    },
+    {
+      "filePath": "\/Users\/bleck\/Documents\/Dev\/Work\/iOS\/biometrics-ios-sdk\/VerifikKit\/Processors\/VerifikPhotoIDScanProcessor.swift",
+      "kind": "StringLiteral",
+      "offset": 8535,
+      "length": 14,
+      "value": "\"X-User-Agent\""
+    },
+    {
+      "filePath": "\/Users\/bleck\/Documents\/Dev\/Work\/iOS\/biometrics-ios-sdk\/VerifikKit\/Processors\/VerifikPhotoIDScanProcessor.swift",
+      "kind": "StringLiteral",
+      "offset": 9533,
+      "length": 88,
+      "value": "\"There was an error parsing ID scan resulting data, please contact Verifik Support Team\""
+    },
+    {
+      "filePath": "\/Users\/bleck\/Documents\/Dev\/Work\/iOS\/biometrics-ios-sdk\/VerifikKit\/Processors\/VerifikPhotoIDScanProcessor.swift",
+      "kind": "StringLiteral",
+      "offset": 10207,
+      "length": 90,
+      "value": "\"There was an error parsing ID scan resulting data 2, please contact Verifik Support Team\""
+    },
+    {
+      "filePath": "\/Users\/bleck\/Documents\/Dev\/Work\/iOS\/biometrics-ios-sdk\/VerifikKit\/Processors\/VerifikPhotoIDScanProcessor.swift",
+      "kind": "StringLiteral",
+      "offset": 10448,
+      "length": 6,
+      "value": "\"code\""
+    },
+    {
+      "filePath": "\/Users\/bleck\/Documents\/Dev\/Work\/iOS\/biometrics-ios-sdk\/VerifikKit\/Processors\/VerifikPhotoIDScanProcessor.swift",
+      "kind": "StringLiteral",
+      "offset": 10511,
+      "length": 9,
+      "value": "\"message\""
+    },
+    {
+      "filePath": "\/Users\/bleck\/Documents\/Dev\/Work\/iOS\/biometrics-ios-sdk\/VerifikKit\/Processors\/VerifikPhotoIDScanProcessor.swift",
+      "kind": "StringLiteral",
+      "offset": 10582,
+      "length": 20,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/bleck\/Documents\/Dev\/Work\/iOS\/biometrics-ios-sdk\/VerifikKit\/Processors\/VerifikPhotoIDScanProcessor.swift",
+      "kind": "StringLiteral",
+      "offset": 10590,
+      "length": 1,
+      "value": "\" \""
+    },
+    {
+      "filePath": "\/Users\/bleck\/Documents\/Dev\/Work\/iOS\/biometrics-ios-sdk\/VerifikKit\/Processors\/VerifikPhotoIDScanProcessor.swift",
+      "kind": "StringLiteral",
+      "offset": 10601,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/bleck\/Documents\/Dev\/Work\/iOS\/biometrics-ios-sdk\/VerifikKit\/Processors\/VerifikPhotoIDScanProcessor.swift",
+      "kind": "StringLiteral",
+      "offset": 10766,
       "length": 6,
       "value": "\"data\""
     },
     {
       "filePath": "\/Users\/bleck\/Documents\/Dev\/Work\/iOS\/biometrics-ios-sdk\/VerifikKit\/Processors\/VerifikPhotoIDScanProcessor.swift",
       "kind": "StringLiteral",
-      "offset": 10658,
+      "offset": 10775,
       "length": 16,
       "value": "\"scanResultBlob\""
     },
     {
       "filePath": "\/Users\/bleck\/Documents\/Dev\/Work\/iOS\/biometrics-ios-sdk\/VerifikKit\/Processors\/VerifikPhotoIDScanProcessor.swift",
       "kind": "StringLiteral",
-      "offset": 10738,
+      "offset": 10855,
       "length": 6,
       "value": "\"data\""
     },
     {
       "filePath": "\/Users\/bleck\/Documents\/Dev\/Work\/iOS\/biometrics-ios-sdk\/VerifikKit\/Processors\/VerifikPhotoIDScanProcessor.swift",
       "kind": "StringLiteral",
-      "offset": 10747,
+      "offset": 10864,
       "length": 14,
       "value": "\"wasProcessed\""
     },
     {
       "filePath": "\/Users\/bleck\/Documents\/Dev\/Work\/iOS\/biometrics-ios-sdk\/VerifikKit\/Processors\/VerifikPhotoIDScanProcessor.swift",
       "kind": "StringLiteral",
-      "offset": 11081,
+      "offset": 11198,
       "length": 45,
       "value": "\"There was an error with the ID scan process\""
     },
     {
       "filePath": "\/Users\/bleck\/Documents\/Dev\/Work\/iOS\/biometrics-ios-sdk\/VerifikKit\/Processors\/VerifikPhotoIDScanProcessor.swift",
       "kind": "BooleanLiteral",
-      "offset": 11559,
+      "offset": 11676,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/bleck\/Documents\/Dev\/Work\/iOS\/biometrics-ios-sdk\/VerifikKit\/Processors\/VerifikPhotoIDScanProcessor.swift",
       "kind": "StringLiteral",
-      "offset": 12167,
+      "offset": 12284,
       "length": 18,
       "value": "\"ID Scan Complete\""
     },
     {
       "filePath": "\/Users\/bleck\/Documents\/Dev\/Work\/iOS\/biometrics-ios-sdk\/VerifikKit\/Processors\/VerifikPhotoIDScanProcessor.swift",
       "kind": "StringLiteral",
-      "offset": 12299,
+      "offset": 12416,
       "length": 22,
       "value": "\"Front of ID\nScanned\""
     },
     {
       "filePath": "\/Users\/bleck\/Documents\/Dev\/Work\/iOS\/biometrics-ios-sdk\/VerifikKit\/Processors\/VerifikPhotoIDScanProcessor.swift",
       "kind": "StringLiteral",
-      "offset": 12441,
+      "offset": 12558,
       "length": 22,
       "value": "\"Front of ID\nScanned\""
     },
     {
       "filePath": "\/Users\/bleck\/Documents\/Dev\/Work\/iOS\/biometrics-ios-sdk\/VerifikKit\/Processors\/VerifikPhotoIDScanProcessor.swift",
       "kind": "StringLiteral",
-      "offset": 12595,
+      "offset": 12712,
       "length": 18,
       "value": "\"ID Scan Complete\""
     },
     {
       "filePath": "\/Users\/bleck\/Documents\/Dev\/Work\/iOS\/biometrics-ios-sdk\/VerifikKit\/Processors\/VerifikPhotoIDScanProcessor.swift",
       "kind": "StringLiteral",
-      "offset": 12731,
+      "offset": 12848,
       "length": 21,
       "value": "\"Back of ID\nScanned\""
     },
     {
       "filePath": "\/Users\/bleck\/Documents\/Dev\/Work\/iOS\/biometrics-ios-sdk\/VerifikKit\/Processors\/VerifikPhotoIDScanProcessor.swift",
       "kind": "StringLiteral",
-      "offset": 12859,
+      "offset": 12976,
       "length": 24,
       "value": "\"Passport Scan Complete\""
     },
     {
       "filePath": "\/Users\/bleck\/Documents\/Dev\/Work\/iOS\/biometrics-ios-sdk\/VerifikKit\/Processors\/VerifikPhotoIDScanProcessor.swift",
       "kind": "StringLiteral",
-      "offset": 12986,
+      "offset": 13103,
       "length": 18,
       "value": "\"Passport Scanned\""
     },
     {
       "filePath": "\/Users\/bleck\/Documents\/Dev\/Work\/iOS\/biometrics-ios-sdk\/VerifikKit\/Processors\/VerifikPhotoIDScanProcessor.swift",
       "kind": "StringLiteral",
-      "offset": 13104,
+      "offset": 13221,
       "length": 25,
       "value": "\"Photo ID Scan\nComplete\""
     },
     {
       "filePath": "\/Users\/bleck\/Documents\/Dev\/Work\/iOS\/biometrics-ios-sdk\/VerifikKit\/Processors\/VerifikPhotoIDScanProcessor.swift",
       "kind": "StringLiteral",
-      "offset": 13235,
+      "offset": 13352,
       "length": 18,
       "value": "\"ID Scan Complete\""
     },
     {
       "filePath": "\/Users\/bleck\/Documents\/Dev\/Work\/iOS\/biometrics-ios-sdk\/VerifikKit\/Processors\/VerifikPhotoIDScanProcessor.swift",
       "kind": "StringLiteral",
-      "offset": 13355,
+      "offset": 13472,
       "length": 36,
       "value": "\"Face Didn’t Match\nHighly Enough\""
     },
     {
       "filePath": "\/Users\/bleck\/Documents\/Dev\/Work\/iOS\/biometrics-ios-sdk\/VerifikKit\/Processors\/VerifikPhotoIDScanProcessor.swift",
       "kind": "StringLiteral",
-      "offset": 13547,
+      "offset": 13664,
       "length": 32,
       "value": "\"ID Document\nNot Fully Visible\""
     },
     {
       "filePath": "\/Users\/bleck\/Documents\/Dev\/Work\/iOS\/biometrics-ios-sdk\/VerifikKit\/Processors\/VerifikPhotoIDScanProcessor.swift",
       "kind": "StringLiteral",
-      "offset": 13727,
+      "offset": 13844,
       "length": 21,
       "value": "\"ID Text Not Legible\""
     },
     {
       "filePath": "\/Users\/bleck\/Documents\/Dev\/Work\/iOS\/biometrics-ios-sdk\/VerifikKit\/Processors\/VerifikPhotoIDScanProcessor.swift",
       "kind": "StringLiteral",
-      "offset": 13928,
+      "offset": 14045,
       "length": 36,
       "value": "\"ID Type Mismatch\nPlease Try Again\""
     },
     {
       "filePath": "\/Users\/bleck\/Documents\/Dev\/Work\/iOS\/biometrics-ios-sdk\/VerifikKit\/Processors\/VerifikPhotoIDScanProcessor.swift",
       "kind": "StringLiteral",
-      "offset": 14107,
+      "offset": 14224,
       "length": 22,
       "value": "\"ID Details\nUploaded\""
     },
     {
       "filePath": "\/Users\/bleck\/Documents\/Dev\/Work\/iOS\/biometrics-ios-sdk\/VerifikKit\/Processors\/VerifikPhotoIDScanProcessor.swift",
       "kind": "StringLiteral",
-      "offset": 15658,
+      "offset": 15775,
       "length": 15,
       "value": "\"Can't scan ID\""
     },

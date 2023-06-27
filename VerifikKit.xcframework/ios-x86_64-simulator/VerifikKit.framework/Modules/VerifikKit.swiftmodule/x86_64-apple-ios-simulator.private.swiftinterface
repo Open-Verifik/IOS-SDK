@@ -14,7 +14,7 @@ import _StringProcessing
   @objc public func enroll(externalDataBaseRefID: Swift.String)
   @objc public func authenticate(externalDataBaseRefID: Swift.String)
   @objc public func matchIDScan(externalDataBaseRefID: Swift.String)
-  @objc public func photoIDScan()
+  @objc public func photoIDScan(externalDataBaseRefID: Swift.String?)
   @objc public func appRegistrationKYC(project: Swift.String, email: Swift.String?, phone: Swift.String?)
   @objc public func appLoginKYC(project: Swift.String, email: Swift.String?, phone: Swift.String?)
   @objc public func appPhotoIDScanKYC(project: Swift.String, documentType: VerifikKit.VerifikDocumentType)
