@@ -1,0 +1,11 @@
+framework module VerifikKit {
+  umbrella header "VerifikKit.h"
+
+  export *
+  module * { export * }
+}
+
+module VerifikKit.Swift {
+  header "VerifikKit-Swift.h"
+  requires objc
+}

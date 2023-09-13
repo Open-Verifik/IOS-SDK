@@ -1,0 +1,524 @@
+{
+  "ABIRoot": {
+    "kind": "Root",
+    "name": "TopLevel",
+    "printedName": "TopLevel",
+    "children": [
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "VerifikKit",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "VerifikKit"
+      },
+      {
+        "kind": "Import",
+        "name": "FaceTecSDK",
+        "printedName": "FaceTecSDK",
+        "declKind": "Import",
+        "moduleName": "VerifikKit",
+        "declAttributes": [
+          "ImplementationOnly"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "VerifikKit",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "VerifikKit"
+      },
+      {
+        "kind": "Import",
+        "name": "FaceTecSDK",
+        "printedName": "FaceTecSDK",
+        "declKind": "Import",
+        "moduleName": "VerifikKit",
+        "declAttributes": [
+          "ImplementationOnly"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "Verifik",
+        "printedName": "Verifik",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(vc:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Verifik",
+                "printedName": "VerifikKit.Verifik",
+                "usr": "c:@M@VerifikKit@objc(cs)Verifik"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "LivenessProtocol",
+                "printedName": "VerifikKit.LivenessProtocol",
+                "usr": "s:10VerifikKit16LivenessProtocolP"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:10VerifikKit0A0C2vcAcA16LivenessProtocol_p_tcfc",
+            "mangledName": "$s10VerifikKit0A0C2vcAcA16LivenessProtocol_p_tcfc",
+            "moduleName": "VerifikKit",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "tappedLiveness",
+            "printedName": "tappedLiveness()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:10VerifikKit0A0C14tappedLivenessyyF",
+            "mangledName": "$s10VerifikKit0A0C14tappedLivenessyyF",
+            "moduleName": "VerifikKit",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Verifik",
+                "printedName": "VerifikKit.Verifik",
+                "usr": "c:@M@VerifikKit@objc(cs)Verifik"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@VerifikKit@objc(cs)Verifik(im)init",
+            "mangledName": "$s10VerifikKit0A0CACycfc",
+            "moduleName": "VerifikKit",
+            "overriding": true,
+            "implicit": true,
+            "objc_name": "init",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Override"
+            ],
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "c:@M@VerifikKit@objc(cs)Verifik",
+        "mangledName": "$s10VerifikKit0A0C",
+        "moduleName": "VerifikKit",
+        "declAttributes": [
+          "AccessControl",
+          "ObjC"
+        ],
+        "superclassUsr": "c:objc(cs)NSObject",
+        "superclassNames": [
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "FaceTecSDK",
+        "printedName": "FaceTecSDK",
+        "declKind": "Import",
+        "moduleName": "VerifikKit",
+        "declAttributes": [
+          "ImplementationOnly"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "VerifikKit",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "VerifikKit"
+      },
+      {
+        "kind": "Import",
+        "name": "FaceTecSDK",
+        "printedName": "FaceTecSDK",
+        "declKind": "Import",
+        "moduleName": "VerifikKit",
+        "declAttributes": [
+          "ImplementationOnly"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "LivenessProtocol",
+        "printedName": "LivenessProtocol",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "onLatestSessionResult",
+            "printedName": "onLatestSessionResult()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:10VerifikKit16LivenessProtocolP21onLatestSessionResultyyF",
+            "mangledName": "$s10VerifikKit16LivenessProtocolP21onLatestSessionResultyyF",
+            "moduleName": "VerifikKit",
+            "genericSig": "<τ_0_0 where τ_0_0 : VerifikKit.LivenessProtocol>",
+            "sugared_genericSig": "<Self where Self : VerifikKit.LivenessProtocol>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "enableButtons",
+            "printedName": "enableButtons(enable:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:10VerifikKit16LivenessProtocolP13enableButtons0E0ySb_tF",
+            "mangledName": "$s10VerifikKit16LivenessProtocolP13enableButtons0E0ySb_tF",
+            "moduleName": "VerifikKit",
+            "genericSig": "<τ_0_0 where τ_0_0 : VerifikKit.LivenessProtocol>",
+            "sugared_genericSig": "<Self where Self : VerifikKit.LivenessProtocol>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "updateStatus",
+            "printedName": "updateStatus(status:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:10VerifikKit16LivenessProtocolP12updateStatus6statusySS_tF",
+            "mangledName": "$s10VerifikKit16LivenessProtocolP12updateStatus6statusySS_tF",
+            "moduleName": "VerifikKit",
+            "genericSig": "<τ_0_0 where τ_0_0 : VerifikKit.LivenessProtocol>",
+            "sugared_genericSig": "<Self where Self : VerifikKit.LivenessProtocol>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "onComplete",
+            "printedName": "onComplete()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:10VerifikKit16LivenessProtocolP10onCompleteyyF",
+            "mangledName": "$s10VerifikKit16LivenessProtocolP10onCompleteyyF",
+            "moduleName": "VerifikKit",
+            "genericSig": "<τ_0_0 where τ_0_0 : VerifikKit.LivenessProtocol>",
+            "sugared_genericSig": "<Self where Self : VerifikKit.LivenessProtocol>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Protocol",
+        "usr": "s:10VerifikKit16LivenessProtocolP",
+        "mangledName": "$s10VerifikKit16LivenessProtocolP",
+        "moduleName": "VerifikKit",
+        "genericSig": "<τ_0_0 : UIKit.UIViewController>",
+        "sugared_genericSig": "<Self : UIKit.UIViewController>",
+        "declAttributes": [
+          "AccessControl"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "VerifikKit",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "VerifikKit"
+      },
+      {
+        "kind": "Import",
+        "name": "FaceTecSDK",
+        "printedName": "FaceTecSDK",
+        "declKind": "Import",
+        "moduleName": "VerifikKit",
+        "declAttributes": [
+          "ImplementationOnly"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "VerifikKit",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "VerifikKit"
+      },
+      {
+        "kind": "Import",
+        "name": "FaceTecSDK",
+        "printedName": "FaceTecSDK",
+        "declKind": "Import",
+        "moduleName": "VerifikKit",
+        "declAttributes": [
+          "ImplementationOnly"
+        ]
+      }
+    ],
+    "json_format_version": 8
+  },
+  "ConstValues": [
+    {
+      "filePath": "\/Users\/bleck\/Desktop\/VerifikKit\/VerifikKit\/Processors\/VerifikLivenessProcessor.swift",
+      "kind": "BooleanLiteral",
+      "offset": 617,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/bleck\/Desktop\/VerifikKit\/VerifikKit\/Processors\/VerifikLivenessProcessor.swift",
+      "kind": "StringLiteral",
+      "offset": 382,
+      "length": 24,
+      "value": "\"VerifikKit.VerifikLivenessProcessor\""
+    },
+    {
+      "filePath": "\/Users\/bleck\/Desktop\/VerifikKit\/VerifikKit\/Verifik.swift",
+      "kind": "StringLiteral",
+      "offset": 389,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/bleck\/Desktop\/VerifikKit\/VerifikKit\/Verifik.swift",
+      "kind": "StringLiteral",
+      "offset": 165,
+      "length": 7,
+      "value": "\"VerifikKit.Verifik\""
+    },
+    {
+      "filePath": "\/Users\/bleck\/Desktop\/VerifikKit\/VerifikKit\/Config.swift",
+      "kind": "StringLiteral",
+      "offset": 419,
+      "length": 34,
+      "value": "\"dzxYrV5yHq1vk0YqwawPhrUNe8XiDFQi\""
+    },
+    {
+      "filePath": "\/Users\/bleck\/Desktop\/VerifikKit\/VerifikKit\/Config.swift",
+      "kind": "StringLiteral",
+      "offset": 914,
+      "length": 45,
+      "value": "\"https:\/\/api.facetec.com\/api\/v3.1\/biometrics\""
+    },
+    {
+      "filePath": "\/Users\/bleck\/Desktop\/VerifikKit\/VerifikKit\/Config.swift",
+      "kind": "StringLiteral",
+      "offset": 1314,
+      "length": 30,
+      "value": "\"-----BEGIN PUBLIC KEY-----\n\""
+    },
+    {
+      "filePath": "\/Users\/bleck\/Desktop\/VerifikKit\/VerifikKit\/Config.swift",
+      "kind": "StringLiteral",
+      "offset": 1355,
+      "length": 68,
+      "value": "\"MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA5PxZ3DLj+zP6T6HFgzzk\n\""
+    },
+    {
+      "filePath": "\/Users\/bleck\/Desktop\/VerifikKit\/VerifikKit\/Config.swift",
+      "kind": "StringLiteral",
+      "offset": 1434,
+      "length": 68,
+      "value": "\"M77LdzP3fojBoLasw7EfzvLMnJNUlyRb5m8e5QyyJxI+wRjsALHvFgLzGwxM8ehz\n\""
+    },
+    {
+      "filePath": "\/Users\/bleck\/Desktop\/VerifikKit\/VerifikKit\/Config.swift",
+      "kind": "StringLiteral",
+      "offset": 1513,
+      "length": 68,
+      "value": "\"DqqBZed+f4w33GgQXFZOS4AOvyPbALgCYoLehigLAbbCNTkeY5RDcmmSI\/sbp+s6\n\""
+    },
+    {
+      "filePath": "\/Users\/bleck\/Desktop\/VerifikKit\/VerifikKit\/Config.swift",
+      "kind": "StringLiteral",
+      "offset": 1592,
+      "length": 68,
+      "value": "\"mAiAKKvCdIqe17bltZ\/rfEoL3gPKEfLXeN549LTj3XBp0hvG4loQ6eC1E1tRzSkf\n\""
+    },
+    {
+      "filePath": "\/Users\/bleck\/Desktop\/VerifikKit\/VerifikKit\/Config.swift",
+      "kind": "StringLiteral",
+      "offset": 1671,
+      "length": 68,
+      "value": "\"GJD4GIVvR+j12gXAaftj3ahfYxioBH7F7HQxzmWkwDyn3bqU54eaiB7f0ftsPpWM\n\""
+    },
+    {
+      "filePath": "\/Users\/bleck\/Desktop\/VerifikKit\/VerifikKit\/Config.swift",
+      "kind": "StringLiteral",
+      "offset": 1750,
+      "length": 68,
+      "value": "\"ceUaqkL2DZUvgN0efEJjnWy5y1\/Gkq5GGWCROI9XG\/SwXJ30BbVUehTbVcD70+ZF\n\""
+    },
+    {
+      "filePath": "\/Users\/bleck\/Desktop\/VerifikKit\/VerifikKit\/Config.swift",
+      "kind": "StringLiteral",
+      "offset": 1829,
+      "length": 12,
+      "value": "\"8QIDAQAB\n\""
+    },
+    {
+      "filePath": "\/Users\/bleck\/Desktop\/VerifikKit\/VerifikKit\/Config.swift",
+      "kind": "StringLiteral",
+      "offset": 1852,
+      "length": 26,
+      "value": "\"-----END PUBLIC KEY-----\""
+    },
+    {
+      "filePath": "\/Users\/bleck\/Desktop\/VerifikKit\/VerifikKit\/Config.swift",
+      "kind": "BooleanLiteral",
+      "offset": 10271,
+      "length": 4,
+      "value": "true"
+    }
+  ]
+}

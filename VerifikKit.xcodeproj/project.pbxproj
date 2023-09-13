@@ -1,0 +1,840 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D12642BB2996CA8600FA0F00 /* VerifikAppLoginProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12642BA2996CA8600FA0F00 /* VerifikAppLoginProcessor.swift */; };
+		D127AF602A2A8DF9009F8014 /* VerifikWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = D127AF5E2A2A8DF9009F8014 /* VerifikWrapper.h */; };
+		D127AF612A2A8DF9009F8014 /* VerifikWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = D127AF5F2A2A8DF9009F8014 /* VerifikWrapper.m */; };
+		D155EE052A393AF300A83760 /* FaceTecSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D155EE032A393AD100A83760 /* FaceTecSDK.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		D165888F2A62EB2D00550B0A /* FaceTecSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D155EE032A393AD100A83760 /* FaceTecSDK.framework */; };
+		D16588902A62EB2D00550B0A /* FaceTecSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D155EE032A393AD100A83760 /* FaceTecSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D16617762915E56E007000F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16617752915E56E007000F8 /* AppDelegate.swift */; };
+		D16617782915E56E007000F8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16617772915E56E007000F8 /* SceneDelegate.swift */; };
+		D166177A2915E56E007000F8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16617792915E56E007000F8 /* ViewController.swift */; };
+		D166177D2915E56E007000F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D166177B2915E56E007000F8 /* Main.storyboard */; };
+		D166177F2915E570007000F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D166177E2915E570007000F8 /* Assets.xcassets */; };
+		D16617822915E570007000F8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D16617802915E570007000F8 /* LaunchScreen.storyboard */; };
+		D166178A2915E618007000F8 /* VerifikKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1A98BB4290B45C7007818D6 /* VerifikKit.framework */; };
+		D166178B2915E618007000F8 /* VerifikKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D1A98BB4290B45C7007818D6 /* VerifikKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D166912629149FC600485AAF /* VerifikEnrollmentProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D166912529149FC500485AAF /* VerifikEnrollmentProcessor.swift */; };
+		D16691282914AA7B00485AAF /* VerifikPhotoIDMatchProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16691272914AA7B00485AAF /* VerifikPhotoIDMatchProcessor.swift */; };
+		D166912E2914AE5200485AAF /* VerifikPhotoIDScanProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D166912D2914AE5200485AAF /* VerifikPhotoIDScanProcessor.swift */; };
+		D16691302915B07000485AAF /* HttpUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D166912F2915B07000485AAF /* HttpUtils.swift */; };
+		D16AEDEE297F6B4300E859A9 /* VerifikAppRegisterProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16AEDED297F6B4300E859A9 /* VerifikAppRegisterProcessor.swift */; };
+		D1A3FA4229105CB600491AEF /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1A3FA4129105CB600491AEF /* Media.xcassets */; };
+		D1A3FA4C2912F2DA00491AEF /* VerifikAuthProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A3FA4B2912F2DA00491AEF /* VerifikAuthProcessor.swift */; };
+		D1A3FA4F2913045700491AEF /* HttpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A3FA4E2913045700491AEF /* HttpService.swift */; };
+		D1A3FA51291304AE00491AEF /* VerifikURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A3FA50291304AE00491AEF /* VerifikURL.swift */; };
+		D1A98BB9290B45C7007818D6 /* VerifikKit.docc in Sources */ = {isa = PBXBuildFile; fileRef = D1A98BB8290B45C7007818D6 /* VerifikKit.docc */; };
+		D1A98BBF290B45C7007818D6 /* VerifikKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1A98BB4290B45C7007818D6 /* VerifikKit.framework */; };
+		D1A98BC4290B45C7007818D6 /* VerifikKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A98BC3290B45C7007818D6 /* VerifikKitTests.swift */; };
+		D1A98BC5290B45C7007818D6 /* VerifikKit.h in Headers */ = {isa = PBXBuildFile; fileRef = D1A98BB7290B45C7007818D6 /* VerifikKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D1A98BDA290B512F007818D6 /* VerifikLivenessProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A98BD3290B512F007818D6 /* VerifikLivenessProcessor.swift */; };
+		D1A98BDB290B512F007818D6 /* ProcesingDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A98BD4290B512F007818D6 /* ProcesingDelegate.swift */; };
+		D1A98BDF290B512F007818D6 /* ThemeHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A98BD9290B512F007818D6 /* ThemeHelpers.swift */; };
+		D1A98BE6290B5300007818D6 /* VerifikProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A98BE5290B5300007818D6 /* VerifikProtocols.swift */; };
+		D1A98BE8290B545F007818D6 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A98BE7290B545F007818D6 /* Config.swift */; };
+		D1A98BEC290BA710007818D6 /* Verifik.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A98BEB290BA710007818D6 /* Verifik.swift */; };
+		D1E998CD299D77870007E7AA /* VerifikAppIDScanProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E998CC299D77870007E7AA /* VerifikAppIDScanProcessor.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D166178C2915E618007000F8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D1A98BAB290B45C7007818D6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D1A98BB3290B45C7007818D6;
+			remoteInfo = VerifikKit;
+		};
+		D1A98BC0290B45C7007818D6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D1A98BAB290B45C7007818D6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D1A98BB3290B45C7007818D6;
+			remoteInfo = VerifikKit;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D166178E2915E618007000F8 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				D166178B2915E618007000F8 /* VerifikKit.framework in Embed Frameworks */,
+				D16588902A62EB2D00550B0A /* FaceTecSDK.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		D12642BA2996CA8600FA0F00 /* VerifikAppLoginProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifikAppLoginProcessor.swift; sourceTree = "<group>"; };
+		D127AF5E2A2A8DF9009F8014 /* VerifikWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VerifikWrapper.h; sourceTree = "<group>"; };
+		D127AF5F2A2A8DF9009F8014 /* VerifikWrapper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VerifikWrapper.m; sourceTree = "<group>"; };
+		D155EE032A393AD100A83760 /* FaceTecSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FaceTecSDK.framework; path = frameworks/FaceTecSDK.framework; sourceTree = SOURCE_ROOT; };
+		D16617732915E56E007000F8 /* SampleVerifik.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleVerifik.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D16617752915E56E007000F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D16617772915E56E007000F8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		D16617792915E56E007000F8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D166177C2915E56E007000F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D166177E2915E570007000F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D16617812915E570007000F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D16617832915E570007000F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D166912529149FC500485AAF /* VerifikEnrollmentProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifikEnrollmentProcessor.swift; sourceTree = "<group>"; };
+		D16691272914AA7B00485AAF /* VerifikPhotoIDMatchProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifikPhotoIDMatchProcessor.swift; sourceTree = "<group>"; };
+		D166912D2914AE5200485AAF /* VerifikPhotoIDScanProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifikPhotoIDScanProcessor.swift; sourceTree = "<group>"; };
+		D166912F2915B07000485AAF /* HttpUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpUtils.swift; sourceTree = "<group>"; };
+		D16AEDED297F6B4300E859A9 /* VerifikAppRegisterProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifikAppRegisterProcessor.swift; sourceTree = "<group>"; };
+		D1A3FA4129105CB600491AEF /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		D1A3FA4B2912F2DA00491AEF /* VerifikAuthProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifikAuthProcessor.swift; sourceTree = "<group>"; };
+		D1A3FA4E2913045700491AEF /* HttpService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpService.swift; sourceTree = "<group>"; };
+		D1A3FA50291304AE00491AEF /* VerifikURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifikURL.swift; sourceTree = "<group>"; };
+		D1A98BB4290B45C7007818D6 /* VerifikKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = VerifikKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D1A98BB7290B45C7007818D6 /* VerifikKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VerifikKit.h; sourceTree = "<group>"; };
+		D1A98BB8290B45C7007818D6 /* VerifikKit.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = VerifikKit.docc; sourceTree = "<group>"; };
+		D1A98BBE290B45C7007818D6 /* VerifikKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VerifikKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D1A98BC3290B45C7007818D6 /* VerifikKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifikKitTests.swift; sourceTree = "<group>"; };
+		D1A98BD3290B512F007818D6 /* VerifikLivenessProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifikLivenessProcessor.swift; sourceTree = "<group>"; };
+		D1A98BD4290B512F007818D6 /* ProcesingDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProcesingDelegate.swift; sourceTree = "<group>"; };
+		D1A98BD9290B512F007818D6 /* ThemeHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeHelpers.swift; sourceTree = "<group>"; };
+		D1A98BE5290B5300007818D6 /* VerifikProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifikProtocols.swift; sourceTree = "<group>"; };
+		D1A98BE7290B545F007818D6 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		D1A98BEB290BA710007818D6 /* Verifik.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Verifik.swift; sourceTree = "<group>"; };
+		D1E998CC299D77870007E7AA /* VerifikAppIDScanProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifikAppIDScanProcessor.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D16617702915E56E007000F8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D166178A2915E618007000F8 /* VerifikKit.framework in Frameworks */,
+				D165888F2A62EB2D00550B0A /* FaceTecSDK.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D1A98BB1290B45C7007818D6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D155EE052A393AF300A83760 /* FaceTecSDK.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D1A98BBB290B45C7007818D6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D1A98BBF290B45C7007818D6 /* VerifikKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D111F212290C7EB500F04815 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D155EE032A393AD100A83760 /* FaceTecSDK.framework */,
+			);
+			path = Frameworks;
+			sourceTree = "<group>";
+		};
+		D16617742915E56E007000F8 /* SampleVerifik */ = {
+			isa = PBXGroup;
+			children = (
+				D16617752915E56E007000F8 /* AppDelegate.swift */,
+				D16617772915E56E007000F8 /* SceneDelegate.swift */,
+				D16617792915E56E007000F8 /* ViewController.swift */,
+				D166177B2915E56E007000F8 /* Main.storyboard */,
+				D166177E2915E570007000F8 /* Assets.xcassets */,
+				D16617802915E570007000F8 /* LaunchScreen.storyboard */,
+				D16617832915E570007000F8 /* Info.plist */,
+			);
+			path = SampleVerifik;
+			sourceTree = "<group>";
+		};
+		D1A3FA4D2913044500491AEF /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				D1A3FA4E2913045700491AEF /* HttpService.swift */,
+				D1A3FA50291304AE00491AEF /* VerifikURL.swift */,
+				D166912F2915B07000485AAF /* HttpUtils.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		D1A98BAA290B45C7007818D6 = {
+			isa = PBXGroup;
+			children = (
+				D1A98BB6290B45C7007818D6 /* VerifikKit */,
+				D1A98BC2290B45C7007818D6 /* VerifikKitTests */,
+				D16617742915E56E007000F8 /* SampleVerifik */,
+				D111F212290C7EB500F04815 /* Frameworks */,
+				D1A98BB5290B45C7007818D6 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D1A98BB5290B45C7007818D6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D1A98BB4290B45C7007818D6 /* VerifikKit.framework */,
+				D1A98BBE290B45C7007818D6 /* VerifikKitTests.xctest */,
+				D16617732915E56E007000F8 /* SampleVerifik.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D1A98BB6290B45C7007818D6 /* VerifikKit */ = {
+			isa = PBXGroup;
+			children = (
+				D1A98BB7290B45C7007818D6 /* VerifikKit.h */,
+				D127AF5E2A2A8DF9009F8014 /* VerifikWrapper.h */,
+				D127AF5F2A2A8DF9009F8014 /* VerifikWrapper.m */,
+				D1A98BE7290B545F007818D6 /* Config.swift */,
+				D1A98BEB290BA710007818D6 /* Verifik.swift */,
+				D1A98BE5290B5300007818D6 /* VerifikProtocols.swift */,
+				D1A3FA4D2913044500491AEF /* Services */,
+				D1A98BD2290B512F007818D6 /* Processors */,
+				D1A98BB8290B45C7007818D6 /* VerifikKit.docc */,
+				D1A3FA4129105CB600491AEF /* Media.xcassets */,
+			);
+			path = VerifikKit;
+			sourceTree = "<group>";
+		};
+		D1A98BC2290B45C7007818D6 /* VerifikKitTests */ = {
+			isa = PBXGroup;
+			children = (
+				D1A98BC3290B45C7007818D6 /* VerifikKitTests.swift */,
+			);
+			path = VerifikKitTests;
+			sourceTree = "<group>";
+		};
+		D1A98BD2290B512F007818D6 /* Processors */ = {
+			isa = PBXGroup;
+			children = (
+				D1A98BD3290B512F007818D6 /* VerifikLivenessProcessor.swift */,
+				D166912529149FC500485AAF /* VerifikEnrollmentProcessor.swift */,
+				D1A3FA4B2912F2DA00491AEF /* VerifikAuthProcessor.swift */,
+				D16691272914AA7B00485AAF /* VerifikPhotoIDMatchProcessor.swift */,
+				D166912D2914AE5200485AAF /* VerifikPhotoIDScanProcessor.swift */,
+				D1E998CC299D77870007E7AA /* VerifikAppIDScanProcessor.swift */,
+				D16AEDED297F6B4300E859A9 /* VerifikAppRegisterProcessor.swift */,
+				D12642BA2996CA8600FA0F00 /* VerifikAppLoginProcessor.swift */,
+				D1A98BD4290B512F007818D6 /* ProcesingDelegate.swift */,
+				D1A98BD8290B512F007818D6 /* Helpers */,
+			);
+			path = Processors;
+			sourceTree = "<group>";
+		};
+		D1A98BD8290B512F007818D6 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				D1A98BD9290B512F007818D6 /* ThemeHelpers.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		D1A98BAF290B45C7007818D6 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D1A98BC5290B45C7007818D6 /* VerifikKit.h in Headers */,
+				D127AF602A2A8DF9009F8014 /* VerifikWrapper.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		D16617722915E56E007000F8 /* SampleVerifik */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D16617842915E570007000F8 /* Build configuration list for PBXNativeTarget "SampleVerifik" */;
+			buildPhases = (
+				D166176F2915E56E007000F8 /* Sources */,
+				D16617702915E56E007000F8 /* Frameworks */,
+				D16617712915E56E007000F8 /* Resources */,
+				D166178E2915E618007000F8 /* Embed Frameworks */,
+				D194846D2984B0F2000BD94E /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D166178D2915E618007000F8 /* PBXTargetDependency */,
+			);
+			name = SampleVerifik;
+			productName = SampleVerifik;
+			productReference = D16617732915E56E007000F8 /* SampleVerifik.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D1A98BB3290B45C7007818D6 /* VerifikKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D1A98BC8290B45C7007818D6 /* Build configuration list for PBXNativeTarget "VerifikKit" */;
+			buildPhases = (
+				D1A98BAF290B45C7007818D6 /* Headers */,
+				D1A98BB0290B45C7007818D6 /* Sources */,
+				D1A98BB1290B45C7007818D6 /* Frameworks */,
+				D1A98BB2290B45C7007818D6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VerifikKit;
+			productName = VerifikKit;
+			productReference = D1A98BB4290B45C7007818D6 /* VerifikKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		D1A98BBD290B45C7007818D6 /* VerifikKitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D1A98BCB290B45C7007818D6 /* Build configuration list for PBXNativeTarget "VerifikKitTests" */;
+			buildPhases = (
+				D1A98BBA290B45C7007818D6 /* Sources */,
+				D1A98BBB290B45C7007818D6 /* Frameworks */,
+				D1A98BBC290B45C7007818D6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D1A98BC1290B45C7007818D6 /* PBXTargetDependency */,
+			);
+			name = VerifikKitTests;
+			productName = VerifikKitTests;
+			productReference = D1A98BBE290B45C7007818D6 /* VerifikKitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D1A98BAB290B45C7007818D6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1400;
+				LastUpgradeCheck = 1400;
+				TargetAttributes = {
+					D16617722915E56E007000F8 = {
+						CreatedOnToolsVersion = 14.0.1;
+					};
+					D1A98BB3290B45C7007818D6 = {
+						CreatedOnToolsVersion = 14.0.1;
+						LastSwiftMigration = 1430;
+					};
+					D1A98BBD290B45C7007818D6 = {
+						CreatedOnToolsVersion = 14.0.1;
+					};
+				};
+			};
+			buildConfigurationList = D1A98BAE290B45C7007818D6 /* Build configuration list for PBXProject "VerifikKit" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D1A98BAA290B45C7007818D6;
+			productRefGroup = D1A98BB5290B45C7007818D6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D1A98BB3290B45C7007818D6 /* VerifikKit */,
+				D1A98BBD290B45C7007818D6 /* VerifikKitTests */,
+				D16617722915E56E007000F8 /* SampleVerifik */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D16617712915E56E007000F8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D16617822915E570007000F8 /* LaunchScreen.storyboard in Resources */,
+				D166177F2915E570007000F8 /* Assets.xcassets in Resources */,
+				D166177D2915E56E007000F8 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D1A98BB2290B45C7007818D6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D1A3FA4229105CB600491AEF /* Media.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D1A98BBC290B45C7007818D6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D194846D2984B0F2000BD94E /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n################################################################################\n#\n# Copyright 2015 Realm Inc.\n#\n# Licensed under the Apache License, Version 2.0 (the \"License\");\n# you may not use this file except in compliance with the License.\n# You may obtain a copy of the License at\n#\n# http://www.apache.org/licenses/LICENSE-2.0\n#\n# Unless required by applicable law or agreed to in writing, software\n# distributed under the License is distributed on an \"AS IS\" BASIS,\n# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n# See the License for the specific language governing permissions and\n# limitations under the License.\n#\n################################################################################\n\n# This script strips all non-valid architectures from dynamic libraries in\n# the application's `Frameworks` directory.\n#\n# The following environment variables are required:\n#\n# BUILT_PRODUCTS_DIR\n# FRAMEWORKS_FOLDER_PATH\n# VALID_ARCHS\n# EXPANDED_CODE_SIGN_IDENTITY\n\n\n# Signs a framework with the provided identity\ncode_sign() {\n  # Use the current code_sign_identitiy\n  echo \"Code Signing $1 with Identity ${EXPANDED_CODE_SIGN_IDENTITY_NAME}\"\n  echo \"/usr/bin/codesign --force --sign ${EXPANDED_CODE_SIGN_IDENTITY} --preserve-metadata=identifier,entitlements $1\"\n  /usr/bin/codesign --force --sign ${EXPANDED_CODE_SIGN_IDENTITY} --preserve-metadata=identifier,entitlements \"$1\"\n}\n\necho \"Stripping frameworks\"\ncd \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}\"\n\nfor file in $(find . -type f -perm +111); do\n  # Skip non-dynamic libraries\n  if ! [[ \"$(file \"$file\")\" == *\"dynamically linked shared library\"* ]]; then\n    continue\n  fi\n  # Get architectures for current file\n  archs=\"$(lipo -info \"${file}\" | rev | cut -d ':' -f1 | rev)\"\n  stripped=\"\"\n  for arch in $archs; do\n    if ! [[ \"${VALID_ARCHS}\" == *\"$arch\"* ]]; then\n      # Strip non-valid architectures in-place\n      lipo -remove \"$arch\" -output \"$file\" \"$file\" || exit 1\n      stripped=\"$stripped $arch\"\n    fi\n  done\n  if [[ \"$stripped\" != \"\" ]]; then\n    echo \"Stripped $file of architectures:$stripped\"\n    if [ \"${CODE_SIGNING_REQUIRED}\" == \"YES\" ]; then\n      code_sign \"${file}\"\n    fi\n  fi\ndone\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D166176F2915E56E007000F8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D166177A2915E56E007000F8 /* ViewController.swift in Sources */,
+				D16617762915E56E007000F8 /* AppDelegate.swift in Sources */,
+				D16617782915E56E007000F8 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D1A98BB0290B45C7007818D6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D1A98BDA290B512F007818D6 /* VerifikLivenessProcessor.swift in Sources */,
+				D1A98BB9290B45C7007818D6 /* VerifikKit.docc in Sources */,
+				D1A98BEC290BA710007818D6 /* Verifik.swift in Sources */,
+				D12642BB2996CA8600FA0F00 /* VerifikAppLoginProcessor.swift in Sources */,
+				D1A98BDB290B512F007818D6 /* ProcesingDelegate.swift in Sources */,
+				D166912E2914AE5200485AAF /* VerifikPhotoIDScanProcessor.swift in Sources */,
+				D1A3FA51291304AE00491AEF /* VerifikURL.swift in Sources */,
+				D16691282914AA7B00485AAF /* VerifikPhotoIDMatchProcessor.swift in Sources */,
+				D16AEDEE297F6B4300E859A9 /* VerifikAppRegisterProcessor.swift in Sources */,
+				D1A98BE6290B5300007818D6 /* VerifikProtocols.swift in Sources */,
+				D1A3FA4F2913045700491AEF /* HttpService.swift in Sources */,
+				D16691302915B07000485AAF /* HttpUtils.swift in Sources */,
+				D1A98BDF290B512F007818D6 /* ThemeHelpers.swift in Sources */,
+				D1A98BE8290B545F007818D6 /* Config.swift in Sources */,
+				D127AF612A2A8DF9009F8014 /* VerifikWrapper.m in Sources */,
+				D1E998CD299D77870007E7AA /* VerifikAppIDScanProcessor.swift in Sources */,
+				D166912629149FC600485AAF /* VerifikEnrollmentProcessor.swift in Sources */,
+				D1A3FA4C2912F2DA00491AEF /* VerifikAuthProcessor.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D1A98BBA290B45C7007818D6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D1A98BC4290B45C7007818D6 /* VerifikKitTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D166178D2915E618007000F8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D1A98BB3290B45C7007818D6 /* VerifikKit */;
+			targetProxy = D166178C2915E618007000F8 /* PBXContainerItemProxy */;
+		};
+		D1A98BC1290B45C7007818D6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D1A98BB3290B45C7007818D6 /* VerifikKit */;
+			targetProxy = D1A98BC0290B45C7007818D6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D166177B2915E56E007000F8 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D166177C2915E56E007000F8 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D16617802915E570007000F8 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D16617812915E570007000F8 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D16617852915E570007000F8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9LSP2W34DN;
+				EXCLUDED_ARCHS = "";
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+					"$(PROJECT_DIR)/frameworks",
+				);
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SampleVerifik/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = co.verifik.VerifikKit;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D16617862915E570007000F8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9LSP2W34DN;
+				EXCLUDED_ARCHS = "";
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+					"$(PROJECT_DIR)/frameworks",
+				);
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SampleVerifik/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = co.verifik.VerifikKit;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		D1A98BC6290B45C7007818D6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				EXCLUDED_ARCHS = "";
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = NO;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		D1A98BC7290B45C7007818D6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				EXCLUDED_ARCHS = "";
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		D1A98BC9290B45C7007818D6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 9LSP2W34DN;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				EXCLUDED_ARCHS = "";
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/VerifikKitTests",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Frameworks",
+					"$(PROJECT_DIR)/frameworks",
+				);
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = co.mat.VerifikKit;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D1A98BCA290B45C7007818D6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 9LSP2W34DN;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				EXCLUDED_ARCHS = "";
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/VerifikKitTests",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Frameworks",
+					"$(PROJECT_DIR)/frameworks",
+				);
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = co.mat.VerifikKit;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		D1A98BCC290B45C7007818D6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9LSP2W34DN;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = co.mat.VerifikKitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D1A98BCD290B45C7007818D6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9LSP2W34DN;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = co.mat.VerifikKitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D16617842915E570007000F8 /* Build configuration list for PBXNativeTarget "SampleVerifik" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D16617852915E570007000F8 /* Debug */,
+				D16617862915E570007000F8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D1A98BAE290B45C7007818D6 /* Build configuration list for PBXProject "VerifikKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D1A98BC6290B45C7007818D6 /* Debug */,
+				D1A98BC7290B45C7007818D6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D1A98BC8290B45C7007818D6 /* Build configuration list for PBXNativeTarget "VerifikKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D1A98BC9290B45C7007818D6 /* Debug */,
+				D1A98BCA290B45C7007818D6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D1A98BCB290B45C7007818D6 /* Build configuration list for PBXNativeTarget "VerifikKitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D1A98BCC290B45C7007818D6 /* Debug */,
+				D1A98BCD290B45C7007818D6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D1A98BAB290B45C7007818D6 /* Project object */;
+}
