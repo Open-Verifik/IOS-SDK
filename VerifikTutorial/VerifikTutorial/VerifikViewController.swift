@@ -32,7 +32,7 @@ class VerifikViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         startButton.setTitle(NSLocalizedString("Start", comment: ""), for: .normal)
-        verifik = Verifik(vc: self, token: token ?? "")
+        verifik = Verifik(vc: self, token: token ?? "", vp: self)
     }
 
 
@@ -41,7 +41,7 @@ class VerifikViewController: UIViewController {
             switch verifikService?.verifikType{
             case .liveness:
                 //verifik.liveness()
-                verifik?.photoIDScan()
+                verifik?.photoIDScan(externalDataBaseRefID: "0001")
                 break
             case .register:
                 verifik?.enroll(externalDataBaseRefID: uuid)
@@ -51,7 +51,7 @@ class VerifikViewController: UIViewController {
                 //verifik.matchID()
                 break
             case .OCR:
-                verifik?.photoIDScan()
+                verifik?.photoIDScan(externalDataBaseRefID: "0001")
             case .age2D:
                 //verifik.age2D()
                 break
@@ -90,7 +90,7 @@ class VerifikViewController: UIViewController {
 
 }
 
-extension VerifikViewController: VerifikProtocol{
+extension VerifikViewController: VerifikProtocol {
     
     func initVerifikSuccess() {
         let alertC = UIAlertController(title: "Verifik SDK init successfully", message: "Everything is ok", preferredStyle: .alert)
@@ -124,6 +124,76 @@ extension VerifikViewController: VerifikProtocol{
         alertC.addAction(ok)
         self.present(alertC, animated: true)
     }
+    
+    func onLivenessDone(done: Bool) {
+        if done {
+            print("Se verifico que es un ser vivo")
+        }
+    }
+    
+    func livenessError(error: String) {
+        print("Hubo un error al detectar vida: \(error)")
+    }
+    
+    func onEnrollmentDone(done: Bool) {
+        if done{
+            print("Se registro el rostro correctamente")
+        }
+    }
+    func enrollmentError(error: String) {
+        print("Hubo un error al registrar el rostro: \(error)")
+    }
+    func onAuthDone(done: Bool) {
+        if done{
+            print("Se autenticó el rostro correctamente")
+        }
+    }
+    func authError(error: String) {
+        print("Hubo un error al autenticar el rostro: \(error)")
+    }
+    func onPhotoIDMatchDone(done: Bool) {
+        if done{
+            print("Se registro correctamente el rostro con la identificación")
+        }
+    }
+    func photoIDMatchError(error: String) {
+        print("Hubo un error al registrar el rostro con la identificación: \(error)")
+    }
+    func onPhotoIDScan(done: Bool) {
+        if done{
+            print("Se escaneo correctamente la identificación")
+        }
+    }
+    func photoIDScanError(error: String) {
+        print("Hubo un error al escanear la identificación: \(error)")
+    }
+    
+    func onAppRegisterDone(done: Bool, resultToken: String?) {
+        if done{
+            let alert = UIAlertController(title: "Registro exitoso", message: resultToken, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default))
+            self.show(alert, sender: nil)
+        }
+    }
+    
+    func appRegisterError(error: String) {
+        print("Hubo un error al intentar hacer el registro en la app: \(error)")
+    }
+    
+    func onAppLoginDone(done: Bool, resultToken: String?) {
+        if done{
+            let alert = UIAlertController(title: "Login exitoso", message: resultToken, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default))
+            self.show(alert, sender: nil)
+        }
+    }
+    
+    func appLoginError(error: String) {
+        print("Hubo un error al intentar hacer login a la app: \(error)")
+    }
+    
+    func onAppPhotoIDScanDone(done: Bool, resultID: String?) {}
+    func appPhotoIDScanError(error: String) {}
 }
 
 struct VerifikViewWrapper: UIViewControllerRepresentable {

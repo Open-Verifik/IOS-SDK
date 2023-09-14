@@ -19,11 +19,11 @@
 		D1640C572953876000C603E9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D1640C592953876000C603E9 /* Localizable.strings */; };
 		D1640C5C2953877F00C603E9 /* Localizable-es.strings in Resources */ = {isa = PBXBuildFile; fileRef = D1640C5E2953877F00C603E9 /* Localizable-es.strings */; };
 		D1640C602954EF7300C603E9 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1640C5F2954EF7300C603E9 /* DetailView.swift */; };
+		D18D43B92AB3A73500CA350F /* FaceTecSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D18D43B52AB3A72F00CA350F /* FaceTecSDK.framework */; };
+		D18D43BA2AB3A73500CA350F /* FaceTecSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D18D43B52AB3A72F00CA350F /* FaceTecSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D18D43BB2AB3A73700CA350F /* VerifikKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = D18D43B62AB3A72F00CA350F /* VerifikKit.xcframework */; };
+		D18D43BC2AB3A73700CA350F /* VerifikKit.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D18D43B62AB3A72F00CA350F /* VerifikKit.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D1B6E5CD29564FFB00981962 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B6E5CC29564FFB00981962 /* StartView.swift */; };
-		D1C69CB529F37F8E00903D71 /* VerifikKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = D113CC7B2967C4A90050497B /* VerifikKit.xcframework */; };
-		D1C69CB629F37F8E00903D71 /* VerifikKit.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D113CC7B2967C4A90050497B /* VerifikKit.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		D1C69CB929F380ED00903D71 /* FaceTecSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1C69CB729F380E500903D71 /* FaceTecSDK.framework */; };
-		D1C69CBA29F380ED00903D71 /* FaceTecSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D1C69CB729F380E500903D71 /* FaceTecSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -33,8 +33,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				D1C69CB629F37F8E00903D71 /* VerifikKit.xcframework in Embed Frameworks */,
-				D1C69CBA29F380ED00903D71 /* FaceTecSDK.framework in Embed Frameworks */,
+				D18D43BA2AB3A73500CA350F /* FaceTecSDK.framework in Embed Frameworks */,
+				D18D43BC2AB3A73700CA350F /* VerifikKit.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -42,7 +42,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		D113CC7B2967C4A90050497B /* VerifikKit.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = VerifikKit.xcframework; path = ../../../VerifikKit.xcframework; sourceTree = "<group>"; };
 		D113CC7D2968AB270050497B /* VerifikViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifikViewController.swift; sourceTree = "<group>"; };
 		D113CC7E2968AB270050497B /* VerifikViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VerifikViewController.xib; sourceTree = "<group>"; };
 		D1640C392952914400C603E9 /* VerifikTutorial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VerifikTutorial.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -56,8 +55,9 @@
 		D1640C582953876000C603E9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D1640C5D2953877F00C603E9 /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/Localizable-es.strings"; sourceTree = "<group>"; };
 		D1640C5F2954EF7300C603E9 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		D18D43B52AB3A72F00CA350F /* FaceTecSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FaceTecSDK.framework; sourceTree = "<group>"; };
+		D18D43B62AB3A72F00CA350F /* VerifikKit.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = VerifikKit.xcframework; sourceTree = "<group>"; };
 		D1B6E5CC29564FFB00981962 /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
-		D1C69CB729F380E500903D71 /* FaceTecSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FaceTecSDK.framework; path = ../../../frameworks/FaceTecSDK.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,8 +65,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D1C69CB529F37F8E00903D71 /* VerifikKit.xcframework in Frameworks */,
-				D1C69CB929F380ED00903D71 /* FaceTecSDK.framework in Frameworks */,
+				D18D43B92AB3A73500CA350F /* FaceTecSDK.framework in Frameworks */,
+				D18D43BB2AB3A73700CA350F /* VerifikKit.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,8 +76,8 @@
 		D1587CCE2967A8130026B619 /* Library */ = {
 			isa = PBXGroup;
 			children = (
-				D1C69CB729F380E500903D71 /* FaceTecSDK.framework */,
-				D113CC7B2967C4A90050497B /* VerifikKit.xcframework */,
+				D18D43B52AB3A72F00CA350F /* FaceTecSDK.framework */,
+				D18D43B62AB3A72F00CA350F /* VerifikKit.xcframework */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -172,7 +172,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1420;
-				LastUpgradeCheck = 1420;
+				LastUpgradeCheck = 1500;
 				TargetAttributes = {
 					D1640C382952914400C603E9 = {
 						CreatedOnToolsVersion = 14.2;
@@ -255,6 +255,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -315,6 +316,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -377,6 +379,10 @@
 				ENABLE_PREVIEWS = YES;
 				EXCLUDED_ARCHS = "";
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/VerifikTutorial/Library",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "La cámara se usa para hacer la validación de rostro con el SDK Demo de Verifik";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -392,6 +398,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = co.verifik.VerifikKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				REEXPORTED_FRAMEWORK_NAMES = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -409,6 +416,10 @@
 				DEVELOPMENT_TEAM = 9LSP2W34DN;
 				ENABLE_PREVIEWS = YES;
 				EXCLUDED_ARCHS = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/VerifikTutorial/Library",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "La cámara se usa para hacer la validación de rostro con el SDK Demo de Verifik";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -424,6 +435,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = co.verifik.VerifikKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				REEXPORTED_FRAMEWORK_NAMES = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

@@ -13,6 +13,7 @@ class ViewController: UIViewController{
     var verifikKYC: Verifik?
     var initVerifik = false
     let refId = "verifik_app_" + UUID().uuidString
+    //Complete this constants with your data
     let projectID = ""
     let phone = ""
     let token = ""

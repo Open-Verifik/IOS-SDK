@@ -1,0 +1,75 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.8.1 (swiftlang-5.8.0.124.5 clang-1403.0.22.11.100)
+// swift-module-flags: -target arm64-apple-ios16.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name VerifikKit
+// swift-module-flags-ignorable: -enable-bare-slash-regex
+import Foundation
+import Swift
+import UIKit
+@_exported import VerifikKit
+import _Concurrency
+import _StringProcessing
+@objc @objcMembers public class Verifik : ObjectiveC.NSObject, Foundation.URLSessionDelegate {
+  @objc public init(vc: UIKit.UIViewController, token: Swift.String, vp: any VerifikKit.VerifikProtocol)
+  @objc public func liveness()
+  @objc public func enroll(externalDataBaseRefID: Swift.String)
+  @objc public func authenticate(externalDataBaseRefID: Swift.String)
+  @objc public func matchIDScan(externalDataBaseRefID: Swift.String)
+  @objc public func photoIDScan(externalDataBaseRefID: Swift.String?)
+  @objc public func appRegistrationKYC(project: Swift.String, email: Swift.String?, phone: Swift.String?)
+  @objc public func appLoginKYC(project: Swift.String, email: Swift.String?, phone: Swift.String?)
+  @objc public func appPhotoIDScanKYC(project: Swift.String, documentType: VerifikKit.VerifikDocumentType)
+  @objc deinit
+}
+@objc public protocol VerifikProtocol : Foundation.URLSessionDelegate {
+  @objc func initVerifikSuccess()
+  @objc func configError(error: Swift.String)
+  @objc func sessionError(error: Swift.String)
+  @objc func onVerifikComplete()
+  @objc func onLivenessDone(done: Swift.Bool)
+  @objc func livenessError(error: Swift.String)
+  @objc func onEnrollmentDone(done: Swift.Bool)
+  @objc func enrollmentError(error: Swift.String)
+  @objc func onAuthDone(done: Swift.Bool)
+  @objc func authError(error: Swift.String)
+  @objc func onPhotoIDMatchDone(done: Swift.Bool)
+  @objc func photoIDMatchError(error: Swift.String)
+  @objc func onPhotoIDScan(done: Swift.Bool)
+  @objc func photoIDScanError(error: Swift.String)
+  @objc func onAppRegisterDone(done: Swift.Bool, resultToken: Swift.String?)
+  @objc func appRegisterError(error: Swift.String)
+  @objc func onAppLoginDone(done: Swift.Bool, resultToken: Swift.String?)
+  @objc func appLoginError(error: Swift.String)
+  @objc func onAppPhotoIDScanDone(done: Swift.Bool, resultID: Swift.String?)
+  @objc func appPhotoIDScanError(error: Swift.String)
+}
+extension VerifikKit.VerifikProtocol {
+  public func onLivenessDone(done: Swift.Bool)
+  public func livenessError(error: Swift.String)
+  public func onEnrollmentDone(done: Swift.Bool)
+  public func enrollmentError(error: Swift.String)
+  public func onAuthDone(done: Swift.Bool)
+  public func authError(error: Swift.String)
+  public func onPhotoIDMatchDone(done: Swift.Bool)
+  public func photoIDMatchError(error: Swift.String)
+  public func onPhotoIDScan(done: Swift.Bool)
+  public func photoIDScanError(error: Swift.String)
+  public func onAppRegisterDone(done: Swift.Bool, resultToken: Swift.String?)
+  public func appRegisterError(error: Swift.String)
+  public func onAppLoginDone(done: Swift.Bool, resultToken: Swift.String?)
+  public func appLoginError(error: Swift.String)
+  public func onAppPhotoIDScanDone(done: Swift.Bool, resultID: Swift.String?)
+  public func appPhotoIDScanError(error: Swift.String)
+}
+@objc public enum VerifikDocumentType : Swift.Int, Swift.RawRepresentable {
+  case license
+  case passport
+  case government
+  case automatic_detection
+  public typealias RawValue = Swift.String
+  public var rawValue: VerifikKit.VerifikDocumentType.RawValue {
+    get
+  }
+  public init?(rawValue: VerifikKit.VerifikDocumentType.RawValue)
+}
+extension VerifikKit.VerifikDocumentType : Swift.Equatable {}
+extension VerifikKit.VerifikDocumentType : Swift.Hashable {}
